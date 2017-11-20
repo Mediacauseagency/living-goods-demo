@@ -1,0 +1,45 @@
+{
+  "name": "Living-Goods-front-end",
+  "version": "1.0.0",
+  "descrpition": "Living Goods front-end",
+  "main": "js/index.js",
+  "scripts": {
+    "docs-css": "postcss docs/index.css -c postcss.config.js -o docs/build.css -w",
+    "docs-js": "budo docs/index.js:build.js --live -t babelify --dir docs --pushstate",
+    "watch-docs": "concurrently \"npm run docs-js\" \"npm run docs-css\"",
+    "build-docs-js": "browserify -t babelify -p tinyify docs/index.js > docs/build.js && gzip -c -9 < docs/build.js > docs/build.js.gz",
+    "build-docs-css": "postcss docs/index.css -c postcss.config.js --env 'production' -o docs/build.css && gzip -c -9 < docs/build.css > docs/build.css.gz",
+    "build-docs" : "npm run build-docs-js && npm run build-docs-css"
+  },
+  "author": "Yutaka Houlette <yutakahoulette@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
+    "budo": "^10.0.4",
+    "concurrently": "^3.5.0",
+    "cssnano": "^3.10.0",
+    "normalize.css": "^7.0.0",
+    "postcss": "^6.0.11",
+    "postcss-assets": "^5.0.0",
+    "postcss-at-rules-variables": "^0.1.1",
+    "postcss-cli": "^4.1.1",
+    "postcss-conditionals": "^2.1.0",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-each": "^0.10.0",
+    "postcss-easy-import": "^3.0.0",
+    "postcss-for": "^2.1.1",
+    "tinyify": "^2.3.0",
+    "watchify": "^3.9.0"
+  },
+  "dependencies": {
+    "choo": "6.5.1",
+    "choo-log": "8.0.0",
+    "d3": "^4.11.0",
+    "email-validator": "^1.1.1",
+    "format-number": "^3.0.0",
+    "phone": "^2.0.0-rc.1",
+    "ramda": "^0.25.0"
+  }
+}

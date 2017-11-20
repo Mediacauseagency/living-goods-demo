@@ -1,0 +1,24 @@
+[data-is-valid='false'] input {
+}
+
+[data-is-valid='true'] input {
+  padding-right: 2.5em;
+  background-repeat: no-repeat;
+  background-size: 1.5em;
+  background-position: calc(100% - .5em) center;
+}
+
+[data-validate]:after,
+[data-is-valid='false'] label {
+}
+
+[data-validate] {
+  position: relative;
+}
+
+[data-validate]:after {
+  content: attr(data-validation-error);
+  font-size: .825rem;
+  display: inline-block;
+  padding-top: .25rem;
+}

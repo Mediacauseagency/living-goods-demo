@@ -1,0 +1,26 @@
+.align-baseline { vertical-align:baseline }
+.align-top { vertical-align:top }
+.align-middle { vertical-align:middle }
+.align-bottom { vertical-align:bottom }
+
+.align-left { text-align:left }
+.align-right { text-align:right }
+
+.center { text-align:center }
+.justify { text-align:justify }
+
+
+@each $size in (lg,md,sm) {
+  @media (--break-$(size)) {
+    .$(size)-align-baseline { vertical-align:baseline }
+    .$(size)-align-top { vertical-align:top }
+    .$(size)-align-middle { vertical-align:middle }
+    .$(size)-align-bottom { vertical-align:bottom }
+
+    .$(size)-align-left { text-align:left }
+    .$(size)-align-right { text-align:right }
+    .$(size)-center { text-align:center }
+    .$(size)-justify { text-align:justify }
+  }
+}
+

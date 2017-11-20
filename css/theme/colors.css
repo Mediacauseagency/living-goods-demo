@@ -1,0 +1,63 @@
+:root {
+  --black: #2f3239;
+  --pink: #fa025f;
+  --pink-light: #fff3f8;
+  --pink-dark: #d80152;
+  --pink-scrim: rgba(183, 4, 71, 0.3);
+  --blue: #73b8ff;
+  --purple: #9f4996;
+  --grey-0: #f9f9f9;
+  --grey-1: #ececec;
+  --grey-1b: #ccc;
+  --grey-2: #afaea8;
+  --grey-3: #8f8e89;
+  --grey-4: #666666;
+  --grey-5: #3b3c42;
+  --grey-6: #666;
+  --scrim: rgba(0,0,0,0.2);
+  --scrim-dark: rgba(0,0,0,0.8);
+  --scrim-white: rgba(255,255,255,0.85);
+}
+
+/* text color rules */
+.color-white { color: white; }
+.color-grey-1 { color: var(--grey-1); }
+.color-grey-2 { color: var(--grey-2); }
+.color-grey-3 { color: var(--grey-3); }
+.color-grey-6 { color: var(--grey-6); }
+.color-grey { color: var(--grey-4); }
+
+.color-pink { color: var(--pink); }
+.color-blue { color: var(--blue); }
+.color-purple { color: var(--purple); }
+
+/* background color rules */
+.bg-grey-0 { background-color: var(--grey-0); }
+.bg-grey-1 { background-color: var(--grey-1); }
+.bg-grey-2 { background-color: var(--grey-2); }
+.bg-grey-3 { background-color: var(--grey-3); }
+.bg-grey-4 { background-color: var(--grey-4); }
+.bg-grey-5 { background-color: var(--grey-5); }
+.bg-black { background-color: var(--black); }
+
+.bg-pink { background-color: var(--pink); }
+.bg-pink-scrim { background-color: var(--pink-scrim); }
+.bg-blue { background-color: var(--blue); }
+.bg-purple { background-color: var(--purple); }
+
+.bg-scrim { background-color: var(--scrim); }
+.bg-scrim-dark { background-color: var(--scrim-dark); }
+
+.bg-scrim-white {background-color: var(--scrim-white) }
+
+.border-color-white { border-color: white; }
+.border-color-pink { border-color: var(--pink); }
+.border-color-purple { border-color: var(--purple); }
+.border-color-blue { border-color: var(--blue); }
+.border-color-grey { border-color: var(--grey-1); }
+.border-color-grey-2 { border-color: var(--grey-2); }
+.border-color-grey-3 { border-color: var(--grey-3); }
+.border-color-grey-4 { border-color: var(--grey-4); }
+
+.hover-pink:hover { color: var(--pink); }
+.hover-white:hover { color: white; }

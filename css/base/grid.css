@@ -1,0 +1,15 @@
+.col       { float:left }
+.col-right { float:right }
+
+@for $i from 1 to 12 {
+  .col-$(i) { width: calc(($(i) / 12) * 100)%; }
+}
+
+@each $size in (lg-up,lg,md,mdsm,sm) {
+  @for $i from 1 to 12 {
+    @media (--break-$(size)) {
+      .$(size)-col-$(i) { width: calc(($(i) / 12) * 100)%; }
+    }
+  }
+}
+

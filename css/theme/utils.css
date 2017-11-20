@@ -1,0 +1,61 @@
+
+/* flexbox start */
+.flex { display: flex; }
+.flex-none { flex: none;}
+.flex-wrap { flex-wrap: wrap; }
+
+/* vertical center */
+.flex-align-center { align-items: center; }
+
+
+/* horizontal center */
+.flex-jusity-center { justify-content: center; }
+
+@each $prop in (flex-start, flex-end, center, space-between, space-around, space-evenly) {
+  .flex-justify-$(prop) { justify-content: $(prop); }
+}
+
+@each $prop in (auto, flex-start, flex-end, center, baseline, stretch) {
+  .flex-item-align-$(prop) { align-self: $(prop); }
+  .flex-align-$(prop) { align-items: $(prop); }
+}
+
+@for $i from 1 to 4 {
+  .flex-grow-$(i) { flex-grow: $(i)}
+  .order-$(i) { order: $(i)}
+}
+
+@each $size in (lg,md,sm) {
+  @for $i from 1 to 4 {
+    @media (--break-$(size)) {
+      .$(size)-order-$(i) { order: $(i)}
+      .$(size)-flex-grow-$(i) { flex-grow: $(i)}
+    }
+  }
+}
+
+@each $prop in (row, row-reverse, column, column-reverse) {
+  .flex-direction-$(prop) {
+    flex-direction: $(prop)
+  }
+}
+
+/* flexbox end */
+
+.bg-center { background-position: center; }
+
+.border-none {border:none}
+.border-width-2px { border-width: 2px; }
+.border-width-3px { border-width: 3px; }
+
+.width-1 { width: 12rem; }
+
+@each $size in (lg,md,sm) {
+  @media (--break-$(size)) {
+    .$(size)-display-block { display: block;}
+  }
+}
+
+.greyscale {
+  filter: grayscale(100%);
+}

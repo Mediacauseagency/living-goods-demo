@@ -1,0 +1,19 @@
+.hide { display:none !important }
+
+.hover-hide-child,
+.hover-hide-parent:hover .hover-show-child {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.hover-show-child,
+.hover-hide-parent:hover .hover-hide-child {
+  opacity: 1;
+  visibility: visible;
+}
+
+@each $size in (sm, sm-up, md, md-up, lg, lg-up) {
+  @media (--break-$(size)) {
+    .$(size)-hide { display: none !important;}
+  }
+}

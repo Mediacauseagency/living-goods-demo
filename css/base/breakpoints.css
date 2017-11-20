@@ -1,0 +1,11 @@
+@custom-media --break-lg-up (width >= 1008px);
+@custom-media --break-lg (width <= 1008px);
+
+@custom-media --break-md-up (width >= 800px);
+@custom-media --break-md (width <= 800px);
+
+@custom-media --break-mdsm-up (width >= 688px);
+@custom-media --break-mdsm (width <= 688px);
+
+@custom-media --break-sm-up (width >= 496px);
+@custom-media --break-sm (width <= 496px);

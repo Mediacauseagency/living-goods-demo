@@ -1,0 +1,82 @@
+.m-neg-1 { margin: -1rem; }
+.m-neg-05 { margin: -.5rem; }
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+@each $prop, $abbrv in (margin, padding), (m, p) {
+  .$(abbrv)-05 { $(prop): .5rem; }
+  .$(abbrv)t-05 { $(prop)-top: .5rem; }
+  .$(abbrv)b-05 { $(prop)-bottom: .5rem; }
+  .$(abbrv)r-05 { $(prop)-right: .5rem; }
+  .$(abbrv)l-05 { $(prop)-left: .5rem; }
+  .$(abbrv)y-05 {
+    $(prop)-top: .5rem;
+    $(prop)-bottom: .5rem;
+  }
+  .$(abbrv)x-05 {
+    $(prop)-right: .5rem;
+    $(prop)-left: .5rem;
+  }
+}
+
+@each $prop, $abbrv in (margin, padding), (m, p) {
+  .$(abbrv)-15 { $(prop): 1.5rem; }
+  .$(abbrv)t-15 { $(prop)-top: 1.5rem; }
+  .$(abbrv)b-15 { $(prop)-bottom: 1.5rem; }
+  .$(abbrv)r-15 { $(prop)-right: 1.5rem; }
+  .$(abbrv)l-15 { $(prop)-left: 1.5rem; }
+  .$(abbrv)y-15 {
+    $(prop)-top: 1.5rem;
+    $(prop)-bottom: 1.5rem;
+  }
+  .$(abbrv)x-15 {
+    $(prop)-right: 1.5rem;
+    $(prop)-left: 1.5rem;
+  }
+}
+
+
+@for $i from 0 to 4 {
+  @each $prop, $abbrv in (margin, padding), (m, p) {
+    .$(abbrv)-$(i) { $(prop): $(i)rem; }
+    .$(abbrv)t-$(i) { $(prop)-top: $(i)rem; }
+    .$(abbrv)b-$(i) { $(prop)-bottom: $(i)rem; }
+    .$(abbrv)r-$(i) { $(prop)-right: $(i)rem; }
+    .$(abbrv)l-$(i) { $(prop)-left: $(i)rem; }
+    .$(abbrv)y-$(i) {
+      $(prop)-top: $(i)rem;
+      $(prop)-bottom: $(i)rem;
+    }
+    .$(abbrv)x-$(i) {
+      $(prop)-right: $(i)rem;
+      $(prop)-left: $(i)rem;
+    }
+  }
+}
+
+@each $size in (lg,md,sm) {
+  @for $i from 0 to 4 {
+    @media (--break-$(size)) {
+      @each $prop, $abbrv in (margin, padding), (m, p) {
+        .$(size)-$(abbrv)-$(i) { $(prop): $(i)rem; }
+        .$(size)-$(abbrv)t-$(i) { $(prop)-top: $(i)rem; }
+        .$(size)-$(abbrv)b-$(i) { $(prop)-bottom: $(i)rem; }
+        .$(size)-$(abbrv)r-$(i) { $(prop)-right: $(i)rem; }
+        .$(size)-$(abbrv)l-$(i) { $(prop)-left: $(i)rem; }
+        .$(size)-$(abbrv)y-$(i) {
+          $(prop)-top: $(i)rem;
+          $(prop)-bottom: $(i)rem;
+        }
+        .$(size)-$(abbrv)x-$(i) {
+          $(prop)-right: $(i)rem;
+          $(prop)-left: $(i)rem;
+        }
+      }
+    }
+  }
+}
+

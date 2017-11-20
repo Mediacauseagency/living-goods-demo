@@ -1,0 +1,120 @@
+:root {
+  --border-radius: 8px;
+}
+
+button,
+*.btn {
+  transition: var(--basic-transition);
+  font-weight: 700;
+  color: white;
+  border-radius: var(--border-radius);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-width: 2px;
+  font-size: .85em;
+  padding: 1.4em 2.4em;
+}
+
+*.btn--white { 
+  background: white;
+  border-color: white;
+}
+
+*.btn--white:hover { 
+  background: transparent;
+  color: white;
+}
+
+*.btn--white:active { 
+}
+
+button:hover,
+*.btn:hover {
+  background: transparent;
+}
+
+button:active,
+*.btn:active {
+  color: white;
+}
+
+*.btn--white:hover { 
+}
+
+
+select,
+textarea,
+input {
+  border-width: 2px;
+}
+
+input[type='radio'] + label:before,
+input[type='checkbox'] + label:before {
+  border-width: 1px;
+}
+
+label {
+  font-weight: 300; 
+  margin-bottom: .25em;
+}
+
+select,
+textarea,
+input {
+  padding: .75em;
+}
+
+input[type='checkbox']:checked + label:before,
+input[type='search'],
+select {
+  background-repeat:  no-repeat;
+}
+
+input[type='search'] {
+  padding-left: 2.5em;
+  background-image:  url('svgs/search.svg');
+  background-position: .5em  center;
+}
+
+select {
+  padding-right: 2.5em;
+  background-image:  url('svgs/triangle-down.svg');
+  background-size: 1.25em;
+  background-position: calc(100% - .6em)  center;
+}
+
+.selectWrapper { position: relative; }
+
+.selectWrapper:after {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  right: calc(2.5em - 1px);
+  top: 0;
+}
+
+input[type='checkbox'] + label:before,
+input[type='radio'] + label:before {
+  content: '';
+  margin-right: .5em;
+  width: 1em;
+  height: 1em;
+}
+
+input[type='radio'] + label:before { border-radius: 50%; }
+input[type='checkbox'] + label:before { border-radius: 3px; }
+
+input[type='checkbox']:checked + label:before,
+input[type='radio']:checked + label:before {
+}
+
+input[type='radio']:checked + label:before { border-width: 5px; }
+
+input[type='checkbox']:checked + label:before {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image:  url('svgs/check-white.svg');
+}
+
