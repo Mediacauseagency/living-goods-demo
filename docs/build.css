@@ -2214,13 +2214,14 @@ a {
   color: inherit;
 }
 
-p a {
-  color: var(--blue);
+p a,
+.link {
+  border-bottom: .125rem solid #56b7e0; 
 }
 
-p a:visited,
-p a:hover {
-  text-decoration: underline;
+p a:hover,
+.link:hover {
+  color: #56b7e0; 
 }
 
 .responsive-iframe-wrapper {

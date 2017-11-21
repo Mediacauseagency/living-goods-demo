@@ -3,11 +3,12 @@ a {
   color: inherit;
 }
 
-p a {
-  color: var(--blue);
+p a,
+.link {
+  border-bottom: .125rem solid var(--blue-1); 
+}
+p a:hover,
+.link:hover {
+  color: var(--blue-1); 
 }
 
-p a:visited,
-p a:hover {
-  text-decoration: underline;
-}

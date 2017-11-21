@@ -28,7 +28,9 @@ const wrapper = (state, emit) => {
 
   const li = (v, i) => h`
     <li class='inline-block m-0'>
-      <a class="inline-block p-05 mr-05 ${tab === i ? 'border-bottom border-width-2 border-color-orange' : 'opacity-075'}" href='?tab=${i}' title='${v.title}'>
+      <a class="inline-block p-05 mr-05 ${tab === i ? 'border-bottom border-width-2 border-color-orange' : 'opacity-075'}" 
+        href='?tab=${i}' 
+        title='${v.title}'>
         ${v.title}
       </a>
     </li>
@@ -36,12 +38,14 @@ const wrapper = (state, emit) => {
 
   return h`
     <div>
-      <div>
-        <ul class='list-reset m-0 bg-grey-1'>
+      <ul class='list-reset m-0 bg-grey-1'>
+        <div class='container'>
           ${views.map(li)}
-        </ul>
-      </div>
-      ${views[tab].view(state, emit)}
+        </div>
+      </ul>
+      <main>
+        ${views[tab].view(state, emit)}
+      </main>
     </div>
   `
 }
