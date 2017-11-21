@@ -7,6 +7,7 @@ p a,
 .link {
   border-bottom: .125rem solid var(--blue-1); 
 }
+
 p a:hover,
 .link:hover {
   color: var(--blue-1); 

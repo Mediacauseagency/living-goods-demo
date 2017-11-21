@@ -28,7 +28,7 @@ const wrapper = (state, emit) => {
 
   const li = (v, i) => h`
     <li class='inline-block m-0'>
-      <a class="inline-block p-05 mr-05 ${tab === i ? 'border-bottom border-width-2 border-color-orange' : 'opacity-075'}" 
+      <a class="sub inline-block p-05 mr-05 ${tab === i ? 'border-bottom border-width-2 border-color-orange' : 'opacity-075'}" 
         href='?tab=${i}' 
         title='${v.title}'>
         ${v.title}

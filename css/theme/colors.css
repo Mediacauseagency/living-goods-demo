@@ -25,5 +25,5 @@
 
 .border-color-white { border-color: white; }
 .border-color-orange { border-color: var(--orange-2);}
-
+.border-color-grey { border-color: var(--grey-1);}
 

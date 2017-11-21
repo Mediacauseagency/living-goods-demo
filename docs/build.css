@@ -2008,7 +2008,11 @@ ul.tabs--v li {
   border-left: 3px solid transparent;
 }
 
-.jumbo { font-size: 3rem; }
+.xx-large { font-size: 3.3rem; }
+
+.x-large { font-size: 3rem; }
+
+.large { font-size: 2.5rem; }
 
 h1, .h1 { font-size: 2rem; }
 
@@ -2091,6 +2095,8 @@ pre {
 .border-color-white { border-color: white; }
 
 .border-color-orange { border-color: #f47a44;}
+
+.border-color-grey { border-color: #f2f2f2;}
 
 button,
 *.btn {
