@@ -3,46 +3,47 @@ const devtools = require('choo-devtools')
 const choo = require('choo')
 const home = require('./views/home')
 const atoms = require('./views/atoms')
-const {map} = require('ramda')
+
+const isProduction = process.env.NODE_ENV === 'production'
 
 const views = [
   {
-    route: '/',
     title: 'Home',
     view: home
   },
   {
-    route: '/atoms',
     title: 'Atoms',
     view: atoms
   }
 ]
 
-const wrapper = view => (state, emit) => {
-  const li = v => h`
+const wrapper = (state, emit) => {
+  const tab = Number(state.query.tab || 0)
+
+  const li = (v, i) => h`
     <li class='inline-block pr-1'>
-      <a class="${state.href.replace('/', '') === v.route.replace('/', '') ? 'h1' : ''}"
-        href='${v.route}' title='${v.title}'>
+      <a class="${tab === i ? 'h1' : ''}" href='/?tab=${i}' title='${v.title}'>
         ${v.title}
       </a>
     </li>
   `
+
+  console.log(state.query)
   return h`
     <div>
       <div>
         <ul class='list-reset p-1 m-0'>
-          ${map(li, views)}
+          ${views.map(li)}
         </ul>
       </div>
-      ${view(state, emit)}
+      ${views[tab].view(state, emit)}
     </div>
   `
 }
 
 
 const app = choo()
-app.use(devtools())
-app.route('*', home)
-map(v => app.route(v.route, wrapper(v.view)), views)
+if (!isProduction) { app.use(devtools()) }
+app.route('*', wrapper)
 app.mount('#js-container')
 
