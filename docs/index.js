@@ -27,8 +27,8 @@ const wrapper = (state, emit) => {
   const tab = Number(state.query.tab || 0)
 
   const li = (v, i) => h`
-    <li class='inline-block pr-1'>
-      <a class="${tab === i ? 'h1' : ''}" href='?tab=${i}' title='${v.title}'>
+    <li class='inline-block m-0'>
+      <a class="inline-block p-05 mr-05 ${tab === i ? 'border-bottom border-width-2 border-color-orange' : 'opacity-075'}" href='?tab=${i}' title='${v.title}'>
         ${v.title}
       </a>
     </li>
@@ -37,7 +37,7 @@ const wrapper = (state, emit) => {
   return h`
     <div>
       <div>
-        <ul class='list-reset p-1 m-0'>
+        <ul class='list-reset m-0 bg-grey-1'>
           ${views.map(li)}
         </ul>
       </div>
