@@ -5,8 +5,6 @@
   margin-right: auto;
 }
 
-
-
 @each $prop, $abbrv in (margin, padding), (m, p) {
   .$(abbrv)-05 { $(prop): .5rem; }
   .$(abbrv)t-05 { $(prop)-top: .5rem; }
@@ -22,23 +20,6 @@
     $(prop)-left: .5rem;
   }
 }
-
-@each $prop, $abbrv in (margin, padding), (m, p) {
-  .$(abbrv)-15 { $(prop): 1.5rem; }
-  .$(abbrv)t-15 { $(prop)-top: 1.5rem; }
-  .$(abbrv)b-15 { $(prop)-bottom: 1.5rem; }
-  .$(abbrv)r-15 { $(prop)-right: 1.5rem; }
-  .$(abbrv)l-15 { $(prop)-left: 1.5rem; }
-  .$(abbrv)y-15 {
-    $(prop)-top: 1.5rem;
-    $(prop)-bottom: 1.5rem;
-  }
-  .$(abbrv)x-15 {
-    $(prop)-right: 1.5rem;
-    $(prop)-left: 1.5rem;
-  }
-}
-
 
 @for $i from 0 to 4 {
   @each $prop, $abbrv in (margin, padding), (m, p) {

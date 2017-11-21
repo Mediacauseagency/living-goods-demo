@@ -1,88 +1,13 @@
 :root {
-  --Lato: Lato, -apple-system, BlinkMacSystemFont, 'avenir next', avenir,
+  --system: -apple-system, BlinkMacSystemFont, 'avenir next', avenir,
     helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
-  --din: din, -apple-system, BlinkMacSystemFont, 'avenir next', avenir,
-    helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
-  --serif: georgia, times, serif;
 }
 
-@font-face {
-  font-family: Lato;
-  src:  url('fonts/Lato-Light.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Lato;
-  src:  url('fonts/Lato-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Lato;
-  src:  url('fonts/Lato-Italic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: Lato;
-  src:  url('fonts/Lato-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Lato;
-  src:  url('fonts/Lato-BoldItalic.ttf') format('truetype');
-  font-weight: 700;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: Lato;
-  src:  url('fonts/Lato-Black.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: din;
-  src:  url('fonts/din.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: din;
-  src:  url('fonts/din-medium.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
 
 body { 
-  color: var(--black);
-  font-family: var(--Lato); 
+  font-family: var(--system); 
 }
 
-p { 
-  font-weight: 200;
-  line-height: 1.5; 
-}
 
-.din { font-family: var(--din); }
-.serif { font-family: var(--serif); }
-
-.fw-0 { font-weight: 300; }
-.fw-1 { font-weight: 400; }
-.bold, .fw-2 { font-weight: 700; }
-.fw-3 { font-weight: 900; }
-
-
-.kern { letter-spacing: .06rem; }
-
-p,
-.kern-s { letter-spacing: .03rem; }
+.kern { letter-spacing: .05rem; }
 

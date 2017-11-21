@@ -1,19 +1,19 @@
-.border{
+.border {
   border-style:solid;
   border-width: 1px;
 }
 
-.border-top{
+.border-top {
   border-top-style:solid;
   border-top-width: 1px;
 }
 
-.border-right{
+.border-right {
   border-right-style:solid;
   border-right-width: 1px;
 }
 
-.border-bottom{
+.border-bottom {
   border-bottom-style:solid;
   border-bottom-width: 1px;
 }
