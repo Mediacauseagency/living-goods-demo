@@ -1,12 +1,13 @@
 const h = require('choo/html')
 const parameterize = require('../helpers/parameterize')
 const docs = require('../helpers/docs')
+const colors = require('./colors')
 
 
 const sections = [
   {
     title: 'Colors',
-    view: h`<div>asdf</div>` 
+    view: require('./colors')()
   },
   {
     title: 'Typography',
