@@ -1,19 +1,25 @@
 const h = require('choo/html')
 const devtools = require('choo-devtools')
 const choo = require('choo')
-const home = require('./views/home')
-const atoms = require('./views/atoms')
 
 const isProduction = process.env.NODE_ENV === 'production'
 
 const views = [
   {
-    title: 'Home',
-    view: home
+    title: 'Atoms',
+    view: require('./views/atoms/index')
   },
   {
-    title: 'Atoms',
-    view: atoms
+    title: 'Molecules',
+    view: require('./views/molecules/index')
+  },
+  {
+    title: 'Organisisms',
+    view: require('./views/organisms/index')
+  },
+  {
+    title: 'Home',
+    view: require('./views/home/index')
   }
 ]
 
