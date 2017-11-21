@@ -2300,13 +2300,51 @@ p a:hover,
   font-style: normal;
 }
 
+@font-face {
+  font-family: Open;
+  src:  url('/assets/fonts/OpenSans-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Open;
+  src:  url('/assets/fonts/OpenSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Open;
+  src:  url('/assets/fonts/OpenSans-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Merri;
+  src:  url('/assets/fonts/Merriweather-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
 body { 
   color: #313334;
-  font-family: Open, -apple-system, BlinkMacSystemFont, 'avenir next', avenir,
-    helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial, sans-serif; 
+  font-family: Open, -apple-system, BlinkMacSystemFont, 'avenir next', avenir, helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial, sans-serif; 
+}
+
+.merri {
+  font-family: Merri, -apple-system, BlinkMacSystemFont, 'avenir next', avenir, helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial, sans-serif; 
 }
 
 .kern { letter-spacing: .05rem; }
+
+.mono,
+pre,
+code, 
+samp {
+  font-family: Roboto Mono,Source Code Pro,Menlo,Consolas,Liberation Mono,monospace;
+}
 
 /* flexbox start */
 
@@ -2517,4 +2555,14 @@ body {
   font-size: .825rem;
   display: inline-block;
   padding-top: .25rem;
+}
+
+::-moz-selection {
+  color: white;
+  background: #f47a44;
+}
+
+::selection {
+  color: white;
+  background: #f47a44;
 }

@@ -1,6 +1,8 @@
 :root {
-  --open: Open, -apple-system, BlinkMacSystemFont, 'avenir next', avenir,
-    helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial, sans-serif;
+  --sans: -apple-system, BlinkMacSystemFont, 'avenir next', avenir, helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial, sans-serif; 
+  --open: Open, var(--sans);
+  --merri: Merri, var(--sans);
+  --mono: Roboto Mono,Source Code Pro,Menlo,Consolas,Liberation Mono,monospace;
 }
 
 @font-face {
@@ -10,11 +12,49 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: Open;
+  src:  url('/assets/fonts/OpenSans-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Open;
+  src:  url('/assets/fonts/OpenSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Open;
+  src:  url('/assets/fonts/OpenSans-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Merri;
+  src:  url('/assets/fonts/Merriweather-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
 body { 
   color: var(--black);
   font-family: var(--open); 
 }
 
+.merri {
+  font-family: var(--merri); 
+}
 
 .kern { letter-spacing: .05rem; }
+
+.mono,
+pre,
+code, 
+samp {
+  font-family: var(--mono);
+}
 
