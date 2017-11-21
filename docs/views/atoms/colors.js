@@ -41,8 +41,8 @@ const square = obj => h`
       <div class='aspect aspect-1x1'>
         <div style='background-color: ${obj.color}'></div>
       </div>
-      <p class='mb-0 sub pb-05'>${obj.name}</p>
-      <p class='m-0 mono small'>${obj.color}</p>
+      <p class='mono mb-0 sub pb-05'>${obj.name}</p>
+      <p class='mono m-0 small'>${obj.color}</p>
     </div>
   </div>
 `

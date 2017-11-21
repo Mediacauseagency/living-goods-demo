@@ -13,7 +13,7 @@ const docs = (title, sections) => {
 
   const section = obj => h`
     <section class='py-3 border-top border-width-1 border-color-grey' id='${parameterize(obj.title)}'>
-      <h2 class='merri m-0 pb-2 px-1'>${obj.title}</h2>
+      <h2 class='h1 merri m-0 pb-2 px-1'>${obj.title}</h2>
       ${obj.view}
     </section>
   `

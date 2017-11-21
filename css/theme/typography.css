@@ -45,11 +45,10 @@ body {
   font-family: var(--open); 
 }
 
-.merri {
-  font-family: var(--merri); 
-}
+.merri { font-family: var(--merri); }
 
 .kern { letter-spacing: .05rem; }
+.bold { font-weight: 700;}
 
 .mono,
 pre,
@@ -57,4 +56,3 @@ code,
 samp {
   font-family: var(--mono);
 }
-
