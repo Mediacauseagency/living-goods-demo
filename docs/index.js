@@ -22,13 +22,12 @@ const wrapper = (state, emit) => {
 
   const li = (v, i) => h`
     <li class='inline-block pr-1'>
-      <a class="${tab === i ? 'h1' : ''}" href='/?tab=${i}' title='${v.title}'>
+      <a class="${tab === i ? 'h1' : ''}" href='?tab=${i}' title='${v.title}'>
         ${v.title}
       </a>
     </li>
   `
 
-  console.log(state.query)
   return h`
     <div>
       <div>

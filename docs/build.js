@@ -6,13 +6,13 @@
     <div>
       <h1>Atoms page</h1>
     </div>
-  `}],Bt=Nt();Bt.route("*",(e,t)=>{const r=Number(e.query.tab||0);return console.log(e.query),Ne`
+  `}],Bt=Nt();Bt.route("*",(e,t)=>{const r=Number(e.query.tab||0);return Ne`
     <div>
       <div>
         <ul class='list-reset p-1 m-0'>
           ${It.map((e,t)=>Ne`
     <li class='inline-block pr-1'>
-      <a class="${r===t?"h1":""}" href='/?tab=${t}' title='${e.title}'>
+      <a class="${r===t?"h1":""}" href='?tab=${t}' title='${e.title}'>
         ${e.title}
       </a>
     </li>
