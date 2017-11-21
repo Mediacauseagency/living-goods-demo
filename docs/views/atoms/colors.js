@@ -35,18 +35,16 @@ const colors = [
   }
 ]
 
-module.exports = () => {
-  const square = obj => h`
-    <div class='col-3 md-col-4 sm-col-6 px-1 pb-2'>
-      <div>
-        <div class='aspect aspect-1x1'>
-          <div style='background-color: ${obj.color}'></div>
-        </div>
-        <p class='mb-0 sub'>${obj.name}</p>
-        <p class='m-0 opacity-075 small'>${obj.color}</p>
+const square = obj => h`
+  <div class='col-3 md-col-4 sm-col-6 px-1 pb-2'>
+    <div>
+      <div class='aspect aspect-1x1'>
+        <div style='background-color: ${obj.color}'></div>
       </div>
+      <p class='mb-0 sub'>${obj.name}</p>
+      <p class='m-0 opacity-075 small'>${obj.color}</p>
     </div>
-  `
-  return h`<div class='flex flex-wrap'>${colors.map(square)}</div>`
-}
+  </div>
+`
 
+module.exports = h`<div class='flex flex-wrap'>${colors.map(square)}</div>`

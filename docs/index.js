@@ -23,7 +23,7 @@ const views = [
   }
 ]
 
-const wrapper = (state, emit) => {
+const mainView = (state, emit) => {
   const tab = Number(state.query.tab || 0)
 
   const li = (v, i) => h`
@@ -53,6 +53,6 @@ const wrapper = (state, emit) => {
 
 const app = choo()
 if (!isProduction) { app.use(devtools()) }
-app.route('*', wrapper)
+app.route('*', mainView)
 app.mount('#js-container')
 

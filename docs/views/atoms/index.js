@@ -7,7 +7,7 @@ const colors = require('./colors')
 const sections = [
   {
     title: 'Colors',
-    view: require('./colors')()
+    view: require('./colors')
   },
   {
     title: 'Typography',

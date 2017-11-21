@@ -2,7 +2,7 @@ module.exports = (ctx) => ({
   plugins: {
     'postcss-at-rules-variables': {},
     'postcss-easy-import': {},
-    'postcss-assets': {loadPaths: ['./']},
+    'postcss-assets': {loadPaths: ['/assets']},
     'postcss-for': {},
     'postcss-each': {},
     'postcss-conditionals': {},
