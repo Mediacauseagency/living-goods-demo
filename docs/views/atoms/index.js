@@ -10,6 +10,10 @@ const sections = [
   {
     title: 'Typography',
     view: require('./typography')
+  },
+  {
+    title: 'Icons',
+    view: require('./icons')
   }
 ]
 
