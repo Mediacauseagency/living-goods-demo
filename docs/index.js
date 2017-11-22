@@ -99,6 +99,7 @@ const mainView = (state, emit) => {
       <div class='styleToggler'>
         <label>Toggle fonts</label>
         <select onchange=${setFonts}>
+          ${option('', 'Default', state)}
           ${option('serif-headers', 'Serif headers, sans-serif body', state)}
           ${option('sans-headers', 'Sans-serif headers, serif body', state)}
           ${option('all-sans', 'All sans-serif', state)}

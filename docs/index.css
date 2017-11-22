@@ -10,3 +10,6 @@
   max-width: 24rem;
 }
 
+@media (width <= 496px) {
+  .styleToggler { display: none}
+}
