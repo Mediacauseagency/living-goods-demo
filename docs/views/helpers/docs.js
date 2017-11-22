@@ -6,7 +6,7 @@ const parameterize = require('../helpers/parameterize')
 // sections: array of objects ({title: 'Colors', view: colorsView})
 const docs = (title, sections) => {
   const li = obj => h`
-    <li class='col-4 md-col-6'>
+    <li class='col-4 md-col-6 p-1'>
       <a class='link' href='#${parameterize(obj.title)}'>${obj.title}</a>
     </li>
   `
@@ -21,7 +21,7 @@ const docs = (title, sections) => {
   return h`
     <div class='container py-2'>
       <h1 class='merri m-0 xx-large px-1'>${title}</h1>
-      <ul class='list-reset m-0 flex flex-wrap pt-2 pb-3 px-1'>
+      <ul class='list-reset m-0 flex flex-wrap pt-1 pb-2'>
         ${sections.map(li)}
       </ul>
       ${sections.map(section)}

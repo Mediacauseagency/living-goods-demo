@@ -8,13 +8,17 @@ const sections = [
     view: require('./colors')
   },
   {
-    title: 'Typography',
-    view: require('./typography')
+    title: 'Form elements',
+    view: require('./form-elements')
   },
   {
     title: 'Icons',
     view: require('./icons')
-  }
+  },
+  {
+    title: 'Typography',
+    view: require('./typography')
+  },
 ]
 
 

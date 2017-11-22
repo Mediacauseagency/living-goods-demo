@@ -3,8 +3,4 @@
 @import './base/*.css';
 @import './theme/*.css';
 
-::selection {
-  color: white;
-  background: var(--orange-2);
-}
 

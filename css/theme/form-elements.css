@@ -1,73 +1,72 @@
-:root {
-  --border-radius: 8px;
-}
-
 button,
 *.btn {
-  transition: var(--basic-transition);
   font-weight: 700;
-  color: white;
-  border-radius: var(--border-radius);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border-width: 2px;
-  font-size: .85em;
-  padding: 1.4em 2.4em;
+  padding: .5em 1.5em;
+  border-radius: 0;
+  background: transparent;
 }
 
-*.btn--white { 
-  background: white;
+.btn--blue {
+  border-color: var(--blue-1);
+  color: var(--blue-1);
+}
+
+.btn--blue:hover {
+  color: white;
+  background: var(--blue-1);
+}
+
+.btn--orange {
+  border-color: var(--orange-1);
+  color: var(--orange-1);
+}
+
+.btn--orange:hover {
+  background: var(--orange-1);
+  color: white;
+}
+
+.btn--white {
   border-color: white;
-}
-
-*.btn--white:hover { 
-  background: transparent;
   color: white;
 }
 
-*.btn--white:active { 
-}
-
-button:hover,
-*.btn:hover {
-  background: transparent;
-}
-
-button:active,
-*.btn:active {
-  color: white;
-}
-
-*.btn--white:hover { 
+.btn--white:hover {
+  background: white;
+  color: var(--blue-1);
 }
 
 
+button,
+*.btn,
+select,
+textarea,
+input,
+input[type='radio'] + label:before,
+input[type='checkbox'] + label:before {
+  border-width: 3px;
+}
 select,
 textarea,
 input {
-  border-width: 2px;
-}
-
-input[type='radio'] + label:before,
-input[type='checkbox'] + label:before {
-  border-width: 1px;
+  border-color: var(--scrim);
 }
 
 label {
-  font-weight: 300; 
+  font-weight: 700; 
   margin-bottom: .25em;
 }
 
 select,
 textarea,
 input {
-  padding: .75em;
+  padding: .5em;
 }
 
 input[type='checkbox']:checked + label:before,
 input[type='search'],
 select {
-  background-repeat:  no-repeat;
+  background-repeat: no-repeat;
 }
 
 input[type='search'] {

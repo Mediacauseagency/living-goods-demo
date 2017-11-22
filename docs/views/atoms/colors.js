@@ -2,27 +2,19 @@ const h = require('choo/html')
 
 const colors = [
   {
-    name: '--blue-1', 
-    color: '#56b7e0'
-  },
-  {
-    name: '--blue-2',
+    name: '--blue-1',
     color: '#44ade2'
   },
   {
-    name: '--blue-3',
+    name: '--blue-2',
     color: '#0281a4'
   },
   {
-    name: '--blue-4',
+    name: '--blue-3',
     color: '#014f84'
   },
   {
     name: '--orange-1',
-    color: '#f68a5d'
-  },
-  {
-    name: '--orange-2',
     color: '#f47a44'
   },
   {

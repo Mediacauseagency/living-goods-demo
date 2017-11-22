@@ -1,10 +1,8 @@
 :root {
-  --blue-1: #56b7e0;
-  --blue-2: #44ade2;
-  --blue-3: #0281a4;
-  --blue-4: #014f84;
-  --orange-1: #f68a5d;
-  --orange-2: #f47a44;
+  --blue-1: #44ade2;
+  --blue-2: #0281a4;
+  --blue-3: #014f84;
+  --orange-1: #f47a44;
   --grey-1: #f2f2f2;
   --black: #313334;
 
@@ -24,6 +22,6 @@
 .bg-scrim-white {background-color: var(--scrim-white) }
 
 .border-color-white { border-color: white; }
-.border-color-orange { border-color: var(--orange-2);}
+.border-color-orange { border-color: var(--orange-1);}
 .border-color-grey { border-color: var(--grey-1);}
 

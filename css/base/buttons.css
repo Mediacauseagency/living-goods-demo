@@ -8,9 +8,7 @@ button {
   height: auto;
   margin: 0;
   border-style: solid;
-  border-radius: 3px;
   user-select: none;
-  background: none;
   display: inline-block;
 }
 
