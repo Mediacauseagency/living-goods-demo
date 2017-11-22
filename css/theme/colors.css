@@ -11,17 +11,16 @@
   --scrim-white: rgba(255,255,255,0.85);
 }
 
-/* text color rules */
-.color-white { color: white; }
+@each $color in (blue-1, blue-2, blue-3, orange-1, grey-1, scrim, scrim-dark, scrim-white) {
+  .bg-$(color) { background-color: var(--$(color)); }
+  .color-$(color) { color: var(--$(color)); }
+  .border-color-$(color) { border-color: var(--$(color)); }
+}
 
-/* background color rules */
-.bg-grey-1 { background-color: var(--grey-1); }
-.bg-scrim { background-color: var(--scrim); }
-.bg-scrim-dark { background-color: var(--scrim-dark); }
+@each $color in (white, grey) {
+  .bg-$(color) { background-color: $(color); }
+  .color-$(color) { color: $(color); }
+  .border-color-$(color) { border-color: $(color); }
+}
 
-.bg-scrim-white {background-color: var(--scrim-white) }
-
-.border-color-white { border-color: white; }
-.border-color-orange { border-color: var(--orange-1);}
-.border-color-grey { border-color: var(--grey-1);}
 

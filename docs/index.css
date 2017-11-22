@@ -5,10 +5,10 @@
   position: fixed;
   bottom: -54px;
   right: 0;
-  padding: .5rem;
+  padding: .75rem;
   background: var(--grey-1);
   max-width: 24rem;
-  border-radius: 3px 0 0 0;
+  border-radius: 8px 0 0 0;
 }
 
 .styleToggler:hover {

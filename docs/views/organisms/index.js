@@ -1,12 +1,12 @@
 const h = require('choo/html')
 
-const organisisms = (state) => {
+const organisms = (state) => {
   return h`
     <div>
-      <h1>Organisisms</h1>
+      <h1>Organisms (todo)</h1>
     </div>
   `
 }
 
-module.exports = organisisms
+module.exports = organisms
 

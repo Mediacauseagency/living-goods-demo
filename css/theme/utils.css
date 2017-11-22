@@ -45,8 +45,6 @@
 .bg-center { background-position: center; }
 
 .border-none {border:none}
-.border-width-2px { border-width: 2px; }
-.border-width-3px { border-width: 3px; }
 
 .width-1 { width: 12rem; }
 
@@ -56,6 +54,4 @@
   }
 }
 
-.greyscale {
-  filter: grayscale(100%);
-}
+.greyscale { filter: grayscale(100%); }

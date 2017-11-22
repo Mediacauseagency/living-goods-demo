@@ -1,5 +1,6 @@
 button,
 *.btn {
+  border-width: 3px;
   font-weight: 700;
   padding: .5em 1.5em;
   border-radius: 0;
@@ -37,24 +38,23 @@ button,
 }
 
 
-button,
-*.btn,
 select,
 textarea,
 input,
 input[type='radio'] + label:before,
 input[type='checkbox'] + label:before {
-  border-width: 3px;
+  border-width: 1px;
 }
+
 select,
 textarea,
 input {
-  border-color: var(--scrim);
+  border-color: grey;
 }
 
 label {
   font-weight: 700; 
-  margin-bottom: .25em;
+  margin-bottom: .5em;
 }
 
 select,
@@ -93,7 +93,7 @@ input[type='radio'] + label:before {
   margin-right: .5em;
   width: 1.25em;
   height: 1.25em;
-  border-color: var(--scrim);
+  border-color: grey;
 }
 
 input[type='radio'] + label:before { border-radius: 50%; }

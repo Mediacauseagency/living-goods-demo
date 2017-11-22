@@ -14,7 +14,7 @@ const views = [
     view: require('./views/molecules/index')
   },
   {
-    title: 'Organisisms',
+    title: 'Organisms',
     view: require('./views/organisms/index')
   },
   {
@@ -28,7 +28,7 @@ const mainView = (state, emit) => {
 
   const li = (v, i) => h`
     <li class='inline-block m-0'>
-      <a class="sub inline-block p-05 mr-05 ${tab === i ? 'border-bottom border-width-2 border-color-orange' : 'opacity-075'}" 
+      <a class="sub inline-block p-05 mr-05 ${tab === i ? 'border-bottom border-width-2 border-color-orange-1' : 'opacity-075'}" 
         href='?tab=${i}' 
         title='${v.title}'>
         ${v.title}
@@ -100,8 +100,8 @@ const mainView = (state, emit) => {
         <label>Toggle fonts</label>
         <select onchange=${setFonts}>
           ${option('', 'Default', state)}
-          ${option('serif-headers', 'Serif headers, sans-serif body', state)}
           ${option('sans-headers', 'Sans-serif headers, serif body', state)}
+          ${option('serif-headers', 'Serif headers, sans-serif body', state)}
           ${option('all-sans', 'All sans-serif', state)}
           ${option('all-serif', 'All serif', state)}
         </select>

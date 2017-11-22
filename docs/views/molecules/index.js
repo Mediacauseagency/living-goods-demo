@@ -10,7 +10,7 @@ const sections = [
 ]
 
 
-const molecules = () => docs('molecules', sections)
+const molecules = () => docs('Molecules', sections)
 
 module.exports = molecules
 
