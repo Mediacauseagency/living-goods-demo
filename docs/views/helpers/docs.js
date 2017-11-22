@@ -13,14 +13,14 @@ const docs = (title, sections) => {
 
   const section = obj => h`
     <section class='py-3 border-top border-width-1 border-color-grey' id='${parameterize(obj.title)}'>
-      <h2 class='h1 merri m-0 pb-2 px-1'>${obj.title}</h2>
+      <h2 class='h1 serif m-0 pb-2 px-1'>${obj.title}</h2>
       ${obj.view}
     </section>
   `
 
   return h`
     <div class='container py-2'>
-      <h1 class='merri m-0 xx-large px-1'>${title}</h1>
+      <h1 class='serif m-0 xx-large px-1'>${title}</h1>
       <ul class='list-reset m-0 flex flex-wrap pt-1 pb-2'>
         ${sections.map(li)}
       </ul>

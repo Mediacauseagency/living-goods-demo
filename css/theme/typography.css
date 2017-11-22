@@ -1,54 +1,124 @@
 :root {
   --sans: -apple-system, BlinkMacSystemFont, 'avenir next', avenir, helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial, sans-serif; 
-  --open: Open, var(--sans);
-  --merri: Merri, var(--sans);
+  --serif: Palatino,Georgia,serif;
+  --merri-sans: Merri_Sans, var(--sans);
+  --merri: Merri, var(--serif);
   --mono: Roboto Mono,Source Code Pro,Menlo,Consolas,Liberation Mono,monospace;
 }
 
-@font-face {
-  font-family: Open;
-  src:  url('./assets/fonts/OpenSans-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
+/*List of all font file names*/
+/*Merriweather-Black.ttf**/
+/*Merriweather-BlackItalic.ttf**/
+/*Merriweather-Bold.ttf**/
+/*Merriweather-BoldItalic.ttf**/
+/*Merriweather-Italic.ttf**/
+/*Merriweather-Regular.ttf**/
 
-@font-face {
-  font-family: Open;
-  src:  url('./assets/fonts/OpenSans-Italic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: Open;
-  src:  url('./assets/fonts/OpenSans-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Open;
-  src:  url('./assets/fonts/OpenSans-BoldItalic.ttf') format('truetype');
-  font-weight: 700;
-  font-style: italic;
-}
+/*MerriweatherSans-ExtraBold.ttf**/
+/*MerriweatherSans-ExtraBoldItalic.ttf**/
+/*MerriweatherSans-Bold.ttf**/
+/*MerriweatherSans-BoldItalic.ttf**/
+/*MerriweatherSans-Italic.ttf**/
+/*MerriweatherSans-Regular.ttf**/
 
 @font-face {
   font-family: Merri;
+  src:  url('./assets/fonts/Merriweather-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: Merri;
+  src:  url('./assets/fonts/Merriweather-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: Merri;
+  src:  url('./assets/fonts/Merriweather-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: Merri;
+  src:  url('./assets/fonts/Merriweather-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: Merri;
+  src:  url('./assets/fonts/Merriweather-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Merri;
+  src:  url('./assets/fonts/Merriweather-italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: Merri_Sans;
+  src:  url('./assets/fonts/MerriweatherSans-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+@font-face {
+  font-family: Merri_Sans;
+  src:  url('./assets/fonts/MerriweatherSans-ExtraBoldItalic.ttf') format('truetype');
+  font-weight: 800;
+  font-style: italic;
+}
+@font-face {
+  font-family: Merri_Sans;
   src:  url('./assets/fonts/MerriweatherSans-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
 }
+@font-face {
+  font-family: Merri_Sans;
+  src:  url('./assets/fonts/MerriweatherSans-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: Merri_Sans;
+  src:  url('./assets/fonts/MerriweatherSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: Merri_Sans;
+  src:  url('./assets/fonts/MerriweatherSans-italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
 
 body { 
   color: var(--black);
-  font-family: var(--open); 
+  font-family: var(--merri-sans); 
 }
 
-.merri { font-family: var(--merri); }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+label,
+.serif { 
+  font-family: var(--merri); 
+}
+
+.sans { 
+  font-family: var(--merri-sans); 
+}
 
 .kern { letter-spacing: .05rem; }
 .bold { font-weight: 700;}
+.x-bold { font-weight: 800;}
+.black { font-weight: 900;}
 
 .mono,
 pre,
