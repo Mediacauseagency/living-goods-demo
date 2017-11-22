@@ -1,1 +1,12 @@
 @import '../css/index.css';
+
+.styleToggler {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 1rem;
+  background: var(--grey-1);
+  box-shadow: var(--sh-2);
+  width: 14rem;
+}
+

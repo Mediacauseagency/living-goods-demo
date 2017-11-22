@@ -100,20 +100,8 @@ body {
   font-family: var(--merri-sans); 
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-label,
-.serif { 
-  font-family: var(--merri); 
-}
-
-.sans { 
-  font-family: var(--merri-sans); 
-}
+.serif { font-family: var(--merri); }
+.sans { font-family: var(--merri-sans); }
 
 .kern { letter-spacing: .05rem; }
 .bold { font-weight: 700;}

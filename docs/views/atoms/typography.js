@@ -1,23 +1,57 @@
 const h = require('choo/html')
 const txt = require('../helpers/txt')(1)
 
-
-const open = [
+const sans = [
   {
     className: '',
-    title: 'Regular'
+    title: '400'
   },
   {
     className: 'italic',
-    title: 'Regular italic'
+    title: '400 italic'
   },
   {
     className: 'bold',
-    title: 'Bold'
+    title: '700'
   },
   {
     className: 'bold italic',
-    title: 'Bold italic'
+    title: '700 italic'
+  },
+  {
+    className: 'x-bold',
+    title: '800'
+  },
+  {
+    className: 'x-bold italic',
+    title: '800 italic'
+  }
+]
+
+const serif = [
+  {
+    className: 'serif',
+    title: '400'
+  },
+  {
+    className: 'serif italic',
+    title: '400 italic'
+  },
+  {
+    className: 'serif bold',
+    title: '700'
+  },
+  {
+    className: 'serif bold italic',
+    title: '700 italic'
+  },
+  {
+    className: 'serif black',
+    title: '900'
+  },
+  {
+    className: 'serif black italic',
+    title: '900 italic'
   }
 ]
 
@@ -30,20 +64,21 @@ const example = (obj) => h`
 
 module.exports = h`
   <div class='px-1'>
-    <p class='mt-0'>We are using <strong>Open Sans</strong> and <strong>Merriweather</strong>. <strong>Open Sans</strong> is the default font.</p>
+    <p class='mt-0'>We are using <strong>Merriweather</strong> and <strong>Merriweather Sans</strong>.</p>
 
     <div class='pt-1'>
-      <h3>Open Sans has four variations:</h3>
+      <h3>Merriweather Sans</h3>
       <div class='pl-1 pt-1'>
-        ${open.map(example)}  
+        ${sans.map(example)}  
       </div>
     </div>
 
     <div class='pt-1'>
-      <h3>Merriweather has just one variation:</h3>
+      <h3>Merriweather</h3>
       <div class='pl-1 pt-1'>
-        ${example({className: 'merri bold', title: 'Bold'})}
+        ${serif.map(example)}  
       </div>
     </div>
+
   </div>
 `

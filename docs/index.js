@@ -46,6 +46,13 @@ const mainView = (state, emit) => {
       <main>
         ${views[tab].view(state, emit)}
       </main>
+      <div class='styleToggler'>
+        <label>Toggle fonts</label>
+        <select>
+          <option value='serif-headers'>Serif headers</option>
+          <option value='sans-headers'>Sans-serif headers</option>
+        </select>
+      </div>
     </div>
   `
 }
