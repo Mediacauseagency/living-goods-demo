@@ -31,11 +31,11 @@ const icon = (type) => (name) => h`
 
 module.exports = h`
   <div>
-    <h3 class='px-1 mt-0'>Custom icons:</h3>
+    <h3 class='px-1 mt-0'>Custom icons</h3>
     <div class='flex flex-wrap pt-1'>
       ${custom.map(icon('icon-type-custom'))}
     </div>
-    <h3 class='px-1'>Social icons:</h3>
+    <h3 class='px-1'>Social icons</h3>
     <div class='flex flex-wrap pt-1'>
       ${social.map(icon('icon-type-social'))}
     </div>

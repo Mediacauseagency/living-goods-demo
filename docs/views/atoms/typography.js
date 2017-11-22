@@ -79,6 +79,5 @@ module.exports = h`
         ${serif.map(example)}  
       </div>
     </div>
-
   </div>
 `

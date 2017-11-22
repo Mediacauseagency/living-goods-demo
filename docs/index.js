@@ -36,6 +36,56 @@ const mainView = (state, emit) => {
     </li>
   `
 
+  const setFonts = ev => emit('setFonts', ev.target.value)
+
+  const fontStyle = state.fontStyle
+
+  const styleTag = () => {
+    let styles = ''
+    switch (fontStyle) {
+      case('sans-headers'):
+        styles = `
+          .sans, body {
+            font-family: 'Merri'!important;
+          }
+          h1, h2, h3, h4, h5, h6, .serif {
+            font-family: 'Merri_sans' !important;
+          }
+        `
+        break
+      case('serif-headers'):
+        styles = `
+          .sans, body {
+            font-family: 'Merri_sans'!important;
+          }
+          h1, h2, h3, h4, h5, h6, .serif {
+            font-family: 'Merri' !important;
+          }
+        `
+        break
+      case('all-sans'):
+        styles = `
+          h1, h2, h3, h4, h5, h6, .serif, .sans, body, .mono {
+            font-family: 'Merri_sans'!important;
+          }
+        `
+        break
+      case('all-serif'):
+        styles = `
+          h1, h2, h3, h4, h5, h6, .serif, .sans, body, .mono {
+            font-family: 'Merri'!important;
+          }
+        `
+        break
+    }
+    return h`<style>${styles}</style>`
+  }
+
+  const option = (val, title, state) => {
+    const selected = state.fontStyle === val
+    return h`<option ${selected ? 'selected' : ''} value='${val}'>${title}</option>`
+  }
+
   return h`
     <div>
       <ul class='list-reset m-0 bg-grey-1'>
@@ -48,18 +98,28 @@ const mainView = (state, emit) => {
       </main>
       <div class='styleToggler'>
         <label>Toggle fonts</label>
-        <select>
-          <option value='serif-headers'>Serif headers</option>
-          <option value='sans-headers'>Sans-serif headers</option>
+        <select onchange=${setFonts}>
+          ${option('serif-headers', 'Serif headers, sans-serif body', state)}
+          ${option('sans-headers', 'Sans-serif headers, serif body', state)}
+          ${option('all-sans', 'All sans-serif', state)}
+          ${option('all-serif', 'All serif', state)}
         </select>
       </div>
+      ${fontStyle && styleTag()}
     </div>
   `
 }
 
+const store = (state, emitter) => {
+  emitter.on('setFonts', (fontStyle) => {
+    state.fontStyle = fontStyle
+    emitter.emit('render')
+  })
+}
 
 const app = choo()
 if (!isProduction) { app.use(devtools()) }
+app.use(store)
 app.route('*', mainView)
 app.mount('#js-container')
 

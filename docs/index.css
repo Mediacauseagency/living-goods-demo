@@ -7,6 +7,6 @@
   padding: 1rem;
   background: var(--grey-1);
   box-shadow: var(--sh-2);
-  width: 14rem;
+  max-width: 24rem;
 }
 
