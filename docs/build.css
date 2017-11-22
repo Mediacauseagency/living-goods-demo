@@ -2707,14 +2707,19 @@ samp {
 *:focus { outline: thin dotted }
 
 .styleToggler {
+  -webkit-transition: bottom 200ms ease-out;
+  transition: bottom 200ms ease-out;
   position: fixed;
-  bottom: 0;
+  bottom: -54px;
   right: 0;
-  padding: 1rem;
+  padding: .5rem;
   background: #f2f2f2;
-  -webkit-box-shadow: 0 1.5px 6px 1px rgba(0, 0, 0, .2);
-          box-shadow: 0 1.5px 6px 1px rgba(0, 0, 0, .2);
   max-width: 24rem;
+  border-radius: 3px 0 0 0;
+}
+
+.styleToggler:hover {
+  bottom: 0;
 }
 
 @media (max-width: 496px) {

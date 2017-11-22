@@ -1,13 +1,18 @@
 @import '../css/index.css';
 
 .styleToggler {
+  transition: bottom 200ms ease-out;
   position: fixed;
-  bottom: 0;
+  bottom: -54px;
   right: 0;
-  padding: 1rem;
+  padding: .5rem;
   background: var(--grey-1);
-  box-shadow: var(--sh-2);
   max-width: 24rem;
+  border-radius: 3px 0 0 0;
+}
+
+.styleToggler:hover {
+  bottom: 0;
 }
 
 @media (width <= 496px) {
