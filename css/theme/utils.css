@@ -4,12 +4,6 @@
 .flex-none { flex: none;}
 .flex-wrap { flex-wrap: wrap; }
 
-/* vertical center */
-.flex-align-center { align-items: center; }
-
-
-/* horizontal center */
-.flex-jusity-center { justify-content: center; }
 
 @each $prop in (flex-start, flex-end, center, space-between, space-around, space-evenly) {
   .flex-justify-$(prop) { justify-content: $(prop); }

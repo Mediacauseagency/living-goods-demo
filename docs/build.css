@@ -626,7 +626,7 @@ button {
 
 .container { 
   width: 100%;
-  max-width: 1200px;
+  max-width: 1080;
 }
 
 .cursor-pointer { cursor: pointer }
@@ -2060,11 +2060,15 @@ pre {
 
 .border-color-blue-1 { border-color: #44ade2; }
 
+.hover-color-blue-1:hover { color: #44ade2; }
+
 .bg-blue-2 { background-color: #0281a4; }
 
 .color-blue-2 { color: #0281a4; }
 
 .border-color-blue-2 { border-color: #0281a4; }
+
+.hover-color-blue-2:hover { color: #0281a4; }
 
 .bg-blue-3 { background-color: #014f84; }
 
@@ -2072,11 +2076,15 @@ pre {
 
 .border-color-blue-3 { border-color: #014f84; }
 
+.hover-color-blue-3:hover { color: #014f84; }
+
 .bg-orange-1 { background-color: #f47a44; }
 
 .color-orange-1 { color: #f47a44; }
 
 .border-color-orange-1 { border-color: #f47a44; }
+
+.hover-color-orange-1:hover { color: #f47a44; }
 
 .bg-grey-1 { background-color: #f2f2f2; }
 
@@ -2084,11 +2092,15 @@ pre {
 
 .border-color-grey-1 { border-color: #f2f2f2; }
 
-.bg-scrim { background-color: rgba(0, 0, 0, .2); }
+.hover-color-grey-1:hover { color: #f2f2f2; }
 
-.color-scrim { color: rgba(0, 0, 0, .2); }
+.bg-scrim { background-color: rgba(0, 0, 0, .25); }
 
-.border-color-scrim { border-color: rgba(0, 0, 0, .2); }
+.color-scrim { color: rgba(0, 0, 0, .25); }
+
+.border-color-scrim { border-color: rgba(0, 0, 0, .25); }
+
+.hover-color-scrim:hover { color: rgba(0, 0, 0, .25); }
 
 .bg-scrim-dark { background-color: rgba(0, 0, 0, .8); }
 
@@ -2096,11 +2108,15 @@ pre {
 
 .border-color-scrim-dark { border-color: rgba(0, 0, 0, .8); }
 
+.hover-color-scrim-dark:hover { color: rgba(0, 0, 0, .8); }
+
 .bg-scrim-white { background-color: rgba(255, 255, 255, .85); }
 
 .color-scrim-white { color: rgba(255, 255, 255, .85); }
 
 .border-color-scrim-white { border-color: rgba(255, 255, 255, .85); }
+
+.hover-color-scrim-white:hover { color: rgba(255, 255, 255, .85); }
 
 .bg-white { background-color: white; }
 
@@ -2380,6 +2396,10 @@ p a:hover,
   cursor: pointer;
 }
 
+.topNav__logo {
+  max-width: 11rem;
+}
+
 .xx-large { font-size: 3.3rem; }
 
 .x-large { font-size: 3rem; }
@@ -2501,14 +2521,6 @@ p { max-width: 740px; }
 .flex-none { -webkit-box-flex: 0; -ms-flex: none; flex: none;}
 
 .flex-wrap { -ms-flex-wrap: wrap; flex-wrap: wrap; }
-
-/* vertical center */
-
-.flex-align-center { -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
-
-/* horizontal center */
-
-.flex-jusity-center { -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
 
 .flex-justify-flex-start { -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; }
 
