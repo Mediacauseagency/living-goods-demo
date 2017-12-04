@@ -2006,28 +2006,6 @@ ul.tabs--v li {
   border-left: 3px solid transparent;
 }
 
-.xx-large { font-size: 3.3rem; }
-
-.x-large { font-size: 3rem; }
-
-.large { font-size: 2.5rem; }
-
-h1, .h1 { font-size: 2rem; }
-
-h2, .h2 { font-size: 1.5rem; }
-
-h3, .h3 { font-size: 1.25rem; }
-
-h4, .h4 { font-size: 1rem; }
-
-.bump { font-size: 1.25rem; }
-
-h5, .h5, .sub { font-size: .875rem; }
-
-h6, .h5, small, .small { font-size: .75rem; }
-
-.tiny { font-size: .6rem; }
-
 .font-family-inherit { font-family:inherit }
 
 .font-size-inherit { font-size:inherit }
@@ -2402,6 +2380,56 @@ p a:hover,
   cursor: pointer;
 }
 
+.xx-large { font-size: 3.3rem; }
+
+.x-large { font-size: 3rem; }
+
+.large { font-size: 2.5rem; }
+
+h1, .h1 { font-size: 2rem; }
+
+h2, .h2 { font-size: 1.5rem; }
+
+h3, .h3 { font-size: 1.25rem; }
+
+h4, .h4 { font-size: 1rem; }
+
+.bump { font-size: 1.25rem; }
+
+h5, .h5, .sub { font-size: .875rem; }
+
+h6, .h6, small, .small { font-size: .75rem; }
+
+.tiny { font-size: .6rem; }
+
+@media (max-width: 800px) {
+    .md-xx-large { font-size: 3.3rem; }
+    .md-x-large { font-size: 3rem; }
+    .md-large { font-size: 2.5rem; }
+    .md-h1 { font-size: 2rem; }
+    .md-h2 { font-size: 1.5rem; }
+    .md-h3 { font-size: 1.25rem; }
+    .md-h4 { font-size: 1rem; }
+    .md-bump { font-size: 1.25rem; }
+    .md-h5, .md-sub { font-size: .875rem; }
+    .md-h6, .md-.small { font-size: .75rem; }
+    .md-tiny { font-size: .6rem; }
+  }
+
+@media (max-width: 496px) {
+    .sm-xx-large { font-size: 3.3rem; }
+    .sm-x-large { font-size: 3rem; }
+    .sm-large { font-size: 2.5rem; }
+    .sm-h1 { font-size: 2rem; }
+    .sm-h2 { font-size: 1.5rem; }
+    .sm-h3 { font-size: 1.25rem; }
+    .sm-h4 { font-size: 1rem; }
+    .sm-bump { font-size: 1.25rem; }
+    .sm-h5, .sm-sub { font-size: .875rem; }
+    .sm-h6, .sm-.small { font-size: .75rem; }
+    .sm-tiny { font-size: .6rem; }
+  }
+
 @font-face {
   font-family: Merri_Sans;
   src:  url('./assets/fonts/MerriweatherSans-ExtraBold.ttf') format('truetype');
@@ -2454,8 +2482,6 @@ body {
 .bold { font-weight: 700;}
 
 .x-bold { font-weight: 800;}
-
-.black { font-weight: 900;}
 
 .mono,
 pre,
