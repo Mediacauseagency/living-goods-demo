@@ -2402,74 +2402,6 @@ p a:hover,
   cursor: pointer;
 }
 
-/*List of all font file names*/
-
-/*Merriweather-Black.ttf**/
-
-/*Merriweather-BlackItalic.ttf**/
-
-/*Merriweather-Bold.ttf**/
-
-/*Merriweather-BoldItalic.ttf**/
-
-/*Merriweather-Italic.ttf**/
-
-/*Merriweather-Regular.ttf**/
-
-/*MerriweatherSans-ExtraBold.ttf**/
-
-/*MerriweatherSans-ExtraBoldItalic.ttf**/
-
-/*MerriweatherSans-Bold.ttf**/
-
-/*MerriweatherSans-BoldItalic.ttf**/
-
-/*MerriweatherSans-Italic.ttf**/
-
-/*MerriweatherSans-Regular.ttf**/
-
-@font-face {
-  font-family: Merri;
-  src:  url('./assets/fonts/Merriweather-Black.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Merri;
-  src:  url('./assets/fonts/Merriweather-BlackItalic.ttf') format('truetype');
-  font-weight: 900;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: Merri;
-  src:  url('./assets/fonts/Merriweather-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Merri;
-  src:  url('./assets/fonts/Merriweather-BoldItalic.ttf') format('truetype');
-  font-weight: 700;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: Merri;
-  src:  url('./assets/fonts/Merriweather-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Merri;
-  src:  url('./assets/fonts/Merriweather-italic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-}
-
 @font-face {
   font-family: Merri_Sans;
   src:  url('./assets/fonts/MerriweatherSans-ExtraBold.ttf') format('truetype');
@@ -2517,10 +2449,6 @@ body {
   font-family: Merri_Sans, -apple-system, BlinkMacSystemFont, 'avenir next', avenir, helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial, sans-serif; 
 }
 
-.serif { font-family: Merri, Palatino,Georgia,serif; }
-
-.sans { font-family: Merri_Sans, -apple-system, BlinkMacSystemFont, 'avenir next', avenir, helvetica, 'helvetica neue', ubuntu, roboto, noto, 'segoe ui', arial, sans-serif; }
-
 .kern { letter-spacing: .05rem; }
 
 .bold { font-weight: 700;}
@@ -2535,6 +2463,10 @@ code,
 samp {
   font-family: Roboto Mono,Source Code Pro,Menlo,Consolas,Liberation Mono,monospace;
 }
+
+/* same max-width as medium.com's articles */
+
+p { max-width: 740px; }
 
 /* flexbox start */
 

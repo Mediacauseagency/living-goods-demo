@@ -1,7 +1,7 @@
 const h = require('choo/html')
 const txt = require('../helpers/txt')(1)
 
-const sans = [
+const variations = [
   {
     className: '',
     title: '400'
@@ -28,33 +28,6 @@ const sans = [
   }
 ]
 
-const serif = [
-  {
-    className: 'serif',
-    title: '400'
-  },
-  {
-    className: 'serif italic',
-    title: '400 italic'
-  },
-  {
-    className: 'serif bold',
-    title: '700'
-  },
-  {
-    className: 'serif bold italic',
-    title: '700 italic'
-  },
-  {
-    className: 'serif black',
-    title: '900'
-  },
-  {
-    className: 'serif black italic',
-    title: '900 italic'
-  }
-]
-
 const example = (obj) => h`
   <div class='mb-2'>
     <p class='h2 m-0 ${obj.className || ''}'>${txt}</p>
@@ -64,20 +37,11 @@ const example = (obj) => h`
 
 module.exports = h`
   <div class='px-1'>
-    <p class='mt-0'>We are using <strong>Merriweather</strong> and <strong>Merriweather Sans</strong>.</p>
+    <p class='mt-0'>We are using <strong>Merriweather Sans</strong>.</p>
 
-    <div class='pt-1'>
-      <h3>Merriweather Sans</h3>
-      <div class='pl-1 pt-1'>
-        ${sans.map(example)}  
-      </div>
+    <div class='pl-1 pt-1'>
+      ${variations.map(example)}  
     </div>
 
-    <div class='pt-1'>
-      <h3>Merriweather</h3>
-      <div class='pl-1 pt-1'>
-        ${serif.map(example)}  
-      </div>
-    </div>
   </div>
 `
