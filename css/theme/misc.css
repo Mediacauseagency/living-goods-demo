@@ -24,3 +24,15 @@
   text-decoration: underline;
 }
 
+.dividerWithText { position: relative; }
+
+.dividerWithText:after { 
+  content: '';
+  position: absolute;
+  top: calc(50% - 1px);
+  height: 2px;
+  background: var(--blue-1);
+  width: calc(100% - 2rem);
+  left: 1rem;
+  z-index: -1;
+}

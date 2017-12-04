@@ -1,6 +1,7 @@
 const h = require('choo/html')
 const img = require('../helpers/randomImage')
 const heroHeader = require('../organisms/heroHeader')
+const dividerWithText = require('../molecules/dividerWithText')
 
 
 const home = (state) => {
@@ -13,6 +14,7 @@ const home = (state) => {
         btnLink: '#',
         btnText: 'Join Us'
       })}
+      ${dividerWithText('What we do')}
     </div>
   `
 }

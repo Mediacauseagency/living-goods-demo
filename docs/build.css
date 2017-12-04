@@ -2355,6 +2355,19 @@ p a:hover,
   text-decoration: underline;
 }
 
+.dividerWithText { position: relative; }
+
+.dividerWithText:after { 
+  content: '';
+  position: absolute;
+  top: calc(50% - 1px);
+  height: 2px;
+  background: #44ade2;
+  width: calc(100% - 2rem);
+  left: 1rem;
+  z-index: -1;
+}
+
 [data-modal] {
   visibility: hidden;
   opacity: 0;
