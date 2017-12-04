@@ -2,10 +2,18 @@ const h = require('choo/html')
 const img = require('../helpers/randomImage')
 const heroHeader = require('../organisms/heroHeader')
 const dividerWithText = require('../molecules/dividerWithText')
+const textBoxOverImage = require('../organisms/textBoxOverImage')
+const randNumber = require('../helpers/randNumber')
+const txt = require('../helpers/txt')
 
+const textBoxTitle = 'Empowering Community Health Workers Like Janat'
+
+const heroText =  h`
+  <span>Living Goods Saves and <br class='sm-hide'>
+  Improves Lives Door-to-Door</span>
+`
 
 const home = (state) => {
-  const heroText =  h`<span>Living Goods Saves and <br class='sm-hide'>Lives Door-to-Door`
   return h`
     <div>
       ${heroHeader({
@@ -14,7 +22,26 @@ const home = (state) => {
         btnLink: '#',
         btnText: 'Join Us'
       })}
-      ${dividerWithText('What we do')}
+      <div class='pt-1'>
+        ${dividerWithText('What we do')}
+      </div>
+      ${textBoxOverImage({
+        title: textBoxTitle,
+        imgUrl: img(700, 350),
+        btnText: 'See more',
+        link: '#',
+        text: txt(3),
+        direction: 'right'
+      })}
+      <div class='col-12 py-3'></div>
+      ${textBoxOverImage({
+        title: textBoxTitle,
+        imgUrl: img(700, 350),
+        btnText: 'See more',
+        link: '#',
+        text: txt(3),
+        direction: 'left'
+      })}
     </div>
   `
 }

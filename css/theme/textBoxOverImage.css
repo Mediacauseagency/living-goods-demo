@@ -1,0 +1,25 @@
+.textBoxOverImage__image { width: 80%; }
+
+.textBoxOverImage--left .textBoxOverImage__image { float: right; }
+
+.textBoxOverImage__textBoxWrapper { width: 50%; }
+
+.textBoxOverImage--right .textBoxOverImage__textBoxWrapper { right: 1rem; }
+
+.textBoxOverImage--left .textBoxOverImage__textBoxWrapper { left: 1rem; }
+
+.textBoxOverImage__textBox { position: relative; }
+
+.textBoxOverImage__textBox:after { 
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 1rem;
+  z-index: -1;
+  border: 3px solid var(--blue-1);
+}
+
+.textBoxOverImage--right .textBoxOverImage__textBox:after { left: -1rem; }
+.textBoxOverImage--left .textBoxOverImage__textBox:after { right: -1rem; }
+

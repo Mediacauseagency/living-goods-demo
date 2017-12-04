@@ -3,7 +3,7 @@ const topNav = require('./topNav')
 const img = require('../helpers/randomImage')
 
 const heroHeader = ({text, imgUrl, btnLink, btnText}) => h`
-  <div class='bg-cover relative bg-blue-1' style='background-image: url(${imgUrl})'>
+  <div class='bg-cover relative bg-grey-1' style='background-image: url(${imgUrl})'>
     <div class='z-1 relative'>
       ${topNav}
       <div class='py-4 container px-1'>
