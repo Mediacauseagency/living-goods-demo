@@ -80,7 +80,7 @@
 .fade-in-up {
   opacity: 0;
   visibility: hidden;
-  animation: 600ms ease 100ms fadeinup forwards;
+  animation: 800ms ease 100ms fadeinup forwards;
 }
 
 @keyframes fadeinup {
@@ -106,7 +106,7 @@
   opacity: 1;
   visibility: visible;
   transform: translateY(0) translateZ(0);
-  transition: all 600ms ease 400ms;
+  transition: all 800ms ease 400ms;
 }
 
 .in-view-fade-in {
@@ -118,7 +118,7 @@
 [data-in-view='true'].in-view-fade-in {
   opacity: 1;
   visibility: visible;
-  transition: all 600ms ease 400ms;
+  transition: all 800ms ease 400ms;
 }
 
 

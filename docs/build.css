@@ -2439,8 +2439,8 @@ p a:hover,
 .fade-in-up {
   opacity: 0;
   visibility: hidden;
-  -webkit-animation: 600ms ease 100ms fadeinup forwards;
-          animation: 600ms ease 100ms fadeinup forwards;
+  -webkit-animation: 800ms ease 100ms fadeinup forwards;
+          animation: 800ms ease 100ms fadeinup forwards;
 }
 
 @-webkit-keyframes fadeinup {
@@ -2485,8 +2485,8 @@ p a:hover,
   visibility: visible;
   -webkit-transform: translateY(0) translateZ(0);
           transform: translateY(0) translateZ(0);
-  -webkit-transition: all 600ms ease 400ms;
-  transition: all 600ms ease 400ms;
+  -webkit-transition: all 800ms ease 400ms;
+  transition: all 800ms ease 400ms;
 }
 
 .in-view-fade-in {
@@ -2499,8 +2499,8 @@ p a:hover,
 [data-in-view='true'].in-view-fade-in {
   opacity: 1;
   visibility: visible;
-  -webkit-transition: all 600ms ease 400ms;
-  transition: all 600ms ease 400ms;
+  -webkit-transition: all 800ms ease 400ms;
+  transition: all 800ms ease 400ms;
 }
 
 [data-modal] {
@@ -2616,20 +2616,20 @@ p a:hover,
 [data-in-view='true'] .textBoxOverImage__image {
   -webkit-transform: translateX(0) translateZ(0);
           transform: translateX(0) translateZ(0);
-  -webkit-transition: all 500ms ease 200ms;
-  transition: all 500ms ease 200ms;
+  -webkit-transition: all 800ms ease 200ms;
+  transition: all 800ms ease 200ms;
 }
 
 [data-in-view='true'] .textBoxOverImage__textBoxWrapper {
   -webkit-transform: translateY(-50%) translateZ(0);
           transform: translateY(-50%) translateZ(0);
-  -webkit-transition: all 500ms ease 700ms;
-  transition: all 500ms ease 700ms;
+  -webkit-transition: all 800ms ease 1000ms;
+  transition: all 800ms ease 1000ms;
 }
 
 [data-in-view='true'] .textBoxOverImage__textBox:after {
-  -webkit-transition: opacity 500ms ease 1200ms;
-  transition: opacity 500ms ease 1200ms;
+  -webkit-transition: opacity 800ms ease 1800ms;
+  transition: opacity 800ms ease 1800ms;
 }
 
 .topNav__logo {

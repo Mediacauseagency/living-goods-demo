@@ -61,7 +61,7 @@ const home = (state) => {
         quotee: "Aisah - Living Goods clicnet - Uganda",
         imgUrl: images[3],
       })}
-      <div class='py-3'>
+      <div class='pt-3 pb-4'>
         ${dividerWithText('Why it works')}
         <p class='mx-auto mb-0 center'>Combining best practices from business and public health to drive life-saving results.</p>
       </div>

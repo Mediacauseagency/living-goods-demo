@@ -4,7 +4,7 @@ const h = require('choo/html')
 const images = (obj, i) => h`
   <div class='js-carousel__image ${i === 0 ? "fade-in-quick" : "fade-out-quick"} fit-absolute'>
     <div class='aspect aspect-3x2'>
-      <div class='bg-cover bg-scrim' 
+      <div class='bg-cover bg-scrim sh-1' 
         title='${obj.title}' 
         style='background-image: url(${obj.imgUrl})'>
       </div>
@@ -13,7 +13,7 @@ const images = (obj, i) => h`
   `
 
 const icons = (obj, i) => h`
-  <div class='js-carousel__icon cursor-pointer px-1 hover-underline-parent center ${i === 0 ?
+  <div class='js-carousel__icon cursor-pointer px-2 col-3 hover-underline-parent center ${i === 0 ?
   "color-orange-1"
   : "color-blue-1"}'>
     <i class='xxx-large icon-type-custom icon-${obj.icon}'></i>
@@ -24,7 +24,7 @@ const icons = (obj, i) => h`
 const text = (obj, i) => h`
   <div class='js-carousel__text ${i === 0 ? "fade-in-quick" : "fade-out-quick"} fit-absolute'>
     <a class='color-blue-1 hover-underline' title='${obj.title}' href='${obj.link}'>
-      <h2>${obj.title}</h2>
+      <h2 class='h1'>${obj.title}</h2>
     </a>
     <p class='mb-2'>${obj.text}</p>
     <a class='bold uppercase border-color-orange-1 border-bottom
@@ -34,7 +34,7 @@ const text = (obj, i) => h`
 
 const carousel = data => h`
   <div class='px-1 container' data-in-view='false'>
-    <div class='flex max-width-2 mx-auto pb-3'>
+    <div class='flex max-width-3 mx-auto pb-3'>
       ${data.map(icons)}
     </div>
     <div class='flex'>
