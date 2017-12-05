@@ -59,6 +59,20 @@ const addSideEffects = () => {
     if (i % 5 !== 0) return
     toggleInView('[data-in-view]')
   })
+  const images = document.querySelectorAll('.js-carousel__image')
+  document.querySelectorAll('.js-carousel__icon').forEach((icon, i) => {
+    icon.addEventListener('click', (ev) => {
+      images.forEach((img, ii) => {
+        if(i !== ii) {
+          img.classList.remove('fade-in')
+          img.classList.add('fade-out')
+        } else {
+          img.classList.remove('fade-out')
+          img.classList.add('fade-in')
+        }
+      })
+    })
+  })
 }
 
 const toggleInView = (selector) => {
@@ -77,7 +91,7 @@ const store = (state, emitter) => {
     emitter.emit('render')
   })
   emitter.on('DOMContentLoaded', addSideEffects)
-  emitter.on('render', addSideEffects)
+  emitter.on('update', addSideEffects)
 }
 
 const app = choo()

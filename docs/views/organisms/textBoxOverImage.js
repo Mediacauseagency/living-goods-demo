@@ -4,7 +4,7 @@ const textBoxOverImage = ({title, imgUrl, text, link, btnText, direction}) => h`
   <div data-in-view='false' class='container clearfix px-1 relative textBoxOverImage textBoxOverImage--${direction}'>
     <div class=' textBoxOverImage__image'>
       <div class='aspect aspect-2x1'>
-        <div class='bg-cover bg-grey-1' style='background-image: url(${imgUrl})'></div>
+        <div class='bg-cover bg-scrim' style='background-image: url(${imgUrl})'></div>
       </div>
     </div>
     <div class='textBoxOverImage__textBoxWrapper'>

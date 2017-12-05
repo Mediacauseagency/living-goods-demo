@@ -9,6 +9,7 @@ const quoteRow = require('../molecules/quoteRow')
 
 const heroHeader = require('../organisms/heroHeader')
 const textBoxOverImage = require('../organisms/textBoxOverImage')
+const carousel = require('../organisms/carousel')
 
 const textBoxTitle = 'Empowering Community Health Workers Like Janat'
 
@@ -60,10 +61,40 @@ const home = (state) => {
         quotee: "Aisah - Living Goods clicnet - Uganda",
         imgUrl: images[3],
       })}
-      <div class='pt-2 pb-1'>
+      <div class='pt-3 pb-4'>
         ${dividerWithText('Why it works')}
         <p class='mx-auto mb-0 center'>Combining best practices from business and public health to drive life-saving results.</p>
       </div>
+      ${carousel([
+        {
+          title: 'Digitally empowered',
+          icon: 'phone',
+          text: txt(2),
+          imgUrl: images[0],
+          link: '#'
+        },
+        {
+          title: 'Results driven',
+          icon: 'results',
+          text: txt(3),
+          imgUrl: images[1],
+          link: '#'
+        },
+        {
+          title: 'Trained and supported',
+          icon: 'training',
+          text: txt(3),
+          imgUrl: images[2],
+          link: '#'
+        },
+        {
+          title: 'Cost effective',
+          icon: 'cost',
+          text: txt(3),
+          imgUrl: images[3],
+          link: '#'
+        }
+      ])}
     </div>
   `
 }
