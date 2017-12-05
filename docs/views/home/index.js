@@ -27,14 +27,14 @@ const images = [
 
 const home = (state) => {
   return h`
-    <div>
+    <div class='bg-grey-1'>
       ${heroHeader({
         text: heroText,
         imgUrl: images[0],
         btnLink: '#',
         btnText: 'Join Us'
       })}
-      <div class='py-2'>
+      <div class='py-3'>
         ${dividerWithText('What we do')}
       </div>
       ${textBoxOverImage({
@@ -45,7 +45,7 @@ const home = (state) => {
         text: txt(3),
         direction: 'right'
       })}
-      <div class='col-12 py-3'></div>
+      <div class='col-12 py-4'></div>
       ${textBoxOverImage({
         title: textBoxTitle,
         imgUrl: images[2],
@@ -54,7 +54,7 @@ const home = (state) => {
         text: txt(3),
         direction: 'left'
       })}
-      <div class='col-12 py-3'></div>
+      <div class='col-12 py-4'></div>
       ${quoteRow({
         quote: "She is more then just a health worker. She is like my mother.",
         quotee: "Aisah - Living Goods clicnet - Uganda",

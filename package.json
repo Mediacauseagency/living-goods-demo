@@ -9,7 +9,7 @@
     "watch-docs": "concurrently \"npm run docs-js\" \"npm run docs-css\"",
     "build-docs-js": "browserify -t babelify -p tinyify docs/index.js > docs/build.js && gzip -c -9 < docs/build.js > docs/build.js.gz",
     "build-docs-css": "postcss docs/index.css -c postcss.config.js --env 'production' -o docs/build.css && gzip -c -9 < docs/build.css > docs/build.css.gz",
-    "build-docs" : "npm run build-docs-js && npm run build-docs-css"
+    "build-docs": "npm run build-docs-js && npm run build-docs-css"
   },
   "author": "Yutaka Houlette <yutakahoulette@gmail.com>",
   "license": "MIT",

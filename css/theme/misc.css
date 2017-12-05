@@ -34,5 +34,26 @@
   background: var(--blue-1);
   width: calc(100% - 2rem);
   left: 1rem;
-  z-index: -1;
 }
+
+
+
+.fade-in {
+  animation: fadein 800ms;
+}
+
+@keyframes fadein {
+    0% { 
+      transform: translateY(20px);
+      opacity: 0; 
+    }
+    30% { 
+      transform: translateY(20px);
+      opacity: 0; 
+    }
+    100%   { 
+      transform: translateY(0);
+      opacity: 1; 
+    }
+}
+

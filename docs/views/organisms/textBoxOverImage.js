@@ -7,7 +7,7 @@ const textBoxOverImage = ({title, imgUrl, text, link, btnText, direction}) => h`
         <div class='bg-cover bg-grey-1' style='background-image: url(${imgUrl})'></div>
       </div>
     </div>
-    <div class='vertically-center textBoxOverImage__textBoxWrapper'>
+    <div class='textBoxOverImage__textBoxWrapper'>
       <div class='inline-block bg-white sh-2 md-p-1 p-2 textBoxOverImage__textBox'>
         <a href='${link}' title='${title}'>
           <h2 class='mt-0 h1 md-h2 color-blue-1'>${title}</h2>

@@ -6,7 +6,7 @@ const heroHeader = ({text, imgUrl, btnLink, btnText}) => h`
   <div class='bg-cover relative bg-grey-1' style='background-image: url(${imgUrl})'>
     <div class='z-1 relative'>
       ${topNav}
-      <div class='py-4 container px-1'>
+      <div class='py-4 container px-1 fade-in'>
         <div class='py-4 md-py-2 sm-py-0'>
           <h1 class='large md-h1 color-white m-0'>
             ${text}

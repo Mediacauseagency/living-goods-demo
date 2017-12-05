@@ -1,5 +1,5 @@
 const h = require('choo/html')
-const devtools = require('choo-devtools')
+// const devtools = require('choo-devtools')
 const choo = require('choo')
 
 const isProduction = process.env.NODE_ENV === 'production'
@@ -81,7 +81,7 @@ const store = (state, emitter) => {
 }
 
 const app = choo()
-if (!isProduction) { app.use(devtools()) }
+// if (!isProduction) { app.use(devtools()) }
 app.use(store)
 app.route('*', mainView)
 app.mount('#js-container')
