@@ -2367,11 +2367,20 @@ p a:hover,
   left: 1rem;
 }
 
-.fade-in {
+.fade-in-quick {
+  opacity: 0;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
-  -webkit-animation: fadein 800ms forwards;
-          animation: fadein 800ms forwards;
+  -webkit-animation: fadein 400ms forwards;
+          animation: fadein 400ms forwards;
+}
+
+.fade-in-delay {
+  opacity: 0;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-animation: fadein 400ms 800ms forwards;
+          animation: fadein 400ms 800ms forwards;
 }
 
 @-webkit-keyframes fadein {
@@ -2384,11 +2393,11 @@ p a:hover,
   100% { opacity: 1; }
 }
 
-.fade-out {
+.fade-out-quick {
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
-  -webkit-animation: fadeout 800ms forwards;
-          animation: fadeout 800ms forwards;
+  -webkit-animation: fadeout 400ms forwards;
+          animation: fadeout 400ms forwards;
 }
 
 @-webkit-keyframes fadeout {

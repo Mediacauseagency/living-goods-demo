@@ -60,15 +60,21 @@ const addSideEffects = () => {
     toggleInView('[data-in-view]')
   })
   const images = document.querySelectorAll('.js-carousel__image')
-  document.querySelectorAll('.js-carousel__icon').forEach((icon, i) => {
-    icon.addEventListener('click', (ev) => {
+  const icons = document.querySelectorAll('.js-carousel__icon')
+  icons.forEach((icon, i) => {
+    icon.addEventListener('click', () => {
+      icons.forEach((elm) => {
+        elm.classList.remove('color-orange-1')
+        elm.classList.add('color-blue-1')
+      })
+      icon.classList.add('color-orange-1')
       images.forEach((img, ii) => {
         if(i !== ii) {
-          img.classList.remove('fade-in')
-          img.classList.add('fade-out')
+          img.classList.remove('fade-in-quick')
+          img.classList.add('fade-out-quick')
         } else {
-          img.classList.remove('fade-out')
-          img.classList.add('fade-in')
+          img.classList.remove('fade-out-quick')
+          img.classList.add('fade-in-quick')
         }
       })
     })
@@ -80,7 +86,6 @@ const toggleInView = (selector) => {
   elms.forEach(elm => {
     const scrollTop = window.document.body.scrollTop + window.innerHeight
     const elmTop = elm.offsetTop || elm.offsetParent.offsetTop
-    console.log({elmTop, scrollTop})
     elm.setAttribute('data-in-view', scrollTop >= elmTop)
   })
 }

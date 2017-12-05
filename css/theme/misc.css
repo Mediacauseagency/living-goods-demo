@@ -36,9 +36,16 @@
   left: 1rem;
 }
 
-.fade-in {
+.fade-in-quick {
+  opacity: 0;
   transform: translateZ(0);
-  animation: fadein 800ms forwards;
+  animation: fadein 400ms forwards;
+}
+
+.fade-in-delay {
+  opacity: 0;
+  transform: translateZ(0);
+  animation: fadein 400ms 800ms forwards;
 }
 
 @keyframes fadein {
@@ -46,9 +53,9 @@
   100% { opacity: 1; }
 }
 
-.fade-out {
+.fade-out-quick {
   transform: translateZ(0);
-  animation: fadeout 800ms forwards;
+  animation: fadeout 400ms forwards;
 }
 
 @keyframes fadeout {
