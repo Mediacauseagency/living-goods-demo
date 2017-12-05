@@ -2369,49 +2369,76 @@ p a:hover,
 
 .fade-in-quick {
   opacity: 0;
+  visibility: hidden;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
-  -webkit-animation: fadein 400ms forwards;
-          animation: fadein 400ms forwards;
+  -webkit-animation: fadein 300ms forwards;
+          animation: fadein 300ms forwards;
 }
 
 .fade-in-delay {
   opacity: 0;
+  visibility: hidden;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
-  -webkit-animation: fadein 400ms 800ms forwards;
-          animation: fadein 400ms 800ms forwards;
+  -webkit-animation: fadein 300ms 600ms forwards;
+          animation: fadein 300ms 600ms forwards;
 }
 
 @-webkit-keyframes fadein {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
+  0%   { 
+    opacity: 0; 
+    visibility: hidden;
+  }
+  100% { 
+    opacity: 1; 
+    visibility: visible;
+  }
 }
 
 @keyframes fadein {
-  0%   { opacity: 0; }
-  100% { opacity: 1; }
+  0%   { 
+    opacity: 0; 
+    visibility: hidden;
+  }
+  100% { 
+    opacity: 1; 
+    visibility: visible;
+  }
 }
 
 .fade-out-quick {
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
-  -webkit-animation: fadeout 400ms forwards;
-          animation: fadeout 400ms forwards;
+  -webkit-animation: fadeout 300ms forwards;
+          animation: fadeout 300ms forwards;
 }
 
 @-webkit-keyframes fadeout {
-  0%   { opacity: 1; }
-  100% { opacity: 0; }
+  0% { 
+    opacity: 1; 
+    visibility: visible;
+  }
+  100%   { 
+    opacity: 0; 
+    visibility: hidden;
+  }
 }
 
 @keyframes fadeout {
-  0%   { opacity: 1; }
-  100% { opacity: 0; }
+  0% { 
+    opacity: 1; 
+    visibility: visible;
+  }
+  100%   { 
+    opacity: 0; 
+    visibility: hidden;
+  }
 }
 
 .fade-in-up {
   opacity: 0;
+  visibility: hidden;
   -webkit-animation: 600ms ease 100ms fadeinup forwards;
           animation: 600ms ease 100ms fadeinup forwards;
 }
@@ -2420,11 +2447,13 @@ p a:hover,
   0% { 
     -webkit-transform: translateY(20px) translateZ(0); 
             transform: translateY(20px) translateZ(0);
+    visibility: hidden;
     opacity: 0; 
   }
   100%   { 
     -webkit-transform: translateY(0) translateZ(0); 
             transform: translateY(0) translateZ(0);
+    visibility: visible;
     opacity: 1; 
   }
 }
@@ -2433,23 +2462,27 @@ p a:hover,
   0% { 
     -webkit-transform: translateY(20px) translateZ(0); 
             transform: translateY(20px) translateZ(0);
+    visibility: hidden;
     opacity: 0; 
   }
   100%   { 
     -webkit-transform: translateY(0) translateZ(0); 
             transform: translateY(0) translateZ(0);
+    visibility: visible;
     opacity: 1; 
   }
 }
 
 .in-view-fade-in-up {
   opacity: 0;
+  visibility: hidden;
   -webkit-transform: translateY(20px) translateZ(0);
           transform: translateY(20px) translateZ(0);
 }
 
 [data-in-view='true'].in-view-fade-in-up {
   opacity: 1;
+  visibility: visible;
   -webkit-transform: translateY(0) translateZ(0);
           transform: translateY(0) translateZ(0);
   -webkit-transition: all 600ms ease 400ms;
@@ -2458,12 +2491,14 @@ p a:hover,
 
 .in-view-fade-in {
   opacity: 0;
+  visibility: hidden;
   -webkit-transform: translateZ(0);
           transform: translateZ(0);
 }
 
 [data-in-view='true'].in-view-fade-in {
   opacity: 1;
+  visibility: visible;
   -webkit-transition: all 600ms ease 400ms;
   transition: all 600ms ease 400ms;
 }
@@ -2601,7 +2636,9 @@ p a:hover,
   max-width: 11rem;
 }
 
-.xx-large { font-size: 3.3rem; }
+.xxx-large { font-size: 4rem; }
+
+.xx-large { font-size: 3.5rem; }
 
 .x-large { font-size: 3rem; }
 
@@ -2723,15 +2760,27 @@ p { max-width: 740px; }
 
 .flex-wrap { -ms-flex-wrap: wrap; flex-wrap: wrap; }
 
+.flex-item-justify-flex-start { justify-self: flex-start; }
+
 .flex-justify-flex-start { -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; }
+
+.flex-item-justify-flex-end { justify-self: flex-end; }
 
 .flex-justify-flex-end { -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; }
 
+.flex-item-justify-center { justify-self: center; }
+
 .flex-justify-center { -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+
+.flex-item-justify-space-between { justify-self: space-between; }
 
 .flex-justify-space-between { -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
 
+.flex-item-justify-space-around { justify-self: space-around; }
+
 .flex-justify-space-around { -ms-flex-pack: distribute; justify-content: space-around; }
+
+.flex-item-justify-space-evenly { justify-self: space-evenly; }
 
 .flex-justify-space-evenly { -webkit-box-pack: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; }
 

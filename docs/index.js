@@ -59,7 +59,6 @@ const addSideEffects = () => {
     if (i % 5 !== 0) return
     toggleInView('[data-in-view]')
   })
-  const images = document.querySelectorAll('.js-carousel__image')
   const icons = document.querySelectorAll('.js-carousel__icon')
   icons.forEach((icon, i) => {
     icon.addEventListener('click', () => {
@@ -68,16 +67,21 @@ const addSideEffects = () => {
         elm.classList.add('color-blue-1')
       })
       icon.classList.add('color-orange-1')
-      images.forEach((img, ii) => {
-        if(i !== ii) {
-          img.classList.remove('fade-in-quick')
-          img.classList.add('fade-out-quick')
-        } else {
-          img.classList.remove('fade-out-quick')
-          img.classList.add('fade-in-quick')
-        }
-      })
+      toggleFades(document.querySelectorAll('.js-carousel__image'), i)
+      toggleFades(document.querySelectorAll('.js-carousel__text'), i)
     })
+  })
+}
+
+const toggleFades = (elms, i) => {
+  elms.forEach((elm, ii) => {
+    if(i !== ii) {
+      elm.classList.remove('fade-in-quick')
+      elm.classList.add('fade-out-quick')
+    } else {
+      elm.classList.remove('fade-out-quick')
+      elm.classList.add('fade-in-quick')
+    }
   })
 }
 

@@ -61,7 +61,7 @@ const home = (state) => {
         quotee: "Aisah - Living Goods clicnet - Uganda",
         imgUrl: images[3],
       })}
-      <div class='pt-3 pb-4'>
+      <div class='py-3'>
         ${dividerWithText('Why it works')}
         <p class='mx-auto mb-0 center'>Combining best practices from business and public health to drive life-saving results.</p>
       </div>
@@ -69,7 +69,7 @@ const home = (state) => {
         {
           title: 'Digitally empowered',
           icon: 'phone',
-          text: txt(2),
+          text: txt(4),
           imgUrl: images[0],
           link: '#'
         },
@@ -83,18 +83,19 @@ const home = (state) => {
         {
           title: 'Trained and supported',
           icon: 'training',
-          text: txt(3),
+          text: txt(2),
           imgUrl: images[2],
           link: '#'
         },
         {
           title: 'Cost effective',
           icon: 'cost',
-          text: txt(3),
+          text: txt(5),
           imgUrl: images[3],
           link: '#'
         }
       ])}
+      <div class='col-12 py-4'></div>
     </div>
   `
 }
