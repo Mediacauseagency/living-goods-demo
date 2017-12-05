@@ -49,11 +49,33 @@ const mainView = (state, emit) => {
   `
 }
 
+const addSideEffects = () => {
+  const inViewElms = document.querySelectorAll('[data-in-view]')
+  if (!inViewElms.length) return
+  toggleInView(inViewElms)
+  let i = 0
+  window.document.addEventListener('scroll', () => {
+    // debounce dom calculations to every five ticks
+    // to prevent scrolling jank
+    i += 1
+    if (i % 5 !== 0) return
+    toggleInView(inViewElms)
+  })
+}
+
+const toggleInView = (elms) =>
+  elms.forEach(elm => {
+    const scrollTop = window.document.body.scrollTop + window.innerHeight
+    const elmTop = elm.offsetTop 
+    elm.setAttribute('data-in-view', scrollTop >= elmTop)
+  })
+
 const store = (state, emitter) => {
   emitter.on('setFonts', (fontStyle) => {
     state.fontStyle = fontStyle
     emitter.emit('render')
   })
+  emitter.on('DOMContentLoaded', addSideEffects)
 }
 
 const app = choo()
@@ -61,4 +83,5 @@ if (!isProduction) { app.use(devtools()) }
 app.use(store)
 app.route('*', mainView)
 app.mount('#js-container')
+
 

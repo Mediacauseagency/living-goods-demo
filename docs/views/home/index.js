@@ -34,7 +34,7 @@ const home = (state) => {
         btnLink: '#',
         btnText: 'Join Us'
       })}
-      <div class='pt-2 pb-1'>
+      <div class='py-2'>
         ${dividerWithText('What we do')}
       </div>
       ${textBoxOverImage({
@@ -45,7 +45,7 @@ const home = (state) => {
         text: txt(3),
         direction: 'right'
       })}
-      <div class='col-12 py-2'></div>
+      <div class='col-12 py-3'></div>
       ${textBoxOverImage({
         title: textBoxTitle,
         imgUrl: images[2],
@@ -54,7 +54,7 @@ const home = (state) => {
         text: txt(3),
         direction: 'left'
       })}
-      <div class='col-12 py-2'></div>
+      <div class='col-12 py-3'></div>
       ${quoteRow({
         quote: "She is more then just a health worker. She is like my mother.",
         quotee: "Aisah - Living Goods clicnet - Uganda",

@@ -1,12 +1,10 @@
-.textBoxOverImage__image { width: 80%; }
+.textBoxOverImage__image { 
+  width: 80%; 
+}
 
-.textBoxOverImage--left .textBoxOverImage__image { float: right; }
-
-.textBoxOverImage__textBoxWrapper { width: 50%; }
-
-.textBoxOverImage--right .textBoxOverImage__textBoxWrapper { right: 1rem; }
-
-.textBoxOverImage--left .textBoxOverImage__textBoxWrapper { left: 1rem; }
+.textBoxOverImage__textBoxWrapper { 
+  width: 50%; 
+}
 
 .textBoxOverImage__textBox { position: relative; }
 
@@ -20,6 +18,65 @@
   border: 3px solid var(--blue-1);
 }
 
-.textBoxOverImage--right .textBoxOverImage__textBox:after { left: -1rem; }
-.textBoxOverImage--left .textBoxOverImage__textBox:after { right: -1rem; }
+.textBoxOverImage--left .textBoxOverImage__image { 
+  float: right; 
+}
+
+.textBoxOverImage--right .textBoxOverImage__textBox:after { 
+  left: -1rem; 
+}
+.textBoxOverImage--left .textBoxOverImage__textBox:after { 
+  right: -1rem; 
+}
+.textBoxOverImage--right .textBoxOverImage__textBoxWrapper { 
+  right: 1rem; 
+}
+
+.textBoxOverImage--left .textBoxOverImage__textBoxWrapper { 
+  left: 1rem; 
+}
+
+.textBoxOverImage__textBox:after,
+.textBoxOverImage__image,
+.textBoxOverImage__textBox { 
+  opacity: 0;
+}
+
+.textBoxOverImage--left .textBoxOverImage__image { 
+  transform: translateX(10%);
+}
+
+.textBoxOverImage--right .textBoxOverImage__image { 
+  transform: translateX(-10%);
+}
+
+.textBoxOverImage__textBox {
+  margin-top: 10%;
+}
+
+
+[data-in-view='true'] .textBoxOverImage__textBox,
+[data-in-view='true'] .textBoxOverImage__textBox:after,
+[data-in-view='true'] .textBoxOverImage__image {
+  opacity: 1;
+}
+
+
+[data-in-view='true'] .textBoxOverImage__image {
+  transform: translateX(0);
+  transition: all 500ms ease 500ms;
+}
+
+[data-in-view='true'] .textBoxOverImage__textBox {
+  margin-top: 0;
+  transition: all 500ms ease 1000ms;
+}
+
+[data-in-view='true'] .textBoxOverImage__textBox:after {
+  transition: all 500ms ease 1500ms;
+}
+
+
+
+
 
