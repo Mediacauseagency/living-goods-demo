@@ -9,14 +9,14 @@ const views = [
     title: 'Atoms',
     view: require('./views/atoms/index')
   },
-  {
-    title: 'Molecules',
-    view: require('./views/molecules/index')
-  },
-  {
-    title: 'Organisms',
-    view: require('./views/organisms/index')
-  },
+  //{
+    //title: 'Molecules',
+    //view: require('./views/molecules/index')
+  //},
+  //{
+    //title: 'Organisms',
+    //view: require('./views/organisms/index')
+  //},
   {
     title: 'Home',
     view: require('./views/home/index')
