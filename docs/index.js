@@ -65,7 +65,7 @@ const toggleInView = (selector) => {
   const elms = document.querySelectorAll(selector)
   elms.forEach(elm => {
     const scrollTop = window.document.body.scrollTop + window.innerHeight
-    const elmTop = elm.offsetTop 
+    const elmTop = elm.offsetTop || elm.offsetParent.offsetTop
     console.log({elmTop, scrollTop})
     elm.setAttribute('data-in-view', scrollTop >= elmTop)
   })
