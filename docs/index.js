@@ -50,25 +50,26 @@ const mainView = (state, emit) => {
 }
 
 const addSideEffects = () => {
-  const inViewElms = document.querySelectorAll('[data-in-view]')
-  if (!inViewElms.length) return
-  toggleInView(inViewElms)
+  toggleInView('[data-in-view]')
   let i = 0
   window.document.addEventListener('scroll', () => {
     // debounce dom calculations to every five ticks
     // to prevent scrolling jank
     i += 1
     if (i % 5 !== 0) return
-    toggleInView(inViewElms)
+    toggleInView('[data-in-view]')
   })
 }
 
-const toggleInView = (elms) =>
+const toggleInView = (selector) => {
+  const elms = document.querySelectorAll(selector)
   elms.forEach(elm => {
     const scrollTop = window.document.body.scrollTop + window.innerHeight
     const elmTop = elm.offsetTop 
+    console.log({elmTop, scrollTop})
     elm.setAttribute('data-in-view', scrollTop >= elmTop)
   })
+}
 
 const store = (state, emitter) => {
   emitter.on('setFonts', (fontStyle) => {
@@ -76,6 +77,7 @@ const store = (state, emitter) => {
     emitter.emit('render')
   })
   emitter.on('DOMContentLoaded', addSideEffects)
+  emitter.on('render', addSideEffects)
 }
 
 const app = choo()
