@@ -96,6 +96,7 @@ const home = (state) => {
         }
       ])}
       <div class='col-12 py-4'></div>
+
     </div>
   `
 }

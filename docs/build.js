@@ -234,8 +234,8 @@
   </div>
   `)}
         </div>
-        <div class='aspect aspect-3x2 fade-in-quick'>
-          <div class='bg-scrim'></div>
+        <div class='aspect aspect-3x2'>
+          <div></div>
         </div>
       </div>
       <div class='carousel__text col-6 pl-3 py-1'>
@@ -246,16 +246,16 @@
       <h2 class='h1'>${e.title}</h2>
     </a>
     <p class='mb-2'>${e.text}</p>
-    <a class='bold uppercase border-color-orange-1 border-bottom
-    border-width-1' href='${e.link}' title='${e.title}'>Learn more</a>
+    <a class='btn btn--orange' href='${e.link}' title='${e.title}'>Learn more</a>
   </div>
-  `)}
+`)}
         </div>
       </div>
     </div>
   </div>
 `)([{title:"Digitally empowered",icon:"phone",text:re(4),imgUrl:ae[0],link:"#"},{title:"Results driven",icon:"results",text:re(3),imgUrl:ae[1],link:"#"},{title:"Trained and supported",icon:"training",text:re(2),imgUrl:ae[2],link:"#"},{title:"Cost effective",icon:"cost",text:re(5),imgUrl:ae[3],link:"#"}])}
       <div class='col-12 py-4'></div>
+
     </div>
   `}],Be=()=>{We("[data-in-view]");let e=0;window.document.addEventListener("scroll",()=>{(e+=1)%5==0&&We("[data-in-view]")});const t=document.querySelectorAll(".js-carousel__icon");t.forEach((e,i)=>{e.addEventListener("click",()=>{t.forEach(e=>{e.classList.remove("color-orange-1"),e.classList.add("color-blue-1")}),e.classList.add("color-orange-1"),Fe(document.querySelectorAll(".js-carousel__image"),i),Fe(document.querySelectorAll(".js-carousel__text"),i)})})},Fe=(e,t)=>{e.forEach((e,i)=>{t!==i?(e.classList.remove("fade-in-quick"),e.classList.add("fade-out-quick")):(e.classList.remove("fade-out-quick"),e.classList.add("fade-in-quick"))})},We=e=>{document.querySelectorAll(e).forEach(e=>{const t=window.document.body.scrollTop+window.innerHeight,i=e.offsetTop||e.offsetParent.offsetTop;e.setAttribute("data-in-view",t>=i)})},ze=Ge();ze.use((e,t)=>{t.on("setFonts",i=>{e.fontStyle=i,t.emit("render")}),t.on("DOMContentLoaded",Be),t.on("update",Be)}),ze.route("*",(e,t)=>{const i=Number(e.query.tab||0);return U`
     <div>

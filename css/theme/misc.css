@@ -40,7 +40,7 @@
   opacity: 0;
   visibility: hidden;
   transform: translateZ(0);
-  animation: fadein 300ms forwards;
+  animation: fadein 300ms 300ms forwards;
 }
 
 .fade-in-delay {

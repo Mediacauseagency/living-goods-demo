@@ -27,10 +27,9 @@ const text = (obj, i) => h`
       <h2 class='h1'>${obj.title}</h2>
     </a>
     <p class='mb-2'>${obj.text}</p>
-    <a class='bold uppercase border-color-orange-1 border-bottom
-    border-width-1' href='${obj.link}' title='${obj.title}'>Learn more</a>
+    <a class='btn btn--orange' href='${obj.link}' title='${obj.title}'>Learn more</a>
   </div>
-  `
+`
 
 const carousel = data => h`
   <div class='px-1 container' data-in-view='false'>
@@ -42,8 +41,8 @@ const carousel = data => h`
         <div class='relative fade-in-delay z-1'>
           ${data.map(images)}
         </div>
-        <div class='aspect aspect-3x2 fade-in-quick'>
-          <div class='bg-scrim'></div>
+        <div class='aspect aspect-3x2'>
+          <div></div>
         </div>
       </div>
       <div class='carousel__text col-6 pl-3 py-1'>
