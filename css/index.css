@@ -5,20 +5,14 @@
 
 *:focus { outline: thin dotted }
 
-.border-pop {
-  position: relative;
-}
-.border-pop:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 1rem;
-  left: -1rem;
-  z-index: -1;
-  border: 3px solid var(--blue-1);
-}
-
 body {
   min-width: 1000px;
 }
+
+blockquote {
+  font-style: italic;
+  font-size: 1.75rem;
+}
+
+blockquote:before {content:"\201C";}
+blockquote:after {content:"\201D";}
