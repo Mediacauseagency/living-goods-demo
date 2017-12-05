@@ -221,7 +221,7 @@
         <p class='mx-auto mb-0 center'>Combining best practices from business and public health to drive life-saving results.</p>
       </div>
     </div>
-  `}],or=e=>e.forEach(e=>{const t=window.document.body.scrollTop+window.innerHeight,r=e.offsetTop;e.setAttribute("data-in-view",t>=r)}),sr=rr();sr.use((e,t)=>{t.on("setFonts",r=>{e.fontStyle=r,t.emit("render")}),t.on("DOMContentLoaded",()=>{const e=document.querySelectorAll("[data-in-view]");if(!e.length)return;or(e);let t=0;window.document.addEventListener("scroll",()=>{(t+=1)%5==0&&or(e)})})}),sr.route("*",(e,t)=>{const r=Number(e.query.tab||0);return Ce`
+  `}],or=()=>{sr("[data-in-view]");let e=0;window.document.addEventListener("scroll",()=>{(e+=1)%5==0&&sr("[data-in-view]")})},sr=e=>{document.querySelectorAll(e).forEach(e=>{const t=window.document.body.scrollTop+window.innerHeight,r=e.offsetTop;console.log({elmTop:r,scrollTop:t}),e.setAttribute("data-in-view",t>=r)})},ar=rr();ar.use((e,t)=>{t.on("setFonts",r=>{e.fontStyle=r,t.emit("render")}),t.on("DOMContentLoaded",or),t.on("render",or)}),ar.route("*",(e,t)=>{const r=Number(e.query.tab||0);return Ce`
     <div>
       <ul class='list-reset m-0 bg-grey-1'>
         <div class='container'>
@@ -240,4 +240,4 @@
         ${ir[r].view(e,t)}
       </main>
     </div>
-  `}),sr.mount("#js-container")}();
+  `}),ar.mount("#js-container")}();
