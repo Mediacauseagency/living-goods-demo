@@ -9,7 +9,7 @@
     "watch-docs": "concurrently \"npm run docs-js\" \"npm run docs-css\"",
     "build-docs-js": "browserify -t babelify -p tinyify docs/index.js > docs/build.js && gzip -c -9 < docs/build.js > docs/build.js.gz",
     "build-docs-css": "postcss docs/index.css -c postcss.config.js --env 'production' -o docs/build.css && gzip -c -9 < docs/build.css > docs/build.css.gz",
-    "build-docs" : "npm run build-docs-js && npm run build-docs-css"
+    "build-docs": "npm run build-docs-js && npm run build-docs-css"
   },
   "author": "Yutaka Houlette <yutakahoulette@gmail.com>",
   "license": "MIT",
@@ -34,7 +34,9 @@
     "watchify": "^3.9.0"
   },
   "dependencies": {
+    "chart.js": "^2.7.1",
     "choo": "6.5.1",
+    "choo-devtools": "^2.2.0",
     "choo-log": "8.0.0",
     "d3": "^4.11.0",
     "email-validator": "^1.1.1",

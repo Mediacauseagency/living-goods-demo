@@ -6,6 +6,7 @@
 
 
 @each $prop in (flex-start, flex-end, center, space-between, space-around, space-evenly) {
+  .flex-item-justify-$(prop) { justify-self: $(prop); }
   .flex-justify-$(prop) { justify-content: $(prop); }
 }
 
@@ -48,4 +49,3 @@
   }
 }
 
-.greyscale { filter: grayscale(100%); }

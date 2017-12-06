@@ -38,45 +38,41 @@
 
 .textBoxOverImage__textBox:after,
 .textBoxOverImage__image,
-.textBoxOverImage__textBox { 
+.textBoxOverImage__textBoxWrapper { 
   opacity: 0;
 }
 
 .textBoxOverImage--left .textBoxOverImage__image { 
-  transform: translateX(10%);
+  transform: translateX(10%) translateZ(0);
 }
 
 .textBoxOverImage--right .textBoxOverImage__image { 
-  transform: translateX(-10%);
+  transform: translateX(-10%) translateZ(0);
 }
 
-.textBoxOverImage__textBox {
-  margin-top: 10%;
+.textBoxOverImage__textBoxWrapper {
+  transform: translateY(-40%) translateZ(0);
+  top: 50%;
+  position: absolute;
 }
 
-
-[data-in-view='true'] .textBoxOverImage__textBox,
+[data-in-view='true'] .textBoxOverImage__textBoxWrapper,
 [data-in-view='true'] .textBoxOverImage__textBox:after,
 [data-in-view='true'] .textBoxOverImage__image {
   opacity: 1;
 }
 
-
 [data-in-view='true'] .textBoxOverImage__image {
-  transform: translateX(0);
-  transition: all 500ms ease 500ms;
+  transform: translateX(0) translateZ(0);
+  transition: all 800ms ease 200ms;
 }
 
-[data-in-view='true'] .textBoxOverImage__textBox {
-  margin-top: 0;
-  transition: all 500ms ease 1000ms;
+[data-in-view='true'] .textBoxOverImage__textBoxWrapper {
+  transform: translateY(-50%) translateZ(0);
+  transition: all 800ms ease 1000ms;
 }
 
 [data-in-view='true'] .textBoxOverImage__textBox:after {
-  transition: all 500ms ease 1500ms;
+  transition: opacity 800ms ease 1800ms;
 }
-
-
-
-
 
