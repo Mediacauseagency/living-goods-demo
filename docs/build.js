@@ -265,15 +265,15 @@
       <a class='btn btn--orange' href='${t.link}' title='${t.title}'>Learn more</a>
     </div>
     <div class='col-6 in-view-fade-in-up' data-in-view='false'>
-      <div data-chart='line' 
+      <canvas data-chart='line' 
         data-labels='apple, orange, pear, guava'
-        data-value='34, 56, 125, 45'></div>
+        data-value='34, 56, 125, 45'></canvas>
     </div>
   </div>
 `)({title:"Backed By Evidence",text:ee(4),link:"#"})}
       <div class='col-12 py-4'></div>
     </div>
-  `}],ii=()=>{ri("[data-in-view]");let t=0;window.document.addEventListener("scroll",()=>{(t+=1)%5==0&&ri("[data-in-view]")});const e=document.querySelectorAll(".js-carousel__icon");e.forEach((t,n)=>{t.addEventListener("click",()=>{e.forEach(t=>{t.classList.remove("color-orange-1"),t.classList.add("color-blue-1")}),t.classList.add("color-orange-1"),ai(document.querySelectorAll(".js-carousel__image"),n),ai(document.querySelectorAll(".js-carousel__text"),n)})}),document.querySelectorAll("[data-chart]").forEach(t=>{const e=document.createElement("canvas"),n=e.getContext("2d");t.appendChild(e),new yn(n,{type:"line",data:{labels:["2010","2011","2012","2013","2014","2015","2016","2017"],datasets:[{label:"Data A",data:[5234,6234,8234,10123,13234,14644,16445,20034],backgroundColor:"transparent",borderColor:"#44ade2"},{label:"Data B",data:[5234,8234,10234,14123,17234,20644,22445,24034],backgroundColor:"transparent",borderColor:"#f47a44"}]}})})},ai=(t,e)=>{t.forEach((t,n)=>{e!==n?(t.classList.remove("fade-in-quick"),t.classList.add("fade-out-quick")):(t.classList.remove("fade-out-quick"),t.classList.add("fade-in-quick"))})},ri=t=>{document.querySelectorAll(t).forEach(t=>{const e=window.document.body.scrollTop+window.innerHeight,n=t.offsetTop||t.offsetParent.offsetTop;t.setAttribute("data-in-view",e>=n)})},oi=ti();oi.use((t,e)=>{e.on("setFonts",n=>{t.fontStyle=n,e.emit("render")}),e.on("DOMContentLoaded",ii),e.on("update",ii)}),oi.route("*",(t,e)=>{const n=Number(t.query.tab||0);return Nt`
+  `}],ii=()=>{ri("[data-in-view]");let t=0;window.document.addEventListener("scroll",()=>{(t+=1)%5==0&&ri("[data-in-view]")});const e=document.querySelectorAll(".js-carousel__icon");e.forEach((t,n)=>{t.addEventListener("click",()=>{e.forEach(t=>{t.classList.remove("color-orange-1"),t.classList.add("color-blue-1")}),t.classList.add("color-orange-1"),ai(document.querySelectorAll(".js-carousel__image"),n),ai(document.querySelectorAll(".js-carousel__text"),n)})}),document.querySelectorAll("[data-chart]").forEach(t=>{const e=t.getContext("2d");new yn(e,{type:"line",data:{labels:["2010","2011","2012","2013","2014","2015","2016","2017"],datasets:[{label:"Data A",data:[5234,6234,8234,10123,13234,14644,16445,20034],backgroundColor:"rgba(0,0,0,0.05)",borderColor:"#44ade2"},{label:"Data B",data:[5234,8234,10234,14123,17234,20644,22445,24034],backgroundColor:"rgba(0,0,0,0.05)",borderColor:"#f47a44"}]}})})},ai=(t,e)=>{t.forEach((t,n)=>{e!==n?(t.classList.remove("fade-in-quick"),t.classList.add("fade-out-quick")):(t.classList.remove("fade-out-quick"),t.classList.add("fade-in-quick"))})},ri=t=>{document.querySelectorAll(t).forEach(t=>{const e=window.document.body.scrollTop+window.innerHeight,n=t.offsetTop||t.offsetParent.offsetTop;t.setAttribute("data-in-view",e>=n)})},oi=ti();oi.use((t,e)=>{e.on("setFonts",n=>{t.fontStyle=n,e.emit("render")}),e.on("DOMContentLoaded",ii),e.on("update",ii)}),oi.route("*",(t,e)=>{const n=Number(t.query.tab||0);return Nt`
     <div>
       <ul class='list-reset m-0 bg-grey-1'>
         <div class='container'>

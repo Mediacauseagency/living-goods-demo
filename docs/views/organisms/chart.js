@@ -10,9 +10,9 @@ const chart = obj => h`
       <a class='btn btn--orange' href='${obj.link}' title='${obj.title}'>Learn more</a>
     </div>
     <div class='col-6 in-view-fade-in-up' data-in-view='false'>
-      <div data-chart='line' 
+      <canvas data-chart='line' 
         data-labels='apple, orange, pear, guava'
-        data-value='34, 56, 125, 45'></div>
+        data-value='34, 56, 125, 45'></canvas>
     </div>
   </div>
 `

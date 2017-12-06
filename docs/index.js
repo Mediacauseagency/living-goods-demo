@@ -7,18 +7,6 @@ const isProduction = process.env.NODE_ENV === 'production'
 
 const views = [
   {
-    title: 'Atoms',
-    view: require('./views/atoms/index')
-  },
-  //{
-    //title: 'Molecules',
-    //view: require('./views/molecules/index')
-  //},
-  //{
-    //title: 'Organisms',
-    //view: require('./views/organisms/index')
-  //},
-  {
     title: 'Home',
     view: require('./views/home/index')
   }
@@ -27,15 +15,19 @@ const views = [
 const mainView = (state, emit) => {
   const tab = Number(state.query.tab || 0)
 
-  const li = (v, i) => h`
-    <li class='inline-block m-0'>
-      <a class="sub inline-block p-05 mr-05 ${tab === i ? 'border-bottom border-width-2 border-color-orange-1' : 'opacity-075'}" 
-        href='?tab=${i}' 
-        title='${v.title}'>
-        ${v.title}
-      </a>
-    </li>
-  `
+  const li = (v, i) => { 
+    return '' 
+      h`
+      <li class='inline-block m-0'>
+        <a class="sub inline-block p-05 mr-05 ${tab === i ? 'border-bottom border-width-2 border-color-orange-1' : 'opacity-075'}" 
+          href='?tab=${i}' 
+          title='${v.title}'>
+          ${v.title}
+        </a>
+      </li>
+    `
+  }
+
   return h`
     <div>
       <ul class='list-reset m-0 bg-grey-1'>
@@ -74,9 +66,7 @@ const addSideEffects = () => {
   })
   const chartElms = document.querySelectorAll('[data-chart]')
   chartElms.forEach(elm => {
-    const canvas = document.createElement('canvas')
-    const ctx = canvas.getContext('2d')
-    elm.appendChild(canvas)
+    const ctx = elm.getContext('2d')
     const chart = new Chart(ctx, {
       type: 'line',
       data: {
@@ -84,13 +74,13 @@ const addSideEffects = () => {
         datasets: [{
           label: 'Data A',
           data: [5234, 6234, 8234, 10123, 13234, 14644, 16445, 20034],
-          backgroundColor: 'transparent',
+          backgroundColor: 'rgba(0,0,0,0.05)',
           borderColor: '#44ade2'
         },
         {
           label: 'Data B',
           data: [5234, 8234, 10234, 14123, 17234, 20644, 22445, 24034],
-          backgroundColor: 'transparent',
+          backgroundColor: 'rgba(0,0,0,0.05)',
           borderColor: '#f47a44'
         }]
       }
@@ -122,12 +112,8 @@ const toggleInView = (selector) => {
 }
 
 const store = (state, emitter) => {
-  emitter.on('setFonts', (fontStyle) => {
-    state.fontStyle = fontStyle
-    emitter.emit('render')
-  })
   emitter.on('DOMContentLoaded', addSideEffects)
-  emitter.on('update', addSideEffects)
+  emitter.on('render', addSideEffects)
 }
 
 const app = choo()
