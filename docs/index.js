@@ -1,7 +1,7 @@
 const h = require('choo/html')
 // const devtools = require('choo-devtools')
 const choo = require('choo')
-const Chart = require('chart.js')
+const Chart = require('../node_modules/chart.js')
 
 const isProduction = process.env.NODE_ENV === 'production'
 
@@ -113,7 +113,7 @@ const toggleInView = (selector) => {
 
 const store = (state, emitter) => {
   emitter.on('DOMContentLoaded', addSideEffects)
-  emitter.on('render', addSideEffects)
+  emitter.on('update', addSideEffects)
 }
 
 const app = choo()
