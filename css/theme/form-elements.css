@@ -1,5 +1,6 @@
 button,
 *.btn {
+  transition: all ease 200ms;
   border-width: 3px;
   font-weight: 700;
   padding: .5em 2em;

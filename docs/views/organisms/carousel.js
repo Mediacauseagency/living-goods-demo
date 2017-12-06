@@ -13,7 +13,7 @@ const images = (obj, i) => h`
   `
 
 const icons = (obj, i) => h`
-  <div class='js-carousel__icon cursor-pointer px-2 col-3 hover-underline-parent center ${i === 0 ?
+  <div class='js-carousel__icon transition cursor-pointer px-2 col-3 hover-underline-parent center ${i === 0 ?
   "color-orange-1"
   : "color-blue-1"}'>
     <i class='xxx-large icon-type-custom icon-${obj.icon}'></i>

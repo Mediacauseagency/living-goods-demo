@@ -6,6 +6,7 @@ const txt = require('../helpers/txt')
 
 const dividerWithText = require('../molecules/dividerWithText')
 const quoteRow = require('../molecules/quoteRow')
+const insight = require('../molecules/insight')
 
 const heroHeader = require('../organisms/heroHeader')
 const textBoxOverImage = require('../organisms/textBoxOverImage')
@@ -103,6 +104,11 @@ const home = (state) => {
         link: '#'
       })}
       <div class='col-12 py-4'></div>
+      ${insight({
+        text: "Living Goods Kenya Trains, Equips and Empowers 1,000 CHPs!",
+        link: "#",
+        imgUrl: images[3],
+      })}
     </div>
   `
 }

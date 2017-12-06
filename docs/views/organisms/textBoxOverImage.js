@@ -10,7 +10,7 @@ const textBoxOverImage = ({title, imgUrl, text, link, btnText, direction}) => h`
     <div class='textBoxOverImage__textBoxWrapper'>
       <div class='inline-block bg-white sh-2 md-p-1 p-2 textBoxOverImage__textBox'>
         <a href='${link}' title='${title}'>
-          <h2 class='mt-0 h1 md-h2 color-blue-1'>${title}</h2>
+          <h2 class='mt-0 hover-underline h1 md-h2 color-blue-1'>${title}</h2>
         </a>
         <p class='pb-1'>${text}</p>
         <a href='${link}' title='${title}' class='btn btn--orange mb-05'>

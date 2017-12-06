@@ -31,7 +31,7 @@ const navLinks = [
 
 const navLink = o => h`
   <li>
-    <a class='color-white hover-color-orange-1 uppercase border-width-1 mx-1 sub ${o.highlight ? "border-bottom border-color-orange-1": "md-hide" }'
+    <a class='color-white transition hover-color-orange-1 uppercase border-width-1 mx-1 sub ${o.highlight ? "border-bottom border-color-orange-1": "md-hide" }'
        href='${o.url}' 
        title='${o.title}'>
         ${o.title}

@@ -2138,6 +2138,8 @@ pre {
 
 button,
 *.btn {
+  -webkit-transition: all ease 200ms;
+  transition: all ease 200ms;
   border-width: 3px;
   font-weight: 700;
   padding: .5em 2em;
@@ -2743,6 +2745,8 @@ body {
 
 .kern { letter-spacing: .05rem; }
 
+.normal { font-weight: 400;}
+
 .bold { font-weight: 700;}
 
 .x-bold { font-weight: 800;}
@@ -2937,6 +2941,11 @@ p { max-width: 740px; }
 @media (max-width: 496px) {
     .sm-display-block { display: block;}
   }
+
+.transition {
+  -webkit-transition: all ease 200ms;
+  transition: all ease 200ms;
+}
 
 [data-is-valid='false'] input {
 }
