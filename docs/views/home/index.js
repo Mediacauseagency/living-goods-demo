@@ -10,6 +10,7 @@ const quoteRow = require('../molecules/quoteRow')
 const heroHeader = require('../organisms/heroHeader')
 const textBoxOverImage = require('../organisms/textBoxOverImage')
 const carousel = require('../organisms/carousel')
+const chart = require('../organisms/chart')
 
 const textBoxTitle = 'Empowering Community Health Workers Like Janat'
 
@@ -96,7 +97,12 @@ const home = (state) => {
         }
       ])}
       <div class='col-12 py-4'></div>
-
+      ${chart({
+        title: 'Backed By Evidence',
+        text: txt(4),
+        link: '#'
+      })}
+      <div class='col-12 py-4'></div>
     </div>
   `
 }

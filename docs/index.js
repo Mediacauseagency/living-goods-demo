@@ -1,6 +1,7 @@
 const h = require('choo/html')
 // const devtools = require('choo-devtools')
 const choo = require('choo')
+const Chart = require('chart.js')
 
 const isProduction = process.env.NODE_ENV === 'production'
 
@@ -71,6 +72,32 @@ const addSideEffects = () => {
       toggleFades(document.querySelectorAll('.js-carousel__text'), i)
     })
   })
+  const chartElms = document.querySelectorAll('[data-chart]')
+  chartElms.forEach(elm => {
+    const canvas = document.createElement('canvas')
+    const ctx = canvas.getContext('2d')
+    elm.appendChild(canvas)
+    const chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017"],
+        datasets: [{
+          label: 'Data A',
+          data: [5234, 6234, 8234, 10123, 13234, 14644, 16445, 20034],
+          backgroundColor: 'transparent',
+          borderColor: '#44ade2'
+        },
+        {
+          label: 'Data B',
+          data: [5234, 8234, 10234, 14123, 17234, 20644, 22445, 24034],
+          backgroundColor: 'transparent',
+          borderColor: '#f47a44'
+        }]
+      }
+    })
+
+  })
+
 }
 
 const toggleFades = (elms, i) => {

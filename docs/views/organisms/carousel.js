@@ -32,12 +32,12 @@ const text = (obj, i) => h`
 `
 
 const carousel = data => h`
-  <div class='px-1 container' data-in-view='false'>
+  <div class='px-1 container'>
     <div class='flex max-width-3 mx-auto pb-3'>
       ${data.map(icons)}
     </div>
     <div class='flex'>
-      <div class='carousel__images col-6'>
+      <div class='col-6 in-view-fade-in-up' data-in-view='false'>
         <div class='relative fade-in-delay z-1'>
           ${data.map(images)}
         </div>
@@ -45,7 +45,7 @@ const carousel = data => h`
           <div></div>
         </div>
       </div>
-      <div class='carousel__text col-6 pl-3 py-1'>
+      <div class='col-6 pl-3 py-1'>
         <div class='relative fade-in-delay'>
           ${data.map(text)}
         </div>
