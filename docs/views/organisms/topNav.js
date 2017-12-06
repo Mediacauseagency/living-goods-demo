@@ -31,7 +31,8 @@ const navLinks = [
 
 const navLink = o => h`
   <li>
-    <a class='color-white transition hover-color-orange-1 uppercase border-width-1 mx-1 sub ${o.highlight ? "border-bottom border-color-orange-1": "md-hide" }'
+    <a class='transition kern hover-color-orange-1 uppercase ${o.highlight ?
+    "topNav__primaryLink": "topNav__secondaryLink" }'
        href='${o.url}' 
        title='${o.title}'>
         ${o.title}
@@ -40,9 +41,13 @@ const navLink = o => h`
 `
 
 const nav = h`
-  <nav class='container p-1 topNav flex flex-align-center'>
+  <nav class='container p-1 topNav flex flex-align-center relative'>
     <img class='topNav__logo' src='./assets/svgs/logo-white-temp.svg'>
-    <ul class='list-reset m-0 flex flex-wrap flex-justify-flex-end flex-grow-1'>
+    <ul class='topNav__menu--horizontal list-reset m-0'>
+      ${navLinks.map(navLink)}
+    </ul>
+    <a data-toggle-menu class='color-white'>MM</a>
+    <ul data-menu='closed' class='topNav__menu--vertical list-reset m-0'>
       ${navLinks.map(navLink)}
     </ul>
   </nav>

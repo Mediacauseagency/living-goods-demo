@@ -49,8 +49,22 @@ const mainView = (state, emit) => {
   `
 }
 
+const initNav = () => {
+  const toggler = document.querySelector('[data-toggle-menu]')
+  const menu = document.querySelector('[data-menu]')
+  toggler.addEventListener('click', () => {
+    const attr = menu.getAttribute('data-menu') === 'closed' ? 'open' : 'closed'
+    menu.setAttribute('data-menu', attr)
+  })
+  window.document.body.addEventListener('click', (ev) => {
+    if(ev.target.getAttribute('data-toggle-menu')) return
+    menu.setAttribute('data-menu', 'closed')
+  })
+}
+
 const addSideEffects = () => {
   toggleInView('[data-in-view]')
+  initNav()
   let i = 0
   window.document.addEventListener('scroll', () => {
     // debounce dom calculations to every five ticks
@@ -128,7 +142,7 @@ const findOffset = elm => {
 
 const store = (state, emitter) => {
   emitter.on('DOMContentLoaded', addSideEffects)
-  emitter.on('render', () => window.setTimeout(addSideEffects, 100))
+  emitter.on('render', () => window.setTimeout(addSideEffects, 1))
 }
 
 const app = choo()

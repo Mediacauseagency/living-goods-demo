@@ -6,18 +6,6 @@
 
 @font-face {
   font-family: Merri_Sans;
-  src:  url('./assets/fonts/MerriweatherSans-ExtraBold.ttf') format('truetype');
-  font-weight: 800;
-  font-style: normal;
-}
-@font-face {
-  font-family: Merri_Sans;
-  src:  url('./assets/fonts/MerriweatherSans-ExtraBoldItalic.ttf') format('truetype');
-  font-weight: 800;
-  font-style: italic;
-}
-@font-face {
-  font-family: Merri_Sans;
   src:  url('./assets/fonts/MerriweatherSans-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
@@ -49,7 +37,6 @@ body {
 .kern { letter-spacing: .05rem; }
 .normal { font-weight: 400;}
 .bold { font-weight: 700;}
-.x-bold { font-weight: 800;}
 
 .mono,
 pre,
@@ -61,3 +48,10 @@ samp {
 /* same max-width as medium.com's articles */
 p { max-width: 740px; }
 
+blockquote {
+  font-style: italic;
+  font-size: 1.75rem;
+}
+
+blockquote:before {content:"\201C";}
+blockquote:after {content:"\201D";}

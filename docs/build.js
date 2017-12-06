@@ -48,8 +48,22 @@ const mainView = (state, emit) => {
   `;
 };
 
+const initNav = () => {
+  const toggler = document.querySelector('[data-toggle-menu]');
+  const menu = document.querySelector('[data-menu]');
+  toggler.addEventListener('click', () => {
+    const attr = menu.getAttribute('data-menu') === 'closed' ? 'open' : 'closed';
+    menu.setAttribute('data-menu', attr);
+  });
+  window.document.body.addEventListener('click', ev => {
+    if (ev.target.getAttribute('data-toggle-menu')) return;
+    menu.setAttribute('data-menu', 'closed');
+  });
+};
+
 const addSideEffects = () => {
   toggleInView('[data-in-view]');
+  initNav();
   let i = 0;
   window.document.addEventListener('scroll', () => {
     // debounce dom calculations to every five ticks
@@ -124,7 +138,7 @@ const findOffset = elm => {
 
 const store = (state, emitter) => {
   emitter.on('DOMContentLoaded', addSideEffects);
-  emitter.on('render', () => window.setTimeout(addSideEffects, 100));
+  emitter.on('render', () => window.setTimeout(addSideEffects, 1));
 };
 
 const app = choo();
@@ -336,12 +350,6 @@ const variations = [{
 }, {
   className: 'bold italic',
   title: '700 italic'
-}, {
-  className: 'x-bold',
-  title: '800'
-}, {
-  className: 'x-bold italic',
-  title: '800 italic'
 }];
 
 const example = obj => h`
@@ -755,7 +763,7 @@ const navLinks = [{
 
 const navLink = o => h`
   <li>
-    <a class='color-white transition hover-color-orange-1 uppercase border-width-1 mx-1 sub ${o.highlight ? "border-bottom border-color-orange-1" : "md-hide"}'
+    <a class='transition kern hover-color-orange-1 uppercase ${o.highlight ? "topNav__primaryLink" : "topNav__secondaryLink"}'
        href='${o.url}' 
        title='${o.title}'>
         ${o.title}
@@ -764,9 +772,13 @@ const navLink = o => h`
 `;
 
 const nav = h`
-  <nav class='container p-1 topNav flex flex-align-center'>
+  <nav class='container p-1 topNav flex flex-align-center relative'>
     <img class='topNav__logo' src='./assets/svgs/logo-white-temp.svg'>
-    <ul class='list-reset m-0 flex flex-wrap flex-justify-flex-end flex-grow-1'>
+    <ul class='topNav__menu--horizontal list-reset m-0'>
+      ${navLinks.map(navLink)}
+    </ul>
+    <a data-toggle-menu class='color-white'>MM</a>
+    <ul data-menu='closed' class='topNav__menu--vertical list-reset m-0'>
       ${navLinks.map(navLink)}
     </ul>
   </nav>

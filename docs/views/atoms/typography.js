@@ -17,14 +17,6 @@ const variations = [
   {
     className: 'bold italic',
     title: '700 italic'
-  },
-  {
-    className: 'x-bold',
-    title: '800'
-  },
-  {
-    className: 'x-bold italic',
-    title: '800 italic'
   }
 ]
 

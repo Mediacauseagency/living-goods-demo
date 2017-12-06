@@ -5,14 +5,3 @@
 
 *:focus { outline: thin dotted }
 
-body {
-  min-width: 1000px;
-}
-
-blockquote {
-  font-style: italic;
-  font-size: 1.75rem;
-}
-
-blockquote:before {content:"\201C";}
-blockquote:after {content:"\201D";}
