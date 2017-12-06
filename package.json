@@ -30,7 +30,7 @@
     "postcss-each": "^0.10.0",
     "postcss-easy-import": "^3.0.0",
     "postcss-for": "^2.1.1",
-    "tinyify": "^2.3.0",
+    "tinyify": "https://github.com/yutakahoulette/tinyify.git",
     "watchify": "^3.9.0"
   },
   "dependencies": {
@@ -38,7 +38,6 @@
     "choo": "6.5.1",
     "choo-devtools": "^2.2.0",
     "choo-log": "8.0.0",
-    "d3": "^4.11.0",
     "email-validator": "^1.1.1",
     "format-number": "^3.0.0",
     "phone": "^2.0.0-rc.1",
