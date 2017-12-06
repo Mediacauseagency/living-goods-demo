@@ -12,6 +12,7 @@ const heroHeader = require('../organisms/heroHeader')
 const textBoxOverImage = require('../organisms/textBoxOverImage')
 const carousel = require('../organisms/carousel')
 const chart = require('../organisms/chart')
+const whereWeWork = require('../organisms/whereWeWork')
 
 const textBoxTitle = 'Empowering Community Health Workers Like Janat'
 
@@ -25,7 +26,10 @@ const images = [
   'http://www.goodventures.org/images/organizations/Living-Goods-2.jpeg',
   'https://www.openphilanthropy.org/sites/default/files/styles/medium/public/grants/Living-Goods-2014.jpeg?itok=sCuPBCZT',
   'https://i.vimeocdn.com/video/532001913_780x439.jpg',
-  'https://www.lemelson.org/sites/default/files/images/GOOD%20Living%20Goods%20Oct_%202010_05.jpg'
+  'https://www.lemelson.org/sites/default/files/images/GOOD%20Living%20Goods%20Oct_%202010_05.jpg',
+  'https://field.buzz/wp-content/uploads/2017/03/winwin.jpg',
+  'https://media.licdn.com/media/AAEAAQAAAAAAAAdrAAAAJDhkMzVmNjQyLTQ4ZjAtNGU1Yy1hZDQ4LWM5MGFiYTliYjgyMQ.png',
+  'http://breakthrough.unglobalcompact.org/site/assets/files/1139/xliving-goods-second-image.633x0-is.jpg.pagespeed.ic.9wcDQVdRTk.webp'
 ]
 
 const home = (state) => {
@@ -107,8 +111,29 @@ const home = (state) => {
       ${insight({
         text: "Living Goods Kenya Trains, Equips and Empowers 1,000 CHPs!",
         link: "#",
-        imgUrl: images[3],
+        imgUrl: images[4],
       })}
+      <div class='pt-4 pb-3'>
+        ${dividerWithText('Where we work')}
+      </div>
+      ${whereWeWork([
+        {
+          country: 'Uganda',
+          imgUrl: images[5],
+          link: '#'
+        },
+        {
+          country: 'Kenya',
+          imgUrl: images[7],
+          link: '#'
+        }
+      ])}
+      <div class='col-12 py-3'></div>
+      <footer class='bg-blue-3'>
+        <div class='container px-1 py-4 color-white'>
+          <h1 class='m-0 py-4'>Footer content goes here...</h1>
+        </div>
+      </footer>
     </div>
   `
 }

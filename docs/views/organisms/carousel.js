@@ -37,7 +37,7 @@ const carousel = data => h`
       ${data.map(icons)}
     </div>
     <div class='flex'>
-      <div class='col-6 in-view-fade-in-up' data-in-view='false'>
+      <div class='col-6 in-view-fade-in' data-in-view='false'>
         <div class='relative fade-in-delay z-1'>
           ${data.map(images)}
         </div>

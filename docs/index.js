@@ -56,7 +56,7 @@ const addSideEffects = () => {
     // debounce dom calculations to every five ticks
     // to prevent scrolling jank
     i += 1
-    if (i % 5 !== 0) return
+    if (i % 3 !== 0) return
     toggleInView('[data-in-view]')
   })
   const icons = document.querySelectorAll('.js-carousel__icon')
@@ -113,9 +113,17 @@ const toggleInView = (selector) => {
   const elms = document.querySelectorAll(selector)
   elms.forEach(elm => {
     const scrollTop = window.document.body.scrollTop + window.innerHeight
-    const elmTop = elm.offsetTop || elm.offsetParent.offsetTop
+    const elmTop = findOffset(elm)
     elm.setAttribute('data-in-view', scrollTop >= elmTop)
   })
+}
+
+const findOffset = elm => {
+  if(elm.offsetTop) {
+    return elm.offsetTop
+  } else {
+   return findOffset(elm.offsetParent)
+  }
 }
 
 const store = (state, emitter) => {

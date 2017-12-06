@@ -6,7 +6,7 @@
   --grey-1: #f2f2f2;
   --black: #313334;
 
-  --scrim: rgba(0,0,0,0.25);
+  --scrim: rgba(0,0,0,0.3);
   --scrim-dark: rgba(0,0,0,0.8);
   --scrim-white: rgba(255,255,255,0.85);
 }
