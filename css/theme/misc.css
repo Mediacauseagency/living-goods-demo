@@ -36,6 +36,15 @@
   left: 1rem;
 }
 
+
+.bg-grey-1 .dividerWithText__text { 
+  background: var(--grey-1);
+}
+
+.dividerWithText__text { 
+  background: white;
+}
+
 .fade-in-quick {
   opacity: 0;
   visibility: hidden;

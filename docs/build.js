@@ -461,17 +461,18 @@ const images = ['https://i.ytimg.com/vi/Wg8ZX62XpmY/maxresdefault.jpg', 'http://
 
 const home = state => {
   return h`
-    <div class='bg-grey-1'>
+    <div>
       ${heroHeader({
     text: heroText,
     imgUrl: images[0],
     btnLink: '#',
     btnText: 'Join Us'
   })}
-      <div class='py-3 md-py-2'>
-        ${dividerWithText('What we do')}
-      </div>
-      ${textBoxOverImage({
+      <section class='bg-grey-1'>
+        <div class='py-3 md-py-2'>
+          ${dividerWithText('What we do')}
+        </div>
+        ${textBoxOverImage({
     title: textBoxTitle,
     imgUrl: images[1],
     btnText: 'See more',
@@ -479,8 +480,8 @@ const home = state => {
     text: txt(3),
     direction: 'right'
   })}
-      <div class='col-12 py-4 md-py-1'></div>
-      ${textBoxOverImage({
+        <div class='col-12 py-4 md-py-1'></div>
+        ${textBoxOverImage({
     title: textBoxTitle,
     imgUrl: images[2],
     btnText: 'See more',
@@ -488,17 +489,19 @@ const home = state => {
     text: txt(3),
     direction: 'left'
   })}
-      <div class='col-12 py-4 md-py-1'></div>
+        <div class='col-12 py-4 md-py-1'></div>
+      </section>
       ${quoteRow({
     quote: "She is more then just a health worker. She is like my mother.",
     quotee: "Aisah - Living Goods clicnet - Uganda",
     imgUrl: images[3]
   })}
-      <div class='pt-3 pb-4'>
-        ${dividerWithText('Why it works')}
-        <p class='mx-auto mb-0 center'>Combining best practices from business and public health to drive life-saving results.</p>
-      </div>
-      ${carousel([{
+      <section>
+        <div class='pt-3 pb-4'>
+          ${dividerWithText('Why it works')}
+          <p class='mx-auto mb-0 center'>Combining best practices from business and public health to drive life-saving results.</p>
+        </div>
+        ${carousel([{
     title: 'Digitally empowered',
     icon: 'phone',
     text: txt(4),
@@ -523,22 +526,24 @@ const home = state => {
     imgUrl: images[3],
     link: '#'
   }])}
-      <div class='col-12 py-4'></div>
-      ${chart({
+        <div class='col-12 py-4'></div>
+        ${chart({
     title: 'Backed By Evidence',
     text: txt(4),
     link: '#'
   })}
-      <div class='col-12 py-4'></div>
+        <div class='col-12 py-4'></div>
+      </section>
       ${insight({
     text: "Living Goods Kenya Trains, Equips and Empowers 1,000 CHPs!",
     link: "#",
     imgUrl: images[4]
   })}
-      <div class='pt-4 pb-3'>
-        ${dividerWithText('Where we work')}
-      </div>
-      ${whereWeWork([{
+     <section class='bg-grey-1'>
+        <div class='pt-4 pb-3'>
+          ${dividerWithText('Where we work')}
+        </div>
+        ${whereWeWork([{
     country: 'Uganda',
     imgUrl: images[5],
     link: '#'
@@ -547,7 +552,8 @@ const home = state => {
     imgUrl: images[7],
     link: '#'
   }])}
-      <div class='col-12 py-3'></div>
+        <div class='col-12 py-3'></div>
+      </section>
       <footer class='bg-blue-3'>
         <div class='container px-1 py-4 color-white'>
           <h1 class='m-0 py-4'>Footer content goes here...</h1>
@@ -562,9 +568,9 @@ module.exports = home;
 },{"../helpers/randNumber":9,"../helpers/randomImage":10,"../helpers/txt":12,"../molecules/dividerWithText":14,"../molecules/insight":15,"../molecules/quoteRow":16,"../organisms/carousel":17,"../organisms/chart":18,"../organisms/heroHeader":19,"../organisms/textBoxOverImage":20,"../organisms/whereWeWork":22,"choo/html":90}],14:[function(require,module,exports){
 const h = require('choo/html');
 
-const dividerWithText = (text, bgColor = 'grey-1') => h`
+const dividerWithText = text => h`
   <div class='my-1 dividerWithText center mx-auto max-width-3'>
-    <h4 class='bump md-h4 m-0 bg-${bgColor} relative z-1 px-3 md-px-2 inline-block uppercase kern'>${text}</h4>
+    <h4 class='dividerWithText__text bump md-h4 m-0 relative z-1 px-3 md-px-2 inline-block uppercase kern'>${text}</h4>
   </div>
 `;
 
@@ -595,9 +601,9 @@ const h = require('choo/html');
 const quoteRow = ({ quote, quotee, imgUrl }) => h`
   <div class='bg-cover relative' style='background-image: url(${imgUrl})'>
     <div data-in-view='false' class='in-view-fade-in-up container py-4 px-1 color-white relative z-1'>
-      <div class='py-2 max-width-3'>
+      <div class='py-2 md-py-1 sm-py-0 max-width-3'>
         <blockquote>${quote}</blockquote>
-        <p class='align-right m-0 italic'>${quotee}</p>
+        <p class='align-right mb-0 italic'>${quotee}</p>
       </div>
     </div>
     <div class='bg-scrim fit-absolute'></div>

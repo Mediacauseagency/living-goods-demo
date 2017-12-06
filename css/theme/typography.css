@@ -49,8 +49,15 @@ samp {
 p { max-width: 740px; }
 
 blockquote {
+  margin: 0;
   font-style: italic;
   font-size: 1.75rem;
+}
+
+@media (--break-md) {
+  blockquote {
+    font-size: 1.5rem;
+  }
 }
 
 blockquote:before {content:"\201C";}
