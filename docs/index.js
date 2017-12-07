@@ -2,6 +2,8 @@ const h = require('choo/html')
 const devtools = require('choo-devtools')
 const choo = require('choo')
 const chart = require('../js/chart')
+const toggleInView = require('../js/toggleInView')
+const initNav = require('../js/initNav')
 
 const isProduction = process.env.NODE_ENV === 'production'
 
@@ -49,19 +51,6 @@ const mainView = (state, emit) => {
   `
 }
 
-const initNav = () => {
-  const toggler = document.querySelector('[data-toggle-menu]')
-  const menu = document.querySelector('[data-menu]')
-  toggler.addEventListener('click', () => {
-    const attr = menu.getAttribute('data-menu') === 'closed' ? 'open' : 'closed'
-    menu.setAttribute('data-menu', attr)
-  })
-  window.document.body.addEventListener('click', (ev) => {
-    if(ev.target.getAttribute('data-toggle-menu')) return
-    menu.setAttribute('data-menu', 'closed')
-  })
-}
-
 const addSideEffects = () => {
   toggleInView('[data-in-view]', (elm, inView) => {
     elm.setAttribute('data-in-view', inView)
@@ -106,24 +95,6 @@ const toggleSlides = (elms, i) => {
       elm.classList.add('fade-in-quick')
     }
   })
-}
-
-const toggleInView = (selector, cb) => {
-  const elms = document.querySelectorAll(selector)
-  elms.forEach((elm, i) => {
-    const scrollTop = window.document.body.scrollTop + window.innerHeight
-    const elmTop = findOffset(elm)
-    const inView = scrollTop >= elmTop
-    cb(elm, inView, i)
-  })
-}
-
-const findOffset = elm => {
-  if(elm.offsetTop) {
-    return elm.offsetTop
-  } else {
-   return findOffset(elm.offsetParent)
-  }
 }
 
 const store = (state, emitter) => {
