@@ -20,7 +20,7 @@ const listCol = ({title, links}) => h`
 const buttonCol = h`
   <div class='md-col-12'>
     <p class='mt-0 center'>Social links go here</p>
-    <div class='flex flex-wrap'>
+    <div class='md-flex md-flex-wrap'>
       <div class='md-col-6 md-pr-1 sm-col-12 sm-p-0'>
         <button class='btn--white md-col-12'>Donate</button>
       </div>

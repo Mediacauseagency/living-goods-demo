@@ -21,9 +21,11 @@
 }
 
 @each $size in (lg,md,sm) {
-  .$(size)-flex { display: flex; }
-  .$(size)-flex-none { flex: none;}
-  .$(size)-flex-wrap { flex-wrap: wrap; }
+  @media (--break-$(size)) {
+    .$(size)-flex { display: flex; }
+    .$(size)-flex-none { flex: none;}
+    .$(size)-flex-wrap { flex-wrap: wrap; }
+  }
   @for $i from 1 to 4 {
     @media (--break-$(size)) {
       .$(size)-order-$(i) { order: $(i)}
