@@ -42,7 +42,7 @@ const home = (state) => {
         linkText: 'Join Us'
       })}
       <section class='bg-grey-1'>
-        <div class='py-3 md-py-2'>
+        <div class='py-4 md-py-3 sm-py-2'>
           ${dividerWithText('What we do')}
         </div>
         ${textBoxOverImage({
@@ -70,7 +70,7 @@ const home = (state) => {
         imgUrl: images[3],
       })}
       <section>
-        <div class='pt-3 pb-4'>
+        <div class='py-4 md-py-3 sm-py-2'>
           ${dividerWithText('Why it works')}
           <p class='mx-auto mb-0 center px-1'>Combining best practices from business and public health to drive life-saving results.</p>
         </div>
@@ -104,13 +104,13 @@ const home = (state) => {
             link: '#'
           }
         ])}
-        <div class='col-12 py-4'></div>
+        <div class='col-12 py-4 md-py-2 sm-py-1'></div>
         ${chart({
           title: 'Backed By Evidence',
           text: txt(4),
           link: '#'
         })}
-        <div class='col-12 py-4'></div>
+        <div class='col-12 py-4 md-py-3 sm-py-2'></div>
       </section>
       ${insight({
         text: "Living Goods Kenya Trains, Equips and Empowers 1,000 CHPs!",
@@ -118,7 +118,7 @@ const home = (state) => {
         imgUrl: images[4],
       })}
      <section class='bg-grey-1'>
-        <div class='pt-4 pb-3'>
+        <div class='pt-4 pb-3 md-pt-3 md-pb-2 sm-pt-2 sm-pb-1'>
           ${dividerWithText('Where we work')}
         </div>
         ${whereWeWork([
@@ -133,7 +133,7 @@ const home = (state) => {
             link: '#'
           }
         ])}
-        <div class='col-12 py-3'></div>
+        <div class='col-12 py-4 md-py-3 sm-py-2'></div>
       </section>
       <footer class='bg-blue-3'>
         <div class='container px-1 py-4 color-white'>

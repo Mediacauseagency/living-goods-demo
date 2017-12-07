@@ -108,9 +108,11 @@ const addSideEffects = () => {
 
 const toggleSlides = (elms, i) => {
   elms.forEach((elm, ii) => {
+    const child = elm.querySelector('[data-in-view]');
+    child.setAttribute('data-in-view', true);
     if (i !== ii) {
-      elm.classList.remove('fade-in-quick');
       elm.classList.add('fade-out-quick');
+      elm.classList.remove('fade-in-quick');
       elm.classList.add('hide');
     } else {
       elm.classList.remove('hide');
@@ -466,17 +468,17 @@ const home = state => {
       ${heroHeader({
     text: heroText,
     imgUrl: images[0],
-    btnLink: '#',
-    btnText: 'Join Us'
+    link: '#',
+    linkText: 'Join Us'
   })}
       <section class='bg-grey-1'>
-        <div class='py-3 md-py-2'>
+        <div class='py-4 md-py-3 sm-py-2'>
           ${dividerWithText('What we do')}
         </div>
         ${textBoxOverImage({
     title: textBoxTitle,
     imgUrl: images[1],
-    btnText: 'See more',
+    linkText: 'See more',
     link: '#',
     text: txt(3),
     direction: 'right'
@@ -485,7 +487,7 @@ const home = state => {
         ${textBoxOverImage({
     title: textBoxTitle,
     imgUrl: images[2],
-    btnText: 'See more',
+    linkText: 'See more',
     link: '#',
     text: txt(3),
     direction: 'left'
@@ -498,7 +500,7 @@ const home = state => {
     imgUrl: images[3]
   })}
       <section>
-        <div class='pt-3 pb-4'>
+        <div class='py-4 md-py-3 sm-py-2'>
           ${dividerWithText('Why it works')}
           <p class='mx-auto mb-0 center px-1'>Combining best practices from business and public health to drive life-saving results.</p>
         </div>
@@ -527,13 +529,13 @@ const home = state => {
     imgUrl: images[3],
     link: '#'
   }])}
-        <div class='col-12 py-4'></div>
+        <div class='col-12 py-4 md-py-2 sm-py-1'></div>
         ${chart({
     title: 'Backed By Evidence',
     text: txt(4),
     link: '#'
   })}
-        <div class='col-12 py-4'></div>
+        <div class='col-12 py-4 md-py-3 sm-py-2'></div>
       </section>
       ${insight({
     text: "Living Goods Kenya Trains, Equips and Empowers 1,000 CHPs!",
@@ -541,7 +543,7 @@ const home = state => {
     imgUrl: images[4]
   })}
      <section class='bg-grey-1'>
-        <div class='pt-4 pb-3'>
+        <div class='pt-4 pb-3 md-pt-3 md-pb-2 sm-pt-2 sm-pb-1'>
           ${dividerWithText('Where we work')}
         </div>
         ${whereWeWork([{
@@ -553,7 +555,7 @@ const home = state => {
     imgUrl: images[7],
     link: '#'
   }])}
-        <div class='col-12 py-3'></div>
+        <div class='col-12 py-4 md-py-3 sm-py-2'></div>
       </section>
       <footer class='bg-blue-3'>
         <div class='container px-1 py-4 color-white'>
@@ -582,11 +584,11 @@ const h = require('choo/html');
 
 const insight = ({ text, link, imgUrl }) => h`
   <div class='bg-cover relative' style='background-image: url(${imgUrl})'>
-    <div data-in-view='false' class='in-view-fade-in-up flex container py-4 px-1 color-white relative z-1'>
-      <div class='col-7'></div>
-      <div class='py-2 col-5'>
+    <div data-in-view='false' class='in-view-fade-in-up flex container py-4 md-py-2 px-1 color-white relative z-1'>
+      <div class='col-7 md-col-4 sm-hide'></div>
+      <div class='py-2 col-5 md-col-8 sm-col-12'>
         <p class='m-0 uppercase sub'>Key Insight</p>
-        <h2 class='mt-1 pb-2 normal'>${text}</h2>
+        <h2 class='mt-1 pb-2 normal sm-h3'>${text}</h2>
         <a class='btn btn--white'>Read more</a>
       </div>
     </div>
@@ -615,6 +617,7 @@ module.exports = quoteRow;
 
 },{"choo/html":90}],17:[function(require,module,exports){
 const h = require('choo/html');
+const textBoxOverImage = require('./textBoxOverImage');
 
 const icons = (obj, i) => h`
   <div class='js-carousel__icon transition cursor-pointer px-2 md-px-1 col-3 hover-underline-parent center ${i === 0 ? "color-orange-1" : "color-blue-1"}'>
@@ -624,24 +627,15 @@ const icons = (obj, i) => h`
 `;
 
 const slide = (obj, i) => h`
-  <div data-in-view='false' class='js-carousel__slide ${i === 0 ? "fade-in-quick" : "fade-out-quick hide"} container clearfix px-1 sm-px-0
-  relative textBoxOverImage textBoxOverImage--right'>
-    <div class=' textBoxOverImage__image'>
-      <div class='aspect aspect-2x1'>
-        <div class='bg-cover bg-scrim' style='background-image: url(${obj.imgUrl})'></div>
-      </div>
-    </div>
-    <div class='textBoxOverImage__textBoxWrapper'>
-      <div class='inline-block bg-white sh-2 md-p-1 p-2 textBoxOverImage__textBox'> 
-        <a href='${obj.link}' title='${obj.title}'> 
-          <h2 class='mt-0 hover-underline md-h3 color-blue-1'>${obj.title}</h2> 
-        </a>
-        <p class='pb-05'>${obj.text}</p>
-        <a href='${obj.link}' title='${obj.title}' class='caps-link'>
-          Learn more
-        </a> 
-      </div>
-    </div>
+  <div class='js-carousel__slide ${i === 0 ? "" : "hide"}'>
+    ${textBoxOverImage({
+  title: obj.title,
+  imgUrl: obj.imgUrl,
+  text: obj.text,
+  link: obj.link,
+  linkText: 'Learn more',
+  direction: 'right'
+})}
   </div>
 `;
 
@@ -662,22 +656,22 @@ const carousel = data => h`
 
 module.exports = carousel;
 
-},{"choo/html":90}],18:[function(require,module,exports){
+},{"./textBoxOverImage":20,"choo/html":90}],18:[function(require,module,exports){
 const h = require('choo/html');
 
 const chart = obj => h`
-  <div class='px-1 container flex'>
-    <div class='col-6 pr-3'>
-      <a class='color-blue-1 hover-underline' title='${obj.title}' href='${obj.link}'>
-        <h2 class='h1'>${obj.title}</h2>
-      </a>
-      <p class='mb-2'>${obj.text}</p>
-      <a class='btn btn--orange' href='${obj.link}' title='${obj.title}'>Learn more</a>
-    </div>
-    <div class='col-6 in-view-fade-in' data-in-view='false'>
-      <canvas data-chart='line' 
-        data-labels='apple, orange, pear, guava'
-        data-value='34, 56, 125, 45'></canvas>
+  <div class='px-1 container'>
+    <h2 class='center mt-0 pb-1 md-pb-0 sm-h3 color-blue-1'>${obj.title}</h2> 
+    <div class='flex flex-align-center flex-wrap'>
+      <div class='col-5 pr-3 md-col-12 md-pr-0 md-pb-3'>
+        <p class='pb-05'>${obj.text}</p>
+        <a class='caps-link' href='${obj.link}' title='${obj.title}'>Learn more</a>
+      </div>
+      <div class='col-7 md-col-12'>
+        <canvas data-chart='line' 
+          data-labels='apple, orange, pear, guava'
+          data-value='34, 56, 125, 45'></canvas>
+      </div>
     </div>
   </div>
 `;
@@ -689,7 +683,7 @@ const h = require('choo/html');
 const topNav = require('./topNav');
 const img = require('../helpers/randomImage');
 
-const heroHeader = ({ text, imgUrl, btnLink, btnText }) => h`
+const heroHeader = ({ text, imgUrl, link, linkText }) => h`
   <div class='bg-cover relative bg-grey-1' style='background-image: url(${imgUrl})'>
     <div class='z-1 relative'>
       ${topNav}
@@ -699,7 +693,7 @@ const heroHeader = ({ text, imgUrl, btnLink, btnText }) => h`
             ${text}
           </h1>
           <div class='pt-2'>
-            <a class='btn btn--white' href='${btnLink}' title='${btnText}'>${btnText}</a>
+            <a class='btn btn--white' href='${link}' title='${linkText}'>${linkText}</a>
           </div>
         </div>
       </div>
@@ -713,7 +707,7 @@ module.exports = heroHeader;
 },{"../helpers/randomImage":10,"./topNav":21,"choo/html":90}],20:[function(require,module,exports){
 const h = require('choo/html');
 
-const textBoxOverImage = ({ title, imgUrl, text, link, btnText, direction }) => h`
+const textBoxOverImage = ({ title, imgUrl, text, link, linkText, direction }) => h`
   <div data-in-view='false' class='container clearfix px-1 sm-px-0 relative textBoxOverImage textBoxOverImage--${direction}'>
     <div class=' textBoxOverImage__image'>
       <div class='aspect aspect-2x1'>
@@ -727,7 +721,7 @@ const textBoxOverImage = ({ title, imgUrl, text, link, btnText, direction }) => 
         </a>
         <p class='pb-05'>${text}</p>
         <a href='${link}' title='${title}' class='caps-link'>
-          ${btnText}
+          ${linkText}
         </a>
       </div>
     </div>
@@ -790,7 +784,7 @@ module.exports = nav;
 const h = require('choo/html');
 
 const section = obj => h`
-  <div class='col-6 p-1'>
+  <div class='col-6 p-1 mdsm-col-12'>
     <a class='block aspect aspect-2x1'>
       <div class='bg-cover flex flex-align-center flex-justify-center' style='background-image: url(${obj.imgUrl})'>
         <div class='in-view-fade-in px-1 color-white relative z-1'>
@@ -804,7 +798,7 @@ const section = obj => h`
 `;
 
 const whereWeWork = data => h`
-  <div class='container flex' data-in-view='false'>
+  <div class='container flex flex-wrap' data-in-view='false'>
     ${data.map(section)}
   </div>
 
