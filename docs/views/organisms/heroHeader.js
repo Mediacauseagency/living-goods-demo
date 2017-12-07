@@ -2,7 +2,7 @@ const h = require('choo/html')
 const topNav = require('./topNav')
 const img = require('../helpers/randomImage')
 
-const heroHeader = ({text, imgUrl, btnLink, btnText}) => h`
+const heroHeader = ({text, imgUrl, link, linkText}) => h`
   <div class='bg-cover relative bg-grey-1' style='background-image: url(${imgUrl})'>
     <div class='z-1 relative'>
       ${topNav}
@@ -12,7 +12,7 @@ const heroHeader = ({text, imgUrl, btnLink, btnText}) => h`
             ${text}
           </h1>
           <div class='pt-2'>
-            <a class='btn btn--white' href='${btnLink}' title='${btnText}'>${btnText}</a>
+            <a class='btn btn--white' href='${link}' title='${linkText}'>${linkText}</a>
           </div>
         </div>
       </div>

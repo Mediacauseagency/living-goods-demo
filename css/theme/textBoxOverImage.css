@@ -74,6 +74,7 @@
 }
 
 @media (max-width: 800px) {
+  [data-in-view='true'] .textBoxOverImage__textBoxWrapper,
   [data-in-view='true'] .textBoxOverImage__image {
     animation: fadein 800ms 200ms forwards;
   }
@@ -90,7 +91,7 @@
   [data-in-view='true'] .textBoxOverImage__textBoxWrapper { 
     width: calc(100%-8rem);
     position: relative;
-    transform: translateY(-3rem) translateX(4rem);
+    transform: translateY(-3rem) translateX(4rem) translateZ(0);
     top: 0;
     right: 0;
   }

@@ -112,9 +112,11 @@ const addSideEffects = () => {
 
 const toggleSlides = (elms, i) => {
   elms.forEach((elm, ii) => {
+    const child = elm.querySelector('[data-in-view]')
+    child.setAttribute('data-in-view', true)
     if(i !== ii) {
-      elm.classList.remove('fade-in-quick')
       elm.classList.add('fade-out-quick')
+      elm.classList.remove('fade-in-quick')
       elm.classList.add('hide')
     } else {
       elm.classList.remove('hide')

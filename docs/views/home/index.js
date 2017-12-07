@@ -38,8 +38,8 @@ const home = (state) => {
       ${heroHeader({
         text: heroText,
         imgUrl: images[0],
-        btnLink: '#',
-        btnText: 'Join Us'
+        link: '#',
+        linkText: 'Join Us'
       })}
       <section class='bg-grey-1'>
         <div class='py-3 md-py-2'>
@@ -48,7 +48,7 @@ const home = (state) => {
         ${textBoxOverImage({
           title: textBoxTitle,
           imgUrl: images[1],
-          btnText: 'See more',
+          linkText: 'See more',
           link: '#',
           text: txt(3),
           direction: 'right'
@@ -57,7 +57,7 @@ const home = (state) => {
         ${textBoxOverImage({
           title: textBoxTitle,
           imgUrl: images[2],
-          btnText: 'See more',
+          linkText: 'See more',
           link: '#',
           text: txt(3),
           direction: 'left'

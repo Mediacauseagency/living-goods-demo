@@ -1,6 +1,6 @@
 const h = require('choo/html')
 
-const textBoxOverImage = ({title, imgUrl, text, link, btnText, direction}) => h`
+const textBoxOverImage = ({title, imgUrl, text, link, linkText, direction}) => h`
   <div data-in-view='false' class='container clearfix px-1 sm-px-0 relative textBoxOverImage textBoxOverImage--${direction}'>
     <div class=' textBoxOverImage__image'>
       <div class='aspect aspect-2x1'>
@@ -14,7 +14,7 @@ const textBoxOverImage = ({title, imgUrl, text, link, btnText, direction}) => h`
         </a>
         <p class='pb-05'>${text}</p>
         <a href='${link}' title='${title}' class='caps-link'>
-          ${btnText}
+          ${linkText}
         </a>
       </div>
     </div>
