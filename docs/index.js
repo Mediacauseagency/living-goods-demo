@@ -81,8 +81,7 @@ const addSideEffects = () => {
         elm.classList.add('color-blue-1')
       })
       icon.classList.add('color-orange-1')
-      toggleFades(document.querySelectorAll('.js-carousel__image'), i)
-      toggleFades(document.querySelectorAll('.js-carousel__text'), i)
+      toggleSlides(document.querySelectorAll('.js-carousel__slide'), i)
     })
   })
   const chartElms = document.querySelectorAll('[data-chart]')
@@ -111,12 +110,14 @@ const addSideEffects = () => {
 
 }
 
-const toggleFades = (elms, i) => {
+const toggleSlides = (elms, i) => {
   elms.forEach((elm, ii) => {
     if(i !== ii) {
       elm.classList.remove('fade-in-quick')
       elm.classList.add('fade-out-quick')
+      elm.classList.add('hide')
     } else {
+      elm.classList.remove('hide')
       elm.classList.remove('fade-out-quick')
       elm.classList.add('fade-in-quick')
     }

@@ -72,7 +72,7 @@ const home = (state) => {
       <section>
         <div class='pt-3 pb-4'>
           ${dividerWithText('Why it works')}
-          <p class='mx-auto mb-0 center'>Combining best practices from business and public health to drive life-saving results.</p>
+          <p class='mx-auto mb-0 center px-1'>Combining best practices from business and public health to drive life-saving results.</p>
         </div>
         ${carousel([
           {

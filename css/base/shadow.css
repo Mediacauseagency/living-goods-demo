@@ -9,3 +9,9 @@
   .sh-$(i) { box-shadow: var(--sh-$(i)); }
 }
 
+@each $size in (lg,md,mdsm,sm) {
+  @media (--break-$(size)) {
+    .$(size)-sh-none { box-shadow: none; }
+  }
+}
+

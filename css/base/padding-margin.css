@@ -39,7 +39,7 @@
   }
 }
 
-@each $size in (lg,md,sm) {
+@each $size in (lg,md,mdsm,sm) {
   @for $i from 0 to 4 {
     @media (--break-$(size)) {
       @each $prop, $abbrv in (margin, padding), (m, p) {

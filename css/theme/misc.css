@@ -52,13 +52,6 @@
   animation: fadein 300ms 300ms forwards;
 }
 
-.fade-in-delay {
-  opacity: 0;
-  visibility: hidden;
-  transform: translateZ(0);
-  animation: fadein 300ms 600ms forwards;
-}
-
 @keyframes fadein {
   0%   { 
     opacity: 0; 
