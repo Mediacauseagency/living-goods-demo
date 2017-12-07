@@ -1,9 +1,8 @@
 const h = require('choo/html')
 const devtools = require('choo-devtools')
 const choo = require('choo')
-const chart = require('../js/chart')
-const toggleInView = require('../js/toggleInView')
-const initNav = require('../js/initNav')
+
+const addSideEffects = require('../js/addSideEffects')
 
 const isProduction = process.env.NODE_ENV === 'production'
 
@@ -49,52 +48,6 @@ const mainView = (state, emit) => {
       </main>
     </div>
   `
-}
-
-const addSideEffects = () => {
-  toggleInView('[data-in-view]', (elm, inView) => {
-    elm.setAttribute('data-in-view', inView)
-  })
-  toggleInView('[data-chart]', chart)
-  initNav()
-  let i = 0
-  window.document.addEventListener('scroll', () => {
-    // debounce dom calculations to every five ticks
-    // to prevent scrolling jank
-    i += 1
-    if (i % 3 !== 0) return
-    toggleInView('[data-in-view]', (elm, inView) => {
-      elm.setAttribute('data-in-view', inView)
-    })
-    toggleInView('[data-chart]', chart)
-  })
-  const icons = document.querySelectorAll('.js-carousel__icon')
-  icons.forEach((icon, i) => {
-    icon.addEventListener('click', () => {
-      icons.forEach((elm) => {
-        elm.classList.remove('color-orange-1')
-        elm.classList.add('color-blue-1')
-      })
-      icon.classList.add('color-orange-1')
-      toggleSlides(document.querySelectorAll('.js-carousel__slide'), i)
-    })
-  })
-}
-
-const toggleSlides = (elms, i) => {
-  elms.forEach((elm, ii) => {
-    const child = elm.querySelector('[data-in-view]')
-    child.setAttribute('data-in-view', true)
-    if(i !== ii) {
-      elm.classList.add('fade-out-quick')
-      elm.classList.remove('fade-in-quick')
-      elm.classList.add('hide')
-    } else {
-      elm.classList.remove('hide')
-      elm.classList.remove('fade-out-quick')
-      elm.classList.add('fade-in-quick')
-    }
-  })
 }
 
 const store = (state, emitter) => {
