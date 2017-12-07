@@ -63,7 +63,10 @@ const initNav = () => {
 }
 
 const addSideEffects = () => {
-  toggleInView('[data-in-view]')
+  toggleInView('[data-in-view]', (elm, inView) => {
+    elm.setAttribute('data-in-view', inView)
+  })
+  toggleInView('[data-chart]', initChart)
   initNav()
   let i = 0
   window.document.addEventListener('scroll', () => {
@@ -71,7 +74,10 @@ const addSideEffects = () => {
     // to prevent scrolling jank
     i += 1
     if (i % 3 !== 0) return
-    toggleInView('[data-in-view]')
+    toggleInView('[data-in-view]', (elm, inView) => {
+      elm.setAttribute('data-in-view', inView)
+    })
+    toggleInView('[data-chart]', initChart)
   })
   const icons = document.querySelectorAll('.js-carousel__icon')
   icons.forEach((icon, i) => {
@@ -84,30 +90,6 @@ const addSideEffects = () => {
       toggleSlides(document.querySelectorAll('.js-carousel__slide'), i)
     })
   })
-  const chartElms = document.querySelectorAll('[data-chart]')
-  chartElms.forEach(elm => {
-    const ctx = elm.getContext('2d')
-    const chart = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017"],
-        datasets: [{
-          label: 'Data A',
-          data: [5234, 6234, 8234, 10123, 13234, 14644, 16445, 20034],
-          backgroundColor: 'rgba(0,0,0,0.05)',
-          borderColor: '#44ade2'
-        },
-        {
-          label: 'Data B',
-          data: [5234, 8234, 10234, 14123, 17234, 20644, 22445, 24034],
-          backgroundColor: 'rgba(0,0,0,0.05)',
-          borderColor: '#f47a44'
-        }]
-      }
-    })
-
-  })
-
 }
 
 const toggleSlides = (elms, i) => {
@@ -126,13 +108,67 @@ const toggleSlides = (elms, i) => {
   })
 }
 
-const toggleInView = (selector) => {
+const toggleInView = (selector, cb) => {
   const elms = document.querySelectorAll(selector)
-  elms.forEach(elm => {
+  elms.forEach((elm, i) => {
     const scrollTop = window.document.body.scrollTop + window.innerHeight
     const elmTop = findOffset(elm)
-    elm.setAttribute('data-in-view', scrollTop >= elmTop)
+    const inView = scrollTop >= elmTop
+    cb(elm, inView, i)
   })
+}
+
+const initChart = (elm, inView, i) => {
+  let ctx
+  let chart 
+  const dataA = [5234, 6234, 8234, 10123, 13234, 14644, 16445, 20034]
+  const dataB = [5234, 8234, 10234, 14123, 17234, 20644, 22445, 24034]
+  const chartKey = `_chart_${i}`
+
+  if (!window[chartKey] && !window[chartKey + '_update']) {
+    ctx = elm.getContext('2d')
+    chart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017"],
+        datasets: [{
+          label: 'Data A',
+          data: dataA.map(x => 0),
+          backgroundColor: 'rgba(0,0,0,0.05)',
+          borderColor: '#44ade2'
+        },
+        {
+          label: 'Data B',
+          data: dataB.map(x => 0),
+          backgroundColor: 'rgba(0,0,0,0.05)',
+          borderColor: '#f47a44'
+        }]
+      },
+      options: {
+        scaleBeginAtZero: true,
+        animation: {
+          duration: 3000
+        }
+      }
+    })
+    window[chartKey] = chart
+  }
+
+  if (!inView && window[chartKey + '_populated']) {
+    const savedChart = window[chartKey]
+    savedChart.data.datasets[0].data = dataA.map(x => 0)
+    savedChart.data.datasets[1].data = dataB.map(x => 0)
+    savedChart.update()
+    window[chartKey + '_populated'] = false
+  }
+  if (inView && !window[chartKey + '_populated']) {
+    const savedChart = window[chartKey]
+    savedChart.data.datasets[0].data = dataA
+    savedChart.data.datasets[1].data = dataB
+    savedChart.update()
+    window[chartKey + '_populated'] = true
+  }
+
 }
 
 const findOffset = elm => {
