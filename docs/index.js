@@ -1,7 +1,7 @@
 const h = require('choo/html')
 const devtools = require('choo-devtools')
 const choo = require('choo')
-const Chart = require('../node_modules/chart.js')
+const chart = require('../js/chart')
 
 const isProduction = process.env.NODE_ENV === 'production'
 
@@ -66,7 +66,7 @@ const addSideEffects = () => {
   toggleInView('[data-in-view]', (elm, inView) => {
     elm.setAttribute('data-in-view', inView)
   })
-  toggleInView('[data-chart]', initChart)
+  toggleInView('[data-chart]', chart)
   initNav()
   let i = 0
   window.document.addEventListener('scroll', () => {
@@ -77,7 +77,7 @@ const addSideEffects = () => {
     toggleInView('[data-in-view]', (elm, inView) => {
       elm.setAttribute('data-in-view', inView)
     })
-    toggleInView('[data-chart]', initChart)
+    toggleInView('[data-chart]', chart)
   })
   const icons = document.querySelectorAll('.js-carousel__icon')
   icons.forEach((icon, i) => {
@@ -116,59 +116,6 @@ const toggleInView = (selector, cb) => {
     const inView = scrollTop >= elmTop
     cb(elm, inView, i)
   })
-}
-
-const initChart = (elm, inView, i) => {
-  let ctx
-  let chart 
-  const dataA = [5234, 6234, 8234, 10123, 13234, 14644, 16445, 20034]
-  const dataB = [5234, 8234, 10234, 14123, 17234, 20644, 22445, 24034]
-  const chartKey = `_chart_${i}`
-
-  if (!window[chartKey] && !window[chartKey + '_update']) {
-    ctx = elm.getContext('2d')
-    chart = new Chart(ctx, {
-      type: 'line',
-      data: {
-        labels: ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017"],
-        datasets: [{
-          label: 'Data A',
-          data: dataA.map(x => 0),
-          backgroundColor: 'rgba(0,0,0,0.05)',
-          borderColor: '#44ade2'
-        },
-        {
-          label: 'Data B',
-          data: dataB.map(x => 0),
-          backgroundColor: 'rgba(0,0,0,0.05)',
-          borderColor: '#f47a44'
-        }]
-      },
-      options: {
-        scaleBeginAtZero: true,
-        animation: {
-          duration: 3000
-        }
-      }
-    })
-    window[chartKey] = chart
-  }
-
-  if (!inView && window[chartKey + '_populated']) {
-    const savedChart = window[chartKey]
-    savedChart.data.datasets[0].data = dataA.map(x => 0)
-    savedChart.data.datasets[1].data = dataB.map(x => 0)
-    savedChart.update()
-    window[chartKey + '_populated'] = false
-  }
-  if (inView && !window[chartKey + '_populated']) {
-    const savedChart = window[chartKey]
-    savedChart.data.datasets[0].data = dataA
-    savedChart.data.datasets[1].data = dataB
-    savedChart.update()
-    window[chartKey + '_populated'] = true
-  }
-
 }
 
 const findOffset = elm => {
