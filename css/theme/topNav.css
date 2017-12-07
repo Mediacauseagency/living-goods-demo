@@ -1,7 +1,7 @@
 .topNav__logo {
   max-width: 11rem;
 }
-    
+
 .topNav__primaryLink {
   position: relative;
 }
@@ -78,6 +78,7 @@
   .topNav__menu--vertical {
     display: initial;
   }
+
   .topNav__menu--vertical .topNav__primaryLink,
   .topNav__menu--horizontal .topNav__secondaryLink {
     display: none;
@@ -85,8 +86,14 @@
 }
 
 @media (max-width: 550px) {
+  .topNav__menu--horizontal,
   .topNav__menu--horizontal .topNav__primaryLink {
     display: none;
+  }
+  [data-toggle-menu] {
+    display: flex; 
+    flex-grow: 2; 
+    justify-content: flex-end; 
   }
   .topNav__menu--vertical .topNav__primaryLink {
     display: initial;

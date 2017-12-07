@@ -178,7 +178,7 @@ const findOffset = elm => {
 
 const store = (state, emitter) => {
   emitter.on('DOMContentLoaded', addSideEffects);
-  emitter.on('render', () => window.setTimeout(addSideEffects, 1));
+  emitter.on('render', () => window.setTimeout(addSideEffects, 100));
 };
 
 const app = choo();
@@ -190,7 +190,7 @@ app.route('*', mainView);
 app.mount('#js-container');
 
 }).call(this,require('_process'))
-},{"../node_modules/chart.js":26,"./views/atoms/index":5,"./views/home/index":13,"_process":121,"choo":91,"choo-devtools":81,"choo/html":90}],2:[function(require,module,exports){
+},{"../node_modules/chart.js":27,"./views/atoms/index":5,"./views/home/index":13,"_process":122,"choo":92,"choo-devtools":82,"choo/html":91}],2:[function(require,module,exports){
 const h = require('choo/html');
 
 const colors = [{
@@ -227,7 +227,7 @@ const square = obj => h`
 
 module.exports = h`<div class='flex flex-wrap'>${colors.map(square)}</div>`;
 
-},{"choo/html":90}],3:[function(require,module,exports){
+},{"choo/html":91}],3:[function(require,module,exports){
 const h = require('choo/html');
 
 const button = (className, text) => h`
@@ -323,7 +323,7 @@ module.exports = h`
   </div>
 `;
 
-},{"choo/html":90}],4:[function(require,module,exports){
+},{"choo/html":91}],4:[function(require,module,exports){
 const h = require('choo/html');
 
 const custom = ['baby', 'bowl', 'cost', 'family', 'phone', 'pill', 'results', 'syringe', 'training'];
@@ -351,7 +351,7 @@ module.exports = h`
   </div>
 `;
 
-},{"choo/html":90}],5:[function(require,module,exports){
+},{"choo/html":91}],5:[function(require,module,exports){
 const h = require('choo/html');
 const parameterize = require('../helpers/parameterize');
 const docs = require('../helpers/docs');
@@ -374,7 +374,7 @@ const atoms = () => docs('Atoms', sections);
 
 module.exports = atoms;
 
-},{"../helpers/docs":7,"../helpers/parameterize":8,"./colors":2,"./form-elements":3,"./icons":4,"./typography":6,"choo/html":90}],6:[function(require,module,exports){
+},{"../helpers/docs":7,"../helpers/parameterize":8,"./colors":2,"./form-elements":3,"./icons":4,"./typography":6,"choo/html":91}],6:[function(require,module,exports){
 const h = require('choo/html');
 const txt = require('../helpers/txt')(1);
 
@@ -410,7 +410,7 @@ module.exports = h`
   </div>
 `;
 
-},{"../helpers/txt":12,"choo/html":90}],7:[function(require,module,exports){
+},{"../helpers/txt":12,"choo/html":91}],7:[function(require,module,exports){
 const h = require('choo/html');
 const parameterize = require('../helpers/parameterize');
 
@@ -443,7 +443,7 @@ const docs = (title, sections) => {
 
 module.exports = docs;
 
-},{"../helpers/parameterize":8,"choo/html":90}],8:[function(require,module,exports){
+},{"../helpers/parameterize":8,"choo/html":91}],8:[function(require,module,exports){
 module.exports = function parameterize(str) {
   return str.replace(/\W+/g, ' ').trim().replace(/\s/g, '-').toLowerCase();
 };
@@ -489,6 +489,7 @@ const textBoxOverImage = require('../organisms/textBoxOverImage');
 const carousel = require('../organisms/carousel');
 const chart = require('../organisms/chart');
 const whereWeWork = require('../organisms/whereWeWork');
+const footer = require('../organisms/footer');
 
 const textBoxTitle = 'Empowering Community Health Workers Like Janat';
 
@@ -594,18 +595,14 @@ const home = state => {
   }])}
         <div class='col-12 py-4 md-py-3 sm-py-2'></div>
       </section>
-      <footer class='bg-blue-3'>
-        <div class='container px-1 py-4 color-white'>
-          <h1 class='m-0 py-4'>Footer content goes here...</h1>
-        </div>
-      </footer>
+      ${footer()}
     </div>
   `;
 };
 
 module.exports = home;
 
-},{"../helpers/randNumber":9,"../helpers/randomImage":10,"../helpers/txt":12,"../molecules/dividerWithText":14,"../molecules/insight":15,"../molecules/quoteRow":16,"../organisms/carousel":17,"../organisms/chart":18,"../organisms/heroHeader":19,"../organisms/textBoxOverImage":20,"../organisms/whereWeWork":22,"choo/html":90}],14:[function(require,module,exports){
+},{"../helpers/randNumber":9,"../helpers/randomImage":10,"../helpers/txt":12,"../molecules/dividerWithText":14,"../molecules/insight":15,"../molecules/quoteRow":16,"../organisms/carousel":17,"../organisms/chart":18,"../organisms/footer":19,"../organisms/heroHeader":20,"../organisms/textBoxOverImage":21,"../organisms/whereWeWork":23,"choo/html":91}],14:[function(require,module,exports){
 const h = require('choo/html');
 
 const dividerWithText = text => h`
@@ -616,7 +613,7 @@ const dividerWithText = text => h`
 
 module.exports = dividerWithText;
 
-},{"choo/html":90}],15:[function(require,module,exports){
+},{"choo/html":91}],15:[function(require,module,exports){
 const h = require('choo/html');
 
 const insight = ({ text, link, imgUrl }) => h`
@@ -635,7 +632,7 @@ const insight = ({ text, link, imgUrl }) => h`
 
 module.exports = insight;
 
-},{"choo/html":90}],16:[function(require,module,exports){
+},{"choo/html":91}],16:[function(require,module,exports){
 const h = require('choo/html');
 
 const quoteRow = ({ quote, quotee, imgUrl }) => h`
@@ -652,7 +649,7 @@ const quoteRow = ({ quote, quotee, imgUrl }) => h`
 
 module.exports = quoteRow;
 
-},{"choo/html":90}],17:[function(require,module,exports){
+},{"choo/html":91}],17:[function(require,module,exports){
 const h = require('choo/html');
 const textBoxOverImage = require('./textBoxOverImage');
 
@@ -693,7 +690,7 @@ const carousel = data => h`
 
 module.exports = carousel;
 
-},{"./textBoxOverImage":20,"choo/html":90}],18:[function(require,module,exports){
+},{"./textBoxOverImage":21,"choo/html":91}],18:[function(require,module,exports){
 const h = require('choo/html');
 
 const chart = obj => h`
@@ -715,7 +712,90 @@ const chart = obj => h`
 
 module.exports = chart;
 
-},{"choo/html":90}],19:[function(require,module,exports){
+},{"choo/html":91}],19:[function(require,module,exports){
+const h = require('choo/html');
+
+const li = ({ text, link }) => h`
+  <li class='pb-05'>
+    <a class='hover-underline' href='${link}' title='${text}'>
+      ${text}
+    </a>
+  </li>
+`;
+
+const listCol = ({ title, links }) => h`
+  <div class='pr-3 flex-grow-1 md-col-6 md-pb-1 sm-col-12 sm-pr-0'>
+    <h3 class='sub uppercase mt-0 sub pb-05'>${title}</h3>
+    <ul class='list-reset sub'>
+      ${links.map(li)}
+    </ul>
+  </div>
+`;
+
+const buttonCol = h`
+  <div class='md-col-12'>
+    <p class='mt-0 center'>Social links go here</p>
+    <div class='flex flex-wrap'>
+      <div class='md-col-6 md-pr-1 sm-col-12 sm-p-0'>
+        <button class='btn--white md-col-12'>Donate</button>
+      </div>
+      <div class='md-col-6 pt-1 md-pt-0 md-pl-1 sm-col-12 sm-p-0 sm-mt-2'>
+        <button class='btn--white md-col-12'>Donate</button>
+      </div>
+    </div>
+  </div>
+`;
+
+const footer = () => h`
+  <footer class='bg-blue-3'>
+    <div class='container px-1 py-4 md-py-3 sm-py-2 color-white'>
+      <p class='bump bold mb-1'>Email Newsletter</p>
+      <form class='flex flex-wrap'>
+        <div class='flex col-5 md-col-12'>
+          <input class='border-color-white mr-1 md-mr-0' placeholder='Name'>
+        </div>
+        <div class='flex col-7 md-col-12 md-pt-1 sm-pb-1'>
+          <input class='border-color-white mr-1 sm-mr-0' placeholder='Email'>
+          <button class='btn--white sm-hide'>Submit</button>
+        </div>
+        <button class='btn--white sm-up-hide'>Submit</button>
+      </form>
+      <div class='py-3 sm-py-2'>
+        <img class='width-1' src='./assets/svgs/logo-white-temp.svg'>
+      </div>
+      <div class='flex md-flex-wrap border-bottom border-color-white border-width-1 pb-2'>
+        <div class='flex md-flex-wrap flex-grow-2'>
+          ${listCol({
+  title: 'What we do',
+  links: [{ text: 'Link', link: '#' }, { text: 'Link', link: '#' }, { text: 'Link', link: '#' }, { text: 'Link', link: '#' }, { text: 'Link', link: '#' }]
+})}
+          ${listCol({
+  title: 'Impact',
+  links: [{ text: 'Link', link: '#' }, { text: 'Link', link: '#' }, { text: 'Link', link: '#' }, { text: 'Link', link: '#' }]
+})}
+          ${listCol({
+  title: 'Who we are',
+  links: [{ text: 'Link', link: '#' }, { text: 'Link', link: '#' }, { text: 'Link', link: '#' }, { text: 'Link', link: '#' }]
+})}
+          ${listCol({
+  title: 'Insights',
+  links: [{ text: 'Link', link: '#' }, { text: 'Link', link: '#' }]
+})}
+        </div>
+        <div class='flex md-flex-none md-col-12 flex-grow-1 flex-justify-center'>
+          ${buttonCol}
+        </div>
+      </div>
+      <div class='tiny pt-2'>
+        <span>Copyright stuff goes here</span>
+      </div>
+    </div>
+  </footer>
+`;
+
+module.exports = footer;
+
+},{"choo/html":91}],20:[function(require,module,exports){
 const h = require('choo/html');
 const topNav = require('./topNav');
 const img = require('../helpers/randomImage');
@@ -741,7 +821,7 @@ const heroHeader = ({ text, imgUrl, link, linkText }) => h`
 
 module.exports = heroHeader;
 
-},{"../helpers/randomImage":10,"./topNav":21,"choo/html":90}],20:[function(require,module,exports){
+},{"../helpers/randomImage":10,"./topNav":22,"choo/html":91}],21:[function(require,module,exports){
 const h = require('choo/html');
 
 const textBoxOverImage = ({ title, imgUrl, text, link, linkText, direction }) => h`
@@ -767,7 +847,7 @@ const textBoxOverImage = ({ title, imgUrl, text, link, linkText, direction }) =>
 
 module.exports = textBoxOverImage;
 
-},{"choo/html":90}],21:[function(require,module,exports){
+},{"choo/html":91}],22:[function(require,module,exports){
 const h = require('choo/html');
 
 const navLinks = [{
@@ -817,7 +897,7 @@ const nav = h`
 
 module.exports = nav;
 
-},{"choo/html":90}],22:[function(require,module,exports){
+},{"choo/html":91}],23:[function(require,module,exports){
 const h = require('choo/html');
 
 const section = obj => h`
@@ -825,7 +905,7 @@ const section = obj => h`
     <a class='block aspect aspect-2x1'>
       <div class='bg-cover flex flex-align-center flex-justify-center' style='background-image: url(${obj.imgUrl})'>
         <div class='in-view-fade-in px-1 color-white relative z-1'>
-            <h2 class='uppercase m-0'>${obj.country}</h2>
+            <h2 class='uppercase m-0 md-h3'>${obj.country}</h2>
         </div>
       </div>
       <div class='bg-scrim fit-absolute'></div>
@@ -843,7 +923,7 @@ const whereWeWork = data => h`
 
 module.exports = whereWeWork;
 
-},{"choo/html":90}],23:[function(require,module,exports){
+},{"choo/html":91}],24:[function(require,module,exports){
 (function (global){
 'use strict';
 
@@ -1337,7 +1417,7 @@ var objectKeys = Object.keys || function (obj) {
 };
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"util/":127}],24:[function(require,module,exports){
+},{"util/":128}],25:[function(require,module,exports){
 'use strict'
 
 exports.byteLength = byteLength
@@ -1453,7 +1533,7 @@ function fromByteArray (uint8) {
   return parts.join('')
 }
 
-},{}],25:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 /*!
  * The buffer module from node.js, for the browser.
  *
@@ -3169,7 +3249,7 @@ function numberIsNaN (obj) {
   return obj !== obj // eslint-disable-line no-self-compare
 }
 
-},{"base64-js":24,"ieee754":101}],26:[function(require,module,exports){
+},{"base64-js":25,"ieee754":102}],27:[function(require,module,exports){
 /**
  * @namespace Chart
  */
@@ -3249,7 +3329,7 @@ if (typeof window !== 'undefined') {
  */
 Chart.canvasHelpers = Chart.helpers.canvas;
 
-},{"./charts/Chart.Bar":27,"./charts/Chart.Bubble":28,"./charts/Chart.Doughnut":29,"./charts/Chart.Line":30,"./charts/Chart.PolarArea":31,"./charts/Chart.Radar":32,"./charts/Chart.Scatter":33,"./controllers/controller.bar":34,"./controllers/controller.bubble":35,"./controllers/controller.doughnut":36,"./controllers/controller.line":37,"./controllers/controller.polarArea":38,"./controllers/controller.radar":39,"./controllers/controller.scatter":40,"./core/core":48,"./core/core.animation":41,"./core/core.controller":42,"./core/core.datasetController":43,"./core/core.defaults":44,"./core/core.element":45,"./core/core.helpers":46,"./core/core.interaction":47,"./core/core.layoutService":49,"./core/core.plugin":50,"./core/core.scale":51,"./core/core.scaleService":52,"./core/core.tooltip":54,"./elements/index":59,"./helpers/index":64,"./platforms/platform":67,"./plugins/plugin.filler":68,"./plugins/plugin.legend":69,"./plugins/plugin.title":70,"./scales/scale.category":71,"./scales/scale.linear":72,"./scales/scale.linearbase":73,"./scales/scale.logarithmic":74,"./scales/scale.radialLinear":75,"./scales/scale.time":76}],27:[function(require,module,exports){
+},{"./charts/Chart.Bar":28,"./charts/Chart.Bubble":29,"./charts/Chart.Doughnut":30,"./charts/Chart.Line":31,"./charts/Chart.PolarArea":32,"./charts/Chart.Radar":33,"./charts/Chart.Scatter":34,"./controllers/controller.bar":35,"./controllers/controller.bubble":36,"./controllers/controller.doughnut":37,"./controllers/controller.line":38,"./controllers/controller.polarArea":39,"./controllers/controller.radar":40,"./controllers/controller.scatter":41,"./core/core":49,"./core/core.animation":42,"./core/core.controller":43,"./core/core.datasetController":44,"./core/core.defaults":45,"./core/core.element":46,"./core/core.helpers":47,"./core/core.interaction":48,"./core/core.layoutService":50,"./core/core.plugin":51,"./core/core.scale":52,"./core/core.scaleService":53,"./core/core.tooltip":55,"./elements/index":60,"./helpers/index":65,"./platforms/platform":68,"./plugins/plugin.filler":69,"./plugins/plugin.legend":70,"./plugins/plugin.title":71,"./scales/scale.category":72,"./scales/scale.linear":73,"./scales/scale.linearbase":74,"./scales/scale.logarithmic":75,"./scales/scale.radialLinear":76,"./scales/scale.time":77}],28:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -3262,7 +3342,7 @@ module.exports = function(Chart) {
 
 };
 
-},{}],28:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -3274,7 +3354,7 @@ module.exports = function(Chart) {
 
 };
 
-},{}],29:[function(require,module,exports){
+},{}],30:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -3287,7 +3367,7 @@ module.exports = function(Chart) {
 
 };
 
-},{}],30:[function(require,module,exports){
+},{}],31:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -3300,7 +3380,7 @@ module.exports = function(Chart) {
 
 };
 
-},{}],31:[function(require,module,exports){
+},{}],32:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -3313,7 +3393,7 @@ module.exports = function(Chart) {
 
 };
 
-},{}],32:[function(require,module,exports){
+},{}],33:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -3326,7 +3406,7 @@ module.exports = function(Chart) {
 
 };
 
-},{}],33:[function(require,module,exports){
+},{}],34:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -3336,7 +3416,7 @@ module.exports = function(Chart) {
 	};
 };
 
-},{}],34:[function(require,module,exports){
+},{}],35:[function(require,module,exports){
 'use strict';
 
 var defaults = require('../core/core.defaults');
@@ -3759,7 +3839,7 @@ module.exports = function(Chart) {
 	});
 };
 
-},{"../core/core.defaults":44,"../elements/index":59,"../helpers/index":64}],35:[function(require,module,exports){
+},{"../core/core.defaults":45,"../elements/index":60,"../helpers/index":65}],36:[function(require,module,exports){
 'use strict';
 
 var defaults = require('../core/core.defaults');
@@ -3941,7 +4021,7 @@ module.exports = function(Chart) {
 	});
 };
 
-},{"../core/core.defaults":44,"../elements/index":59,"../helpers/index":64}],36:[function(require,module,exports){
+},{"../core/core.defaults":45,"../elements/index":60,"../helpers/index":65}],37:[function(require,module,exports){
 'use strict';
 
 var defaults = require('../core/core.defaults');
@@ -4242,7 +4322,7 @@ module.exports = function(Chart) {
 	});
 };
 
-},{"../core/core.defaults":44,"../elements/index":59,"../helpers/index":64}],37:[function(require,module,exports){
+},{"../core/core.defaults":45,"../elements/index":60,"../helpers/index":65}],38:[function(require,module,exports){
 'use strict';
 
 var defaults = require('../core/core.defaults');
@@ -4577,7 +4657,7 @@ module.exports = function(Chart) {
 	});
 };
 
-},{"../core/core.defaults":44,"../elements/index":59,"../helpers/index":64}],38:[function(require,module,exports){
+},{"../core/core.defaults":45,"../elements/index":60,"../helpers/index":65}],39:[function(require,module,exports){
 'use strict';
 
 var defaults = require('../core/core.defaults');
@@ -4801,7 +4881,7 @@ module.exports = function(Chart) {
 	});
 };
 
-},{"../core/core.defaults":44,"../elements/index":59,"../helpers/index":64}],39:[function(require,module,exports){
+},{"../core/core.defaults":45,"../elements/index":60,"../helpers/index":65}],40:[function(require,module,exports){
 'use strict';
 
 var defaults = require('../core/core.defaults');
@@ -4971,7 +5051,7 @@ module.exports = function(Chart) {
 	});
 };
 
-},{"../core/core.defaults":44,"../elements/index":59,"../helpers/index":64}],40:[function(require,module,exports){
+},{"../core/core.defaults":45,"../elements/index":60,"../helpers/index":65}],41:[function(require,module,exports){
 'use strict';
 
 var defaults = require('../core/core.defaults');
@@ -5015,7 +5095,7 @@ module.exports = function(Chart) {
 
 };
 
-},{"../core/core.defaults":44}],41:[function(require,module,exports){
+},{"../core/core.defaults":45}],42:[function(require,module,exports){
 /* global window: false */
 'use strict';
 
@@ -5189,7 +5269,7 @@ module.exports = function(Chart) {
 
 };
 
-},{"../helpers/index":64,"./core.defaults":44,"./core.element":45}],42:[function(require,module,exports){
+},{"../helpers/index":65,"./core.defaults":45,"./core.element":46}],43:[function(require,module,exports){
 'use strict';
 
 var defaults = require('./core.defaults');
@@ -6095,7 +6175,7 @@ module.exports = function(Chart) {
 	Chart.Controller = Chart;
 };
 
-},{"../helpers/index":64,"../platforms/platform":67,"./core.defaults":44,"./core.interaction":47}],43:[function(require,module,exports){
+},{"../helpers/index":65,"../platforms/platform":68,"./core.defaults":45,"./core.interaction":48}],44:[function(require,module,exports){
 'use strict';
 
 var helpers = require('../helpers/index');
@@ -6427,7 +6507,7 @@ module.exports = function(Chart) {
 	Chart.DatasetController.extend = helpers.inherits;
 };
 
-},{"../helpers/index":64}],44:[function(require,module,exports){
+},{"../helpers/index":65}],45:[function(require,module,exports){
 'use strict';
 
 var helpers = require('../helpers/index');
@@ -6441,7 +6521,7 @@ module.exports = {
 	}
 };
 
-},{"../helpers/index":64}],45:[function(require,module,exports){
+},{"../helpers/index":65}],46:[function(require,module,exports){
 'use strict';
 
 var color = require('chartjs-color');
@@ -6558,7 +6638,7 @@ Element.extend = helpers.inherits;
 
 module.exports = Element;
 
-},{"../helpers/index":64,"chartjs-color":78}],46:[function(require,module,exports){
+},{"../helpers/index":65,"chartjs-color":79}],47:[function(require,module,exports){
 /* global window: false */
 /* global document: false */
 'use strict';
@@ -7163,7 +7243,7 @@ module.exports = function(Chart) {
 	};
 };
 
-},{"../helpers/index":64,"./core.defaults":44,"chartjs-color":78}],47:[function(require,module,exports){
+},{"../helpers/index":65,"./core.defaults":45,"chartjs-color":79}],48:[function(require,module,exports){
 'use strict';
 
 var helpers = require('../helpers/index');
@@ -7495,7 +7575,7 @@ module.exports = {
 	}
 };
 
-},{"../helpers/index":64}],48:[function(require,module,exports){
+},{"../helpers/index":65}],49:[function(require,module,exports){
 'use strict';
 
 var defaults = require('./core.defaults');
@@ -7546,7 +7626,7 @@ module.exports = function() {
 	return Chart;
 };
 
-},{"./core.defaults":44}],49:[function(require,module,exports){
+},{"./core.defaults":45}],50:[function(require,module,exports){
 'use strict';
 
 var helpers = require('../helpers/index');
@@ -7970,7 +8050,7 @@ module.exports = function(Chart) {
 	};
 };
 
-},{"../helpers/index":64}],50:[function(require,module,exports){
+},{"../helpers/index":65}],51:[function(require,module,exports){
 'use strict';
 
 var defaults = require('./core.defaults');
@@ -8367,7 +8447,7 @@ module.exports = function(Chart) {
 	Chart.PluginBase = Element.extend({});
 };
 
-},{"../helpers/index":64,"./core.defaults":44,"./core.element":45}],51:[function(require,module,exports){
+},{"../helpers/index":65,"./core.defaults":45,"./core.element":46}],52:[function(require,module,exports){
 'use strict';
 
 var defaults = require('./core.defaults');
@@ -9300,7 +9380,7 @@ module.exports = function(Chart) {
 	});
 };
 
-},{"../helpers/index":64,"./core.defaults":44,"./core.element":45,"./core.ticks":53}],52:[function(require,module,exports){
+},{"../helpers/index":65,"./core.defaults":45,"./core.element":46,"./core.ticks":54}],53:[function(require,module,exports){
 'use strict';
 
 var defaults = require('./core.defaults');
@@ -9347,7 +9427,7 @@ module.exports = function(Chart) {
 	};
 };
 
-},{"../helpers/index":64,"./core.defaults":44}],53:[function(require,module,exports){
+},{"../helpers/index":65,"./core.defaults":45}],54:[function(require,module,exports){
 'use strict';
 
 var helpers = require('../helpers/index');
@@ -9553,7 +9633,7 @@ module.exports = {
 	}
 };
 
-},{"../helpers/index":64}],54:[function(require,module,exports){
+},{"../helpers/index":65}],55:[function(require,module,exports){
 'use strict';
 
 var defaults = require('./core.defaults');
@@ -10503,7 +10583,7 @@ module.exports = function(Chart) {
 	};
 };
 
-},{"../helpers/index":64,"./core.defaults":44,"./core.element":45}],55:[function(require,module,exports){
+},{"../helpers/index":65,"./core.defaults":45,"./core.element":46}],56:[function(require,module,exports){
 'use strict';
 
 var defaults = require('../core/core.defaults');
@@ -10612,7 +10692,7 @@ module.exports = Element.extend({
 	}
 });
 
-},{"../core/core.defaults":44,"../core/core.element":45,"../helpers/index":64}],56:[function(require,module,exports){
+},{"../core/core.defaults":45,"../core/core.element":46,"../helpers/index":65}],57:[function(require,module,exports){
 'use strict';
 
 var defaults = require('../core/core.defaults');
@@ -10705,7 +10785,7 @@ module.exports = Element.extend({
 	}
 });
 
-},{"../core/core.defaults":44,"../core/core.element":45,"../helpers/index":64}],57:[function(require,module,exports){
+},{"../core/core.defaults":45,"../core/core.element":46,"../helpers/index":65}],58:[function(require,module,exports){
 'use strict';
 
 var defaults = require('../core/core.defaults');
@@ -10813,7 +10893,7 @@ module.exports = Element.extend({
 	}
 });
 
-},{"../core/core.defaults":44,"../core/core.element":45,"../helpers/index":64}],58:[function(require,module,exports){
+},{"../core/core.defaults":45,"../core/core.element":46,"../helpers/index":65}],59:[function(require,module,exports){
 'use strict';
 
 var defaults = require('../core/core.defaults');
@@ -11032,7 +11112,7 @@ module.exports = Element.extend({
 	}
 });
 
-},{"../core/core.defaults":44,"../core/core.element":45}],59:[function(require,module,exports){
+},{"../core/core.defaults":45,"../core/core.element":46}],60:[function(require,module,exports){
 'use strict';
 
 module.exports = {};
@@ -11041,7 +11121,7 @@ module.exports.Line = require('./element.line');
 module.exports.Point = require('./element.point');
 module.exports.Rectangle = require('./element.rectangle');
 
-},{"./element.arc":55,"./element.line":56,"./element.point":57,"./element.rectangle":58}],60:[function(require,module,exports){
+},{"./element.arc":56,"./element.line":57,"./element.point":58,"./element.rectangle":59}],61:[function(require,module,exports){
 'use strict';
 
 var helpers = require('./helpers.core');
@@ -11257,7 +11337,7 @@ helpers.drawRoundedRectangle = function(ctx) {
 	ctx.closePath();
 };
 
-},{"./helpers.core":61}],61:[function(require,module,exports){
+},{"./helpers.core":62}],62:[function(require,module,exports){
 'use strict';
 
 /**
@@ -11598,7 +11678,7 @@ helpers.getValueOrDefault = helpers.valueOrDefault;
  */
 helpers.getValueAtIndexOrDefault = helpers.valueAtIndexOrDefault;
 
-},{}],62:[function(require,module,exports){
+},{}],63:[function(require,module,exports){
 'use strict';
 
 var helpers = require('./helpers.core');
@@ -11850,7 +11930,7 @@ module.exports = {
  */
 helpers.easingEffects = effects;
 
-},{"./helpers.core":61}],63:[function(require,module,exports){
+},{"./helpers.core":62}],64:[function(require,module,exports){
 'use strict';
 
 var helpers = require('./helpers.core');
@@ -11948,7 +12028,7 @@ module.exports = {
 	}
 };
 
-},{"./helpers.core":61}],64:[function(require,module,exports){
+},{"./helpers.core":62}],65:[function(require,module,exports){
 'use strict';
 
 module.exports = require('./helpers.core');
@@ -11956,7 +12036,7 @@ module.exports.easing = require('./helpers.easing');
 module.exports.canvas = require('./helpers.canvas');
 module.exports.options = require('./helpers.options');
 
-},{"./helpers.canvas":60,"./helpers.core":61,"./helpers.easing":62,"./helpers.options":63}],65:[function(require,module,exports){
+},{"./helpers.canvas":61,"./helpers.core":62,"./helpers.easing":63,"./helpers.options":64}],66:[function(require,module,exports){
 /**
  * Platform fallback implementation (minimal).
  * @see https://github.com/chartjs/Chart.js/pull/4591#issuecomment-319575939
@@ -11973,7 +12053,7 @@ module.exports = {
 	}
 };
 
-},{}],66:[function(require,module,exports){
+},{}],67:[function(require,module,exports){
 /**
  * Chart.Platform implementation for targeting a web browser
  */
@@ -12432,7 +12512,7 @@ helpers.addEvent = addEventListener;
  */
 helpers.removeEvent = removeEventListener;
 
-},{"../helpers/index":64}],67:[function(require,module,exports){
+},{"../helpers/index":65}],68:[function(require,module,exports){
 'use strict';
 
 var helpers = require('../helpers/index');
@@ -12508,7 +12588,7 @@ module.exports = helpers.extend({
  * @prop {Number} y - The mouse y position, relative to the canvas (null for incompatible events)
  */
 
-},{"../helpers/index":64,"./platform.basic":65,"./platform.dom":66}],68:[function(require,module,exports){
+},{"../helpers/index":65,"./platform.basic":66,"./platform.dom":67}],69:[function(require,module,exports){
 /**
  * Plugin based on discussion from the following Chart.js issues:
  * @see https://github.com/chartjs/Chart.js/issues/2380#issuecomment-279961569
@@ -12831,7 +12911,7 @@ module.exports = function() {
 	};
 };
 
-},{"../core/core.defaults":44,"../elements/index":59,"../helpers/index":64}],69:[function(require,module,exports){
+},{"../core/core.defaults":45,"../elements/index":60,"../helpers/index":65}],70:[function(require,module,exports){
 'use strict';
 
 var defaults = require('../core/core.defaults');
@@ -13400,7 +13480,7 @@ module.exports = function(Chart) {
 	};
 };
 
-},{"../core/core.defaults":44,"../core/core.element":45,"../helpers/index":64}],70:[function(require,module,exports){
+},{"../core/core.defaults":45,"../core/core.element":46,"../helpers/index":65}],71:[function(require,module,exports){
 'use strict';
 
 var defaults = require('../core/core.defaults');
@@ -13645,7 +13725,7 @@ module.exports = function(Chart) {
 	};
 };
 
-},{"../core/core.defaults":44,"../core/core.element":45,"../helpers/index":64}],71:[function(require,module,exports){
+},{"../core/core.defaults":45,"../core/core.element":46,"../helpers/index":65}],72:[function(require,module,exports){
 'use strict';
 
 module.exports = function(Chart) {
@@ -13780,7 +13860,7 @@ module.exports = function(Chart) {
 
 };
 
-},{}],72:[function(require,module,exports){
+},{}],73:[function(require,module,exports){
 'use strict';
 
 var defaults = require('../core/core.defaults');
@@ -13974,7 +14054,7 @@ module.exports = function(Chart) {
 
 };
 
-},{"../core/core.defaults":44,"../core/core.ticks":53,"../helpers/index":64}],73:[function(require,module,exports){
+},{"../core/core.defaults":45,"../core/core.ticks":54,"../helpers/index":65}],74:[function(require,module,exports){
 'use strict';
 
 var helpers = require('../helpers/index');
@@ -14108,7 +14188,7 @@ module.exports = function(Chart) {
 	});
 };
 
-},{"../core/core.ticks":53,"../helpers/index":64}],74:[function(require,module,exports){
+},{"../core/core.ticks":54,"../helpers/index":65}],75:[function(require,module,exports){
 'use strict';
 
 var helpers = require('../helpers/index');
@@ -14354,7 +14434,7 @@ module.exports = function(Chart) {
 
 };
 
-},{"../core/core.ticks":53,"../helpers/index":64}],75:[function(require,module,exports){
+},{"../core/core.ticks":54,"../helpers/index":65}],76:[function(require,module,exports){
 'use strict';
 
 var defaults = require('../core/core.defaults');
@@ -14886,7 +14966,7 @@ module.exports = function(Chart) {
 
 };
 
-},{"../core/core.defaults":44,"../core/core.ticks":53,"../helpers/index":64}],76:[function(require,module,exports){
+},{"../core/core.defaults":45,"../core/core.ticks":54,"../helpers/index":65}],77:[function(require,module,exports){
 /* global window: false */
 'use strict';
 
@@ -15644,7 +15724,7 @@ module.exports = function(Chart) {
 	Chart.scaleService.registerScaleType('time', TimeScale, defaultConfig);
 };
 
-},{"../core/core.defaults":44,"../helpers/index":64,"moment":102}],77:[function(require,module,exports){
+},{"../core/core.defaults":45,"../helpers/index":65,"moment":103}],78:[function(require,module,exports){
 /* MIT license */
 var colorNames = require('color-name');
 
@@ -15867,7 +15947,7 @@ for (var name in colorNames) {
    reverseNames[colorNames[name]] = name;
 }
 
-},{"color-name":94}],78:[function(require,module,exports){
+},{"color-name":95}],79:[function(require,module,exports){
 /* MIT license */
 var convert = require('color-convert');
 var string = require('chartjs-color-string');
@@ -16354,7 +16434,7 @@ if (typeof window !== 'undefined') {
 
 module.exports = Color;
 
-},{"chartjs-color-string":77,"color-convert":80}],79:[function(require,module,exports){
+},{"chartjs-color-string":78,"color-convert":81}],80:[function(require,module,exports){
 /* MIT license */
 
 module.exports = {
@@ -17054,7 +17134,7 @@ for (var key in cssKeywords) {
   reverseKeywords[JSON.stringify(cssKeywords[key])] = key;
 }
 
-},{}],80:[function(require,module,exports){
+},{}],81:[function(require,module,exports){
 var conversions = require("./conversions");
 
 var convert = function() {
@@ -17147,7 +17227,7 @@ Converter.prototype.getValues = function(space) {
 });
 
 module.exports = convert;
-},{"./conversions":79}],81:[function(require,module,exports){
+},{"./conversions":80}],82:[function(require,module,exports){
 var EventEmitter = require('events').EventEmitter
 
 var storage = require('./lib/storage')
@@ -17195,7 +17275,7 @@ function expose () {
   }
 }
 
-},{"./lib/copy":82,"./lib/debug":83,"./lib/help":84,"./lib/log":85,"./lib/logger":86,"./lib/storage":87,"events":97,"wayfarer/get-all-routes":128}],82:[function(require,module,exports){
+},{"./lib/copy":83,"./lib/debug":84,"./lib/help":85,"./lib/log":86,"./lib/logger":87,"./lib/storage":88,"events":98,"wayfarer/get-all-routes":129}],83:[function(require,module,exports){
 var stateCopy = require('state-copy')
 var pluck = require('plucker')
 
@@ -17211,7 +17291,7 @@ function copy (state) {
   stateCopy(isStateString ? pluck.apply(this, arguments) : state)
 }
 
-},{"plucker":119,"state-copy":124}],83:[function(require,module,exports){
+},{"plucker":120,"state-copy":125}],84:[function(require,module,exports){
 var onChange = require('object-change-callsite')
 var nanologger = require('nanologger')
 var assert = require('assert')
@@ -17252,7 +17332,7 @@ function debug (state, emitter, app, localEmitter) {
   }
 }
 
-},{"assert":23,"nanologger":107,"object-change-callsite":116}],84:[function(require,module,exports){
+},{"assert":24,"nanologger":108,"object-change-callsite":117}],85:[function(require,module,exports){
 module.exports = help
 
 function help () {
@@ -17281,7 +17361,7 @@ function print (cmd, desc) {
   console.log('  %cchoo.' + cmd, 'color: ' + color, '— ' + desc)
 }
 
-},{}],85:[function(require,module,exports){
+},{}],86:[function(require,module,exports){
 var removeItems = require('remove-array-items')
 var onIdle = require('on-idle')
 var clone = require('clone')
@@ -17357,7 +17437,7 @@ function log (state, emitter, app, localEmitter) {
   }
 }
 
-},{"clone":88,"nanologger":107,"on-idle":117,"remove-array-items":122}],86:[function(require,module,exports){
+},{"clone":89,"nanologger":108,"on-idle":118,"remove-array-items":123}],87:[function(require,module,exports){
 var nanologger = require('nanologger')
 var nanotiming = require('nanotiming')
 var Hooks = require('choo-hooks')
@@ -17446,7 +17526,7 @@ function logger (state, emitter) {
   }
 }
 
-},{"choo-hooks":89,"nanologger":107,"nanotiming":114,"on-idle":117}],87:[function(require,module,exports){
+},{"choo-hooks":90,"nanologger":108,"nanotiming":115,"on-idle":118}],88:[function(require,module,exports){
 var pretty = require('prettier-bytes')
 
 module.exports = storage
@@ -17486,7 +17566,7 @@ function fmt (num) {
   return pretty(num).replace(' ', '')
 }
 
-},{"prettier-bytes":120}],88:[function(require,module,exports){
+},{"prettier-bytes":121}],89:[function(require,module,exports){
 (function (Buffer){
 var clone = (function() {
 'use strict';
@@ -17741,7 +17821,7 @@ if (typeof module === 'object' && module.exports) {
 }
 
 }).call(this,require("buffer").Buffer)
-},{"buffer":25}],89:[function(require,module,exports){
+},{"buffer":26}],90:[function(require,module,exports){
 var onPerformance = require('on-performance')
 var onIdle = require('on-idle')
 var assert = require('assert')
@@ -17884,10 +17964,10 @@ function sumDurations (timings) {
   }, 0).toFixed()
 }
 
-},{"assert":23,"on-idle":117,"on-performance":118}],90:[function(require,module,exports){
+},{"assert":24,"on-idle":118,"on-performance":119}],91:[function(require,module,exports){
 module.exports = require('bel')
 
-},{"bel":93}],91:[function(require,module,exports){
+},{"bel":94}],92:[function(require,module,exports){
 var scrollToAnchor = require('scroll-to-anchor')
 var documentReady = require('document-ready')
 var nanolocation = require('nanolocation')
@@ -18095,7 +18175,7 @@ Choo.prototype.toString = function (location, state) {
   return html.toString()
 }
 
-},{"assert":23,"document-ready":96,"nanobus":104,"nanohref":105,"nanolocation":106,"nanomorph":108,"nanoquery":111,"nanoraf":112,"nanorouter":113,"nanotiming":114,"scroll-to-anchor":123,"xtend":131}],92:[function(require,module,exports){
+},{"assert":24,"document-ready":97,"nanobus":105,"nanohref":106,"nanolocation":107,"nanomorph":109,"nanoquery":112,"nanoraf":113,"nanorouter":114,"nanotiming":115,"scroll-to-anchor":124,"xtend":132}],93:[function(require,module,exports){
 var trailingNewlineRegex = /\n[\s]+$/
 var leadingNewlineRegex = /^\n[\s]+/
 var trailingSpaceRegex = /[\s]+$/
@@ -18228,7 +18308,7 @@ module.exports = function appendChild (el, childs) {
   }
 }
 
-},{}],93:[function(require,module,exports){
+},{}],94:[function(require,module,exports){
 var hyperx = require('hyperx')
 var appendChild = require('./appendChild')
 
@@ -18329,7 +18409,7 @@ module.exports = hyperx(belCreateElement, {comments: true})
 module.exports.default = module.exports
 module.exports.createElement = belCreateElement
 
-},{"./appendChild":92,"hyperx":100}],94:[function(require,module,exports){
+},{"./appendChild":93,"hyperx":101}],95:[function(require,module,exports){
 'use strict'
 
 module.exports = {
@@ -18483,7 +18563,7 @@ module.exports = {
 	"yellowgreen": [154, 205, 50]
 };
 
-},{}],95:[function(require,module,exports){
+},{}],96:[function(require,module,exports){
 'use strict';
 module.exports = input => {
 	const el = document.createElement('textarea');
@@ -18526,7 +18606,7 @@ module.exports = input => {
 	return success;
 };
 
-},{}],96:[function(require,module,exports){
+},{}],97:[function(require,module,exports){
 'use strict'
 
 var assert = require('assert')
@@ -18545,7 +18625,7 @@ function ready (callback) {
   })
 }
 
-},{"assert":23}],97:[function(require,module,exports){
+},{"assert":24}],98:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -18849,7 +18929,7 @@ function isUndefined(arg) {
   return arg === void 0;
 }
 
-},{}],98:[function(require,module,exports){
+},{}],99:[function(require,module,exports){
 module.exports = stringify
 stringify.default = stringify
 function stringify (obj) {
@@ -18909,7 +18989,7 @@ function decirc (val, k, stack, parent) {
   stack.pop()
 }
 
-},{}],99:[function(require,module,exports){
+},{}],100:[function(require,module,exports){
 module.exports = attributeToProperty
 
 var transform = {
@@ -18930,7 +19010,7 @@ function attributeToProperty (h) {
   }
 }
 
-},{}],100:[function(require,module,exports){
+},{}],101:[function(require,module,exports){
 var attrToProp = require('hyperscript-attribute-to-property')
 
 var VAR = 0, TEXT = 1, OPEN = 2, CLOSE = 3, ATTR = 4
@@ -19213,7 +19293,7 @@ var closeRE = RegExp('^(' + [
 ].join('|') + ')(?:[\.#][a-zA-Z0-9\u007F-\uFFFF_:-]+)*$')
 function selfClosing (tag) { return closeRE.test(tag) }
 
-},{"hyperscript-attribute-to-property":99}],101:[function(require,module,exports){
+},{"hyperscript-attribute-to-property":100}],102:[function(require,module,exports){
 exports.read = function (buffer, offset, isLE, mLen, nBytes) {
   var e, m
   var eLen = nBytes * 8 - mLen - 1
@@ -19299,7 +19379,7 @@ exports.write = function (buffer, value, offset, isLE, mLen, nBytes) {
   buffer[offset + i - d] |= s * 128
 }
 
-},{}],102:[function(require,module,exports){
+},{}],103:[function(require,module,exports){
 //! moment.js
 //! version : 2.18.1
 //! authors : Tim Wood, Iskren Chernev, Moment.js contributors
@@ -23764,7 +23844,7 @@ return hooks;
 
 })));
 
-},{}],103:[function(require,module,exports){
+},{}],104:[function(require,module,exports){
 assert.notEqual = notEqual
 assert.notOk = notOk
 assert.equal = equal
@@ -23788,7 +23868,7 @@ function assert (t, m) {
   if (!t) throw new Error(m || 'AssertionError')
 }
 
-},{}],104:[function(require,module,exports){
+},{}],105:[function(require,module,exports){
 var splice = require('remove-array-items')
 var nanotiming = require('nanotiming')
 var assert = require('assert')
@@ -23942,7 +24022,7 @@ Nanobus.prototype._emit = function (arr, eventName, data, uuid) {
   }
 }
 
-},{"assert":23,"nanotiming":114,"remove-array-items":122}],105:[function(require,module,exports){
+},{"assert":24,"nanotiming":115,"remove-array-items":123}],106:[function(require,module,exports){
 var assert = require('assert')
 
 var safeExternalLink = /[noopener|noreferrer] [noopener|noreferrer]/
@@ -23984,7 +24064,7 @@ function href (cb, root) {
   })
 }
 
-},{"assert":23}],106:[function(require,module,exports){
+},{"assert":24}],107:[function(require,module,exports){
 var assert = require('assert')
 
 module.exports = nanolocation
@@ -23996,7 +24076,7 @@ function nanolocation () {
   return pathname + hash
 }
 
-},{"assert":23}],107:[function(require,module,exports){
+},{"assert":24}],108:[function(require,module,exports){
 var assert = require('assert')
 var xtend = require('xtend')
 
@@ -24162,7 +24242,7 @@ function pad (str) {
   return str.length !== 2 ? 0 + str : str
 }
 
-},{"assert":23,"xtend":131}],108:[function(require,module,exports){
+},{"assert":24,"xtend":132}],109:[function(require,module,exports){
 var assert = require('assert')
 var morph = require('./lib/morph')
 
@@ -24313,7 +24393,7 @@ function same (a, b) {
   return false
 }
 
-},{"./lib/morph":110,"assert":103}],109:[function(require,module,exports){
+},{"./lib/morph":111,"assert":104}],110:[function(require,module,exports){
 module.exports = [
   // attribute events (can be set with attributes)
   'onclick',
@@ -24357,7 +24437,7 @@ module.exports = [
   'onfocusout'
 ]
 
-},{}],110:[function(require,module,exports){
+},{}],111:[function(require,module,exports){
 var events = require('./events')
 var eventsLength = events.length
 
@@ -24523,7 +24603,7 @@ function updateAttribute (newNode, oldNode, name) {
   }
 }
 
-},{"./events":109}],111:[function(require,module,exports){
+},{"./events":110}],112:[function(require,module,exports){
 var reg = new RegExp('([^?=&]+)(=([^&]*))?', 'g')
 var assert = require('assert')
 
@@ -24541,7 +24621,7 @@ function qs (url) {
   return obj
 }
 
-},{"assert":23}],112:[function(require,module,exports){
+},{"assert":24}],113:[function(require,module,exports){
 'use strict'
 
 var assert = require('assert')
@@ -24578,7 +24658,7 @@ function nanoraf (render, raf) {
   }
 }
 
-},{"assert":23}],113:[function(require,module,exports){
+},{"assert":24}],114:[function(require,module,exports){
 var wayfarer = require('wayfarer')
 
 var isLocalFile = (/file:\/\//.test(typeof window === 'object' &&
@@ -24638,7 +24718,7 @@ function pathname (route, isElectron) {
   return route.replace(suffix, '').replace(normalize, '/')
 }
 
-},{"wayfarer":129}],114:[function(require,module,exports){
+},{"wayfarer":130}],115:[function(require,module,exports){
 var assert = require('assert')
 
 var onIdle = require('./lib/on-idle')
@@ -24682,7 +24762,7 @@ function noop (cb) {
   if (cb) onIdle(cb)
 }
 
-},{"./lib/on-idle":115,"assert":23}],115:[function(require,module,exports){
+},{"./lib/on-idle":116,"assert":24}],116:[function(require,module,exports){
 var assert = require('assert')
 
 var dftOpts = {}
@@ -24715,7 +24795,7 @@ function onIdle (cb, opts) {
   }
 }
 
-},{"assert":23}],116:[function(require,module,exports){
+},{"assert":24}],117:[function(require,module,exports){
 var assert = require('assert')
 
 module.exports = objectChangeCallsite
@@ -24752,7 +24832,7 @@ function strip (str) {
   return '\n' + arr.join('\n')
 }
 
-},{"assert":23}],117:[function(require,module,exports){
+},{"assert":24}],118:[function(require,module,exports){
 var assert = require('assert')
 
 var dftOpts = {}
@@ -24785,7 +24865,7 @@ function onIdle (cb, opts) {
   }
 }
 
-},{"assert":103}],118:[function(require,module,exports){
+},{"assert":104}],119:[function(require,module,exports){
 var onIdle = require('on-idle')
 var assert = require('assert')
 
@@ -24843,7 +24923,7 @@ function onPerformance (cb) {
   }
 }
 
-},{"assert":23,"on-idle":117}],119:[function(require,module,exports){
+},{"assert":24,"on-idle":118}],120:[function(require,module,exports){
 module.exports = plucker
 
 function plucker(path, object) {
@@ -24880,7 +24960,7 @@ function pluck(path) {
   }
 }
 
-},{}],120:[function(require,module,exports){
+},{}],121:[function(require,module,exports){
 module.exports = prettierBytes
 
 function prettierBytes (num) {
@@ -24912,7 +24992,7 @@ function prettierBytes (num) {
   }
 }
 
-},{}],121:[function(require,module,exports){
+},{}],122:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
 
@@ -25098,7 +25178,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],122:[function(require,module,exports){
+},{}],123:[function(require,module,exports){
 'use strict'
 
 /**
@@ -25128,7 +25208,7 @@ module.exports = function removeItems(arr, startIdx, removeCount)
   arr.length = len
 }
 
-},{}],123:[function(require,module,exports){
+},{}],124:[function(require,module,exports){
 module.exports = scrollToAnchor
 
 function scrollToAnchor (anchor, options) {
@@ -25140,7 +25220,7 @@ function scrollToAnchor (anchor, options) {
   }
 }
 
-},{}],124:[function(require,module,exports){
+},{}],125:[function(require,module,exports){
 var fastSafeStringify = require('fast-safe-stringify')
 var copy = require('copy-text-to-clipboard')
 
@@ -25158,7 +25238,7 @@ function stateCopy (obj) {
 module.exports = stateCopy
 
 
-},{"copy-text-to-clipboard":95,"fast-safe-stringify":98}],125:[function(require,module,exports){
+},{"copy-text-to-clipboard":96,"fast-safe-stringify":99}],126:[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -25183,14 +25263,14 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],126:[function(require,module,exports){
+},{}],127:[function(require,module,exports){
 module.exports = function isBuffer(arg) {
   return arg && typeof arg === 'object'
     && typeof arg.copy === 'function'
     && typeof arg.fill === 'function'
     && typeof arg.readUInt8 === 'function';
 }
-},{}],127:[function(require,module,exports){
+},{}],128:[function(require,module,exports){
 (function (process,global){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -25780,7 +25860,7 @@ function hasOwnProperty(obj, prop) {
 }
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./support/isBuffer":126,"_process":121,"inherits":125}],128:[function(require,module,exports){
+},{"./support/isBuffer":127,"_process":122,"inherits":126}],129:[function(require,module,exports){
 var assert = require('assert')
 
 module.exports = getAllRoutes
@@ -25817,7 +25897,7 @@ function getAllRoutes (router) {
   return transform(tree)
 }
 
-},{"assert":23}],129:[function(require,module,exports){
+},{"assert":24}],130:[function(require,module,exports){
 var assert = require('assert')
 var trie = require('./trie')
 
@@ -25884,7 +25964,7 @@ function Wayfarer (dft) {
   }
 }
 
-},{"./trie":130,"assert":23}],130:[function(require,module,exports){
+},{"./trie":131,"assert":24}],131:[function(require,module,exports){
 var mutate = require('xtend/mutable')
 var assert = require('assert')
 var xtend = require('xtend')
@@ -26023,7 +26103,7 @@ Trie.prototype.mount = function (route, trie) {
   }
 }
 
-},{"assert":23,"xtend":131,"xtend/mutable":132}],131:[function(require,module,exports){
+},{"assert":24,"xtend":132,"xtend/mutable":133}],132:[function(require,module,exports){
 module.exports = extend
 
 var hasOwnProperty = Object.prototype.hasOwnProperty;
@@ -26044,7 +26124,7 @@ function extend() {
     return target
 }
 
-},{}],132:[function(require,module,exports){
+},{}],133:[function(require,module,exports){
 module.exports = extend
 
 var hasOwnProperty = Object.prototype.hasOwnProperty;

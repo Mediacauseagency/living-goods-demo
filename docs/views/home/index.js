@@ -13,6 +13,7 @@ const textBoxOverImage = require('../organisms/textBoxOverImage')
 const carousel = require('../organisms/carousel')
 const chart = require('../organisms/chart')
 const whereWeWork = require('../organisms/whereWeWork')
+const footer = require('../organisms/footer')
 
 const textBoxTitle = 'Empowering Community Health Workers Like Janat'
 
@@ -135,11 +136,7 @@ const home = (state) => {
         ])}
         <div class='col-12 py-4 md-py-3 sm-py-2'></div>
       </section>
-      <footer class='bg-blue-3'>
-        <div class='container px-1 py-4 color-white'>
-          <h1 class='m-0 py-4'>Footer content goes here...</h1>
-        </div>
-      </footer>
+      ${footer()}
     </div>
   `
 }

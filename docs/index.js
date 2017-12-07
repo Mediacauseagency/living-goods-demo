@@ -181,7 +181,7 @@ const findOffset = elm => {
 
 const store = (state, emitter) => {
   emitter.on('DOMContentLoaded', addSideEffects)
-  emitter.on('render', () => window.setTimeout(addSideEffects, 1))
+  emitter.on('render', () => window.setTimeout(addSideEffects, 100))
 }
 
 const app = choo()
