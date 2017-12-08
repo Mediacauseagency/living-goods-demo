@@ -2,7 +2,7 @@ const h = require('choo/html')
 const devtools = require('choo-devtools')
 const choo = require('choo')
 
-const addSideEffects = require('../js/addSideEffects')
+const addSideEffects = require('../js/index')
 
 const isProduction = process.env.NODE_ENV === 'production'
 
@@ -60,5 +60,4 @@ if (!isProduction) { app.use(devtools()) }
 app.use(store)
 app.route('*', mainView)
 app.mount('#js-container')
-
 
