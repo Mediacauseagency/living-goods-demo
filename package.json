@@ -7,10 +7,10 @@
     "docs-css": "postcss docs/index.css -c postcss.config.js -o docs/build.css -w",
     "docs-js": "budo docs/index.js:build.js --live -t babelify --dir docs --pushstate --open",
     "watch-docs": "concurrently \"npm run docs-js\" \"npm run docs-css\"",
-    "build-docs-js": "browserify -t babelify docs/index.js > docs/build.js && gzip -c -9 < docs/build.js > docs/build.js.gz",
-    "build-index-js": "browserify -t babelify js/index.js > js/build.js",
+    "build-docs-js": "browserify -t babelify -t uglifyify -p common-shakeify docs/index.js | uglifyjs -c -m > docs/build.js && gzip -c -9 < docs/build.js > docs/build.js.gz",
     "build-docs-css": "postcss docs/index.css -c postcss.config.js --env 'production' -o docs/build.css && gzip -c -9 < docs/build.css > docs/build.css.gz",
-    "build-docs": "npm run build-docs-js && npm run build-docs-css"
+    "build-docs": "npm run build-docs-js && npm run build-docs-css",
+    "build-index-js": "browserify -t babelify -t uglifyify -p common-shakeify js/index.js | uglifyjs -c -m > js/build.js && gzip -c -9 < js/build.js > js/build.js.gz"
   },
   "author": "Yutaka Houlette <yutakahoulette@gmail.com>",
   "license": "MIT",
@@ -19,6 +19,7 @@
     "babelify": "^7.3.0",
     "browserify": "^14.4.0",
     "budo": "^10.0.4",
+    "common-shakeify": "^0.4.5",
     "concurrently": "^3.5.0",
     "cssnano": "^3.10.0",
     "normalize.css": "^7.0.0",
@@ -31,7 +32,9 @@
     "postcss-each": "^0.10.0",
     "postcss-easy-import": "^3.0.0",
     "postcss-for": "^2.1.1",
-    "tinyify": "https://github.com/yutakahoulette/tinyify.git",
+    "tinyify": "^2.4.0",
+    "uglifyify": "^4.0.5",
+    "uglifyjs": "^2.4.11",
     "watchify": "^3.9.0"
   },
   "dependencies": {
