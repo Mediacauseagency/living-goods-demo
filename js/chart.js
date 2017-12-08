@@ -4,6 +4,7 @@ const Chart = require('chart.js')
 // inView should be a boolean
 // i should be the index of the chart on the page
 const toggleChart = (elm, inView, i) => {
+  if(!elm || (elm && elm.nodeName !== 'CANVAS')) return
   let ctx
   let chart
   const colors = ['#44ade2', '#0281a4', '#014f84', '#f47a44']

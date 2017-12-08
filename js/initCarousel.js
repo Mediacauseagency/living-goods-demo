@@ -1,6 +1,7 @@
 
 const initCarousel = () => {
   const icons = document.querySelectorAll('.js-carousel__icon')
+  if (!icons.length) return
   icons.forEach((icon, i) => {
     icon.addEventListener('click', () => {
       icons.forEach((elm) => {
